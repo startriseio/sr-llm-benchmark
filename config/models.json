@@ -1,0 +1,214 @@
+{
+  "$comment": [
+    "The roster under test. To benchmark a newly released model, add one entry and run:",
+    "  npm run bench -- --model <id>",
+    "",
+    "provider:",
+    "  'anthropic'         — @anthropic-ai/sdk (direct).",
+    "  'openai-compatible' — openai SDK + baseURL override. Covers OpenAI, OpenRouter,",
+    "                        Z.ai, Moonshot, DashScope, xAI, DeepSeek, Groq, Together.",
+    "  'manual'            — no API. The runner skips it; you produce each deliverable in",
+    "                        the harness and drop it at runs/<id>/<benchmark>/index.html.",
+    "                        Scoring is identical to an API-generated run.",
+    "",
+    "Models whose apiKeyEnv is unset are SKIPPED (not failed) by --all.",
+    "params are passed to the provider verbatim — per-model tuning goes there.",
+    "",
+    "KEYS NEEDED FOR THIS ROSTER: ANTHROPIC_API_KEY, GLM_API_KEY, OPENROUTER_API_KEY",
+    "(+ DASHSCOPE_API_KEY for Qwen). Every OpenRouter entry can be pointed at its vendor's",
+    "direct endpoint instead — swap baseURL + apiKeyEnv and drop the vendor/ prefix."
+  ],
+  "models": [
+    {
+      "$comment": "Anthropic's most capable model. Thinking is always on — the thinking parameter is omitted deliberately, since an explicit config is rejected. Requires 30-day data retention: under ZDR every request 400s. Safety classifiers can return stop_reason refusal, which the provider surfaces as a clear error.",
+      "id": "claude-fable-5",
+      "label": "Claude Fable 5",
+      "provider": "anthropic",
+      "model": "claude-fable-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "vendor": "anthropic",
+      "params": {
+        "max_tokens": 128000,
+        "output_config": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "id": "claude-opus-5",
+      "label": "Claude Opus 5",
+      "provider": "anthropic",
+      "model": "claude-opus-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "params": {
+        "max_tokens": 128000,
+        "thinking": {
+          "type": "adaptive"
+        },
+        "output_config": {
+          "effort": "xhigh"
+        }
+      },
+      "vendor": "anthropic",
+      "$comment": "max_tokens covers thinking AND output. 64k truncated this model mid-document at xhigh effort; 128k is its ceiling and leaves room for both."
+    },
+    {
+      "id": "claude-sonnet-5",
+      "label": "Claude Sonnet 5",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "params": {
+        "max_tokens": 128000,
+        "thinking": {
+          "type": "adaptive"
+        },
+        "output_config": {
+          "effort": "xhigh"
+        }
+      },
+      "vendor": "anthropic",
+      "$comment": "max_tokens covers thinking AND output. 64k truncated this model mid-document at xhigh effort; 128k is its ceiling and leaves room for both."
+    },
+    {
+      "$comment": "Haiku 4.5 predates adaptive thinking and the effort parameter. It takes the older budget_tokens form, and sending output_config.effort would 400. Max output is 64K.",
+      "id": "claude-haiku-4-5",
+      "label": "Claude Haiku 4.5",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "params": {
+        "max_tokens": 64000,
+        "thinking": {
+          "type": "enabled",
+          "budget_tokens": 12000
+        }
+      },
+      "vendor": "anthropic"
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "label": "GPT-5.6 Sol",
+      "provider": "openai-compatible",
+      "model": "openai/gpt-5.6-sol",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 64000
+      },
+      "vendor": "openai"
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "label": "GPT-5.6 Terra",
+      "provider": "openai-compatible",
+      "model": "openai/gpt-5.6-terra",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 64000
+      },
+      "vendor": "openai"
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "label": "GPT-5.6 Luna",
+      "provider": "openai-compatible",
+      "model": "openai/gpt-5.6-luna",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 64000
+      },
+      "vendor": "openai"
+    },
+    {
+      "$comment": "You said 'Cursor Grok 4.5'. This entry is the raw model over xAI's API via OpenRouter. If you actually want to measure the Cursor HARNESS driving Grok, change provider to 'manual' and run the briefs inside Cursor instead.",
+      "id": "grok-4.5",
+      "label": "Grok 4.5",
+      "provider": "openai-compatible",
+      "model": "x-ai/grok-4.5",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 64000
+      },
+      "vendor": "xai"
+    },
+    {
+      "$comment": "Composer is Cursor-only — there is no public API, so this can only be run by hand inside Cursor. Paste each brief from benchmarks/ (plus benchmarks/_contract.md) and save the result to runs/cursor-composer-2.5/<benchmark-id>/index.html.",
+      "id": "cursor-composer-2.5",
+      "label": "Cursor Composer 2.5",
+      "provider": "manual",
+      "harness": "Cursor",
+      "vendor": "cursor"
+    },
+    {
+      "$comment": "Moved off the Z.ai coding-plan endpoint (https://api.z.ai/api/coding/paas/v4, model 'glm-5.2', GLM_API_KEY) to OpenRouter. GLM 5.2 spends its output budget on reasoning before emitting content, so at max_tokens 64000 it truncated or returned an EMPTY body (finish_reason: length) on the harder briefs — 01 produced 2kb after ten minutes, 10 produced nothing at all. OpenRouter publishes max_completion_tokens 131072 for this model, so 64000 was our ceiling, not the model's. Raising it to 128000 is the fix; do not lower it, which forces truncation rather than preventing it. The Z.ai route still works for lighter tasks if you want it back.",
+      "id": "glm-5.2",
+      "label": "GLM 5.2",
+      "provider": "openai-compatible",
+      "model": "z-ai/glm-5.2",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "zai",
+      "vision": false
+    },
+    {
+      "$comment": "vision:false is a conservative default — it only affects the judge audit, which sends screenshots to every model in this roster. If DeepSeek's OpenRouter route does accept image input, flip it to true; if it does not and this is left unset, every audit call for this model 404s with 'No endpoints found that support image input' (the failure qwen3.7-max hit). Generation is unaffected either way.",
+      "id": "deepseek-v4-pro",
+      "label": "DeepSeek V4 Pro",
+      "provider": "openai-compatible",
+      "model": "deepseek/deepseek-v4-pro",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "vision": false,
+      "params": {
+        "max_tokens": 64000
+      },
+      "vendor": "deepseek"
+    },
+    {
+      "id": "kimi-k3",
+      "label": "Kimi K3",
+      "provider": "openai-compatible",
+      "model": "moonshotai/kimi-k3",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 64000
+      },
+      "vendor": "moonshot"
+    },
+    {
+      "$comment": "Meta's Muse Spark 1.2 (coding-focused update, released via Meta Model API). Verified in the OpenRouter catalog as meta/muse-spark-1.2: 1M context, image input supported (so no vision:false), $1.25/M in, $4.25/M out, no published max_completion_tokens cap. max_tokens 128000 because it reasons inside the output budget (a 'Say READY' probe burned ~270 reasoning tokens and returned an EMPTY body at max_tokens 64) — the same failure mode that truncated GLM 5.2 at 64000; do not lower it. GATE: OpenRouter 403s on this model until the account confirms 18+ age attestation at https://openrouter.ai/settings/preferences — one-time, account-level. Direct alternative: Meta Model API at https://api.meta.ai/v1 (OpenAI-compatible), model 'muse-spark-1.2', key from the Meta Developer Console — swap baseURL/apiKeyEnv/model to use it.",
+      "id": "muse-spark-1.2",
+      "label": "Muse Spark 1.2",
+      "provider": "openai-compatible",
+      "model": "meta/muse-spark-1.2",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "meta"
+    },
+    {
+      "$comment": "Verified present in the OpenRouter catalog. Qwen 3.8 Max Preview is not published there yet; swap model/baseURL/apiKeyEnv to DashScope if you get direct access. vision:false because no OpenRouter endpoint for this model accepts image input — without it every judge-audit call 404s. Only the audit reads this flag; it does not affect generation.",
+      "id": "qwen3.7-max",
+      "vision": false,
+      "label": "Qwen 3.7 Max",
+      "provider": "openai-compatible",
+      "model": "qwen/qwen3.7-max",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 64000
+      },
+      "vendor": "alibaba"
+    }
+  ]
+}

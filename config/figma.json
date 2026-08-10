@@ -1,0 +1,9 @@
+{
+  "$comment": [
+    "Source of truth for the 04-figma-to-code benchmark. Every harness under test must be",
+    "pointed at the same frame for the comparison to mean anything. Paste the URL of a",
+    "single Figma frame (right-click the frame → Copy link to selection)."
+  ],
+  "frameUrl": "",
+  "notes": ""
+}

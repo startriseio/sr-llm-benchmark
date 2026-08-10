@@ -1,0 +1,76 @@
+{
+  "$comment": [
+    "The judge quorum. Each judge scores every submission INDEPENDENTLY on all four axes,",
+    "through its own lens — the lens biases what it weighs and what it notices. Scores are",
+    "aggregated per-axis by MEDIAN (robust to one outlier judge) and the spread between",
+    "judges is recorded, so you can see where the panel disagreed instead of trusting a",
+    "consensus that does not exist.",
+    "",
+    "Diversity is the whole point of a quorum. Two knobs:",
+    "  1. lens  — different evaluative priorities",
+    "  2. model — different model FAMILIES. This matters more. Three Claudes with three",
+    "             lenses still share one model's blind spots; Anthropic + OpenAI + xAI do not.",
+    "Use an odd number so the median is a score a real judge actually gave.",
+    "",
+    "This default panel is three labs, routed through OpenRouter so one key covers it.",
+    "To run judges direct instead, set provider 'anthropic' + model 'claude-opus-5' +",
+    "apiKeyEnv 'ANTHROPIC_API_KEY' and drop baseURL.",
+    "",
+    "vision:false marks a judge that cannot see images — it scores from source and the",
+    "gate measurements only, and its verdict is labelled accordingly. Avoid vision-less",
+    "judges on this benchmark suite where you can; the visual axes are half the point.",
+    "",
+    "A judge whose apiKeyEnv is unset is SKIPPED. The panel needs >= minJudges to score.",
+    "",
+    "NOTE: judges are deliberately drawn from a different pool than the models under test",
+    "where possible. Where they overlap, run `npm run audit` — it measures each judge's",
+    "self-preference and vendor bias so you know how much to trust the overlap."
+  ],
+  "minJudges": 2,
+  "judges": [
+    {
+      "id": "craft",
+      "label": "Craft",
+      "provider": "anthropic",
+      "model": "claude-opus-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "vendor": "anthropic",
+      "vision": true,
+      "params": {
+        "max_tokens": 8000,
+        "thinking": {
+          "type": "adaptive"
+        }
+      },
+      "lens": "You judge as an award-jury design director. You care about visual craft: composition, typography, colour, spacing, motion quality, and whether the thing has a point of view. You are unimpressed by generic AI aesthetics — purple gradients, Inter and system fonts, stock card layouts, centred hero plus three feature boxes. You reward restraint and taste as much as spectacle, and you notice when something is technically busy but visually incoherent."
+    },
+    {
+      "id": "engineering",
+      "label": "Engineering",
+      "provider": "openai-compatible",
+      "model": "openai/gpt-5.6-terra",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "vendor": "openai",
+      "vision": true,
+      "params": {
+        "max_tokens": 8000
+      },
+      "lens": "You judge as a senior graphics and frontend engineer reading the source. You care about what was actually implemented versus faked: real shader maths versus a CSS gradient, real physics versus a hardcoded tween, correct resize and DPR handling, disposal, event cleanup, frame-rate independence via delta time. You reward genuine technique and you call out padding — long files that do little, dead code, and effects that only hold together at one viewport size."
+    },
+    {
+      "id": "brief",
+      "label": "Brief",
+      "provider": "openai-compatible",
+      "model": "x-ai/grok-4.5",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "vendor": "xai",
+      "vision": true,
+      "params": {
+        "max_tokens": 8000
+      },
+      "lens": "You judge as the client who wrote the brief. You care only about whether the deliverable does what was asked, completely, and whether the idea behind it is worth anything. You check every explicit requirement in the prompt one by one. You reward finished work over impressive fragments, and you are harsh on stubs, placeholders, TODOs, and features that were described in comments but never built."
+    }
+  ]
+}

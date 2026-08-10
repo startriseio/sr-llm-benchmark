@@ -1,0 +1,53 @@
+{
+  "$comment": [
+    "Final score is a weighted blend of three independent columns, each normalised to 0-100.",
+    "If no human score has been entered, the report shows an AUTO score with the human",
+    "weight redistributed proportionally, and flags the row as un-reviewed.",
+    "",
+    "gateWeights: relative weight of each Playwright check inside the technical column.",
+    "             Only checks listed in a benchmark's `checks` array are counted, and the",
+    "             weights are renormalised over those — so omitting `fps` on a static page",
+    "             does not cost the model anything.",
+    "",
+    "judgeAxes:   what every judge in the quorum scores, 0-10 each."
+  ],
+  "weights": {
+    "technical": 0.25,
+    "judge": 0.45,
+    "human": 0.3
+  },
+  "gateWeights": {
+    "self_contained": 1,
+    "loads": 2,
+    "console_clean": 1.5,
+    "renders": 2,
+    "fps": 1.5,
+    "interaction": 1.5,
+    "economy": 1,
+    "identity": 2.5
+  },
+  "judgeAxes": [
+    {
+      "id": "craft",
+      "label": "Craft & polish",
+      "description": "Visual quality, typography, colour, composition, motion feel, finish. Would a discerning person believe a human designed this on purpose?"
+    },
+    {
+      "id": "technique",
+      "label": "Technical ambition",
+      "description": "How hard is what was actually built, and is it built correctly? Real technique versus the cheapest thing that looks similar."
+    },
+    {
+      "id": "adherence",
+      "label": "Brief adherence",
+      "description": "Did it do everything the prompt asked, completely, including the output contract? Stubs and TODOs count against."
+    },
+    {
+      "id": "originality",
+      "label": "Originality",
+      "description": "Is the idea and its execution distinctive, or is it the median AI answer to this prompt?"
+    }
+  ],
+  "fpsTarget": 55,
+  "fpsFloor": 15
+}

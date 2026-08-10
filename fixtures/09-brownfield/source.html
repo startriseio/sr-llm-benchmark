@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redland Builders Merchants — Trade Counter</title>
+<style>
+/* ─── Redland trade counter — stylesheet ─────────────────────────────────────
+   House rules, decided a long time ago and not up for discussion:
+     · every class is prefixed tc-
+     · blocks are tc-block, elements tc-block__element, modifiers tc-block--mod
+     · no utility classes, no shorthand soup, one property per line
+     · all colour lives in the custom properties below and nowhere else
+                                                                              */
+
+:root {
+  --tc-ink: #1d2126;
+  --tc-ink-soft: #5b656f;
+  --tc-line: #d5dbe0;
+  --tc-line-soft: #e8ecef;
+  --tc-page: #f3f5f7;
+  --tc-card: #ffffff;
+  --tc-brand: #1f5e3d;
+  --tc-brand-soft: #e7f0ea;
+  --tc-warn: #8a4b12;
+  --tc-warn-soft: #fdf1e3;
+  --tc-radius: 3px;
+  --tc-gutter: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--tc-page);
+  color: var(--tc-ink);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+
+.tc-head {
+  display: flex;
+  align-items: center;
+  gap: var(--tc-gutter);
+  padding: 12px 20px;
+  background: var(--tc-ink);
+  color: #ffffff;
+}
+
+.tc-head__brand {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.tc-head__brand span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9aa4ad;
+}
+
+.tc-head__spacer {
+  flex: 1 1 auto;
+}
+
+.tc-head__total {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.tc-head__status {
+  min-width: 210px;
+  font-size: 12px;
+  color: #9aa4ad;
+}
+
+.tc-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ─── Layout ─────────────────────────────────────────────────────────────── */
+
+.tc-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tc-col--cat {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.tc-col--order {
+  flex: 0 0 400px;
+  position: sticky;
+  top: 20px;
+}
+
+.tc-panel {
+  margin-bottom: 16px;
+  padding: var(--tc-gutter);
+  background: var(--tc-card);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius);
+}
+
+.tc-panel__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--tc-line-soft);
+}
+
+.tc-panel__head h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tc-panel__count {
+  font-size: 12px;
+  color: var(--tc-ink-soft);
+}
+
+/* ─── Filters ────────────────────────────────────────────────────────────── */
+
+.tc-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.tc-search {
+  flex: 0 0 280px;
+  padding: 7px 10px;
+  font: inherit;
+  color: inherit;
+  background: var(--tc-card);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius);
+}
+
+.tc-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tc-cat {
+  padding: 6px 11px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--tc-ink-soft);
+  background: var(--tc-card);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius);
+  cursor: pointer;
+}
+
+.tc-cat--on {
+  color: #ffffff;
+  background: var(--tc-brand);
+  border-color: var(--tc-brand);
+}
+
+/* ─── Catalogue ──────────────────────────────────────────────────────────── */
+
+.tc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.tc-tile {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background: var(--tc-card);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius);
+}
+
+.tc-tile__sku {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--tc-ink-soft);
+}
+
+.tc-tile__name {
+  margin: 3px 0 2px;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.tc-tile__unit {
+  flex: 1 1 auto;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--tc-ink-soft);
+}
+
+.tc-tile__price {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.tc-tile__tier {
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: var(--tc-brand);
+}
+
+.tc-tile__buy {
+  display: flex;
+  gap: 6px;
+}
+
+.tc-qty {
+  flex: 0 0 62px;
+  padding: 5px 6px;
+  font: inherit;
+  font-size: 13px;
+  text-align: right;
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius);
+}
+
+.tc-btn {
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--tc-ink);
+  background: var(--tc-card);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius);
+  cursor: pointer;
+}
+
+.tc-btn--add {
+  flex: 1 1 auto;
+  color: #ffffff;
+  background: var(--tc-brand);
+  border-color: var(--tc-brand);
+}
+
+.tc-btn--wide {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.tc-btn:disabled {
+  color: #a7b0b8;
+  cursor: default;
+}
+
+/* ─── Order lines ────────────────────────────────────────────────────────── */
+
+.tc-lines {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tc-lines th {
+  padding: 0 0 6px;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tc-ink-soft);
+  border-bottom: 1px solid var(--tc-line-soft);
+}
+
+.tc-lines td {
+  padding: 9px 0;
+  vertical-align: top;
+  border-bottom: 1px solid var(--tc-line-soft);
+}
+
+.tc-num {
+  text-align: right;
+}
+
+.tc-num--strong {
+  font-weight: 600;
+}
+
+.tc-line__name {
+  display: block;
+  font-size: 13px;
+}
+
+.tc-line__sku {
+  display: block;
+  font-size: 11px;
+  color: var(--tc-ink-soft);
+}
+
+.tc-line__save {
+  display: inline-block;
+  margin-top: 3px;
+  padding: 1px 5px;
+  font-size: 11px;
+  color: var(--tc-brand);
+  background: var(--tc-brand-soft);
+  border-radius: var(--tc-radius);
+}
+
+.tc-step {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius);
+  overflow: hidden;
+}
+
+.tc-step__btn {
+  width: 24px;
+  padding: 0;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--tc-ink-soft);
+  background: #f7f9fa;
+  border: 0;
+  cursor: pointer;
+}
+
+.tc-step__input {
+  width: 48px;
+  padding: 4px 5px;
+  font: inherit;
+  font-size: 13px;
+  text-align: right;
+  border: 0;
+  border-left: 1px solid var(--tc-line);
+  border-right: 1px solid var(--tc-line);
+}
+
+.tc-x {
+  padding: 2px 6px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--tc-ink-soft);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* ─── Totals ─────────────────────────────────────────────────────────────── */
+
+.tc-totals {
+  margin: 0;
+}
+
+.tc-totals__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.tc-totals__row dt {
+  color: var(--tc-ink-soft);
+}
+
+.tc-totals__row dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.tc-totals__row--grand {
+  margin-top: 6px;
+  padding-top: 9px;
+  font-size: 17px;
+  font-weight: 600;
+  border-top: 1px solid var(--tc-line);
+}
+
+.tc-totals__row--grand dt {
+  color: var(--tc-ink);
+}
+
+.tc-note {
+  margin-top: 8px;
+  padding: 7px 9px;
+  font-size: 12px;
+  color: var(--tc-warn);
+  background: var(--tc-warn-soft);
+  border-radius: var(--tc-radius);
+}
+
+/* ─── Saved quotes ───────────────────────────────────────────────────────── */
+
+.tc-quote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--tc-line-soft);
+}
+
+.tc-quote__ref {
+  flex: 1 1 auto;
+  font-size: 12px;
+}
+
+.tc-quote__ref span {
+  display: block;
+  color: var(--tc-ink-soft);
+}
+
+.tc-quote__sum {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.tc-empty {
+  margin: 0;
+  padding: 14px 0;
+  font-size: 13px;
+  color: var(--tc-ink-soft);
+}
+
+@media (max-width: 900px) {
+  .tc-main {
+    display: block;
+  }
+
+  .tc-col--order {
+    position: static;
+    margin-top: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="tc-head">
+  <div class="tc-head__brand">Redland Builders Merchants <span>Trade Counter</span></div>
+  <label class="tc-toggle"><input type="checkbox" data-act="customer.trade" id="tc-trade"> Trade account</label>
+  <div class="tc-head__spacer"></div>
+  <div class="tc-head__status" id="tc-status"></div>
+  <div class="tc-head__total" id="tc-runningtotal">&nbsp;</div>
+</header>
+
+<div id="tc-app">
+  <main class="tc-main">
+
+    <section class="tc-col tc-col--cat">
+      <div class="tc-filters">
+        <!-- The search box lives outside #tc-catalogue on purpose: the mounts are
+             rewritten wholesale on every render and an input inside one would lose
+             focus and caret position on every keystroke. -->
+        <input type="search" class="tc-search" id="tc-search" data-act="filter.q" placeholder="Search the catalogue" aria-label="Search the catalogue">
+        <div class="tc-cats" id="tc-cats"></div>
+      </div>
+      <div class="tc-grid" id="tc-catalogue"></div>
+    </section>
+
+    <section class="tc-col tc-col--order">
+      <div class="tc-panel">
+        <div class="tc-panel__head">
+          <h2>Order</h2>
+          <span class="tc-panel__count" id="tc-ordercount"></span>
+        </div>
+        <div id="tc-order"></div>
+        <div id="tc-totals"></div>
+      </div>
+      <div class="tc-panel">
+        <div class="tc-panel__head">
+          <h2>Saved quotes</h2>
+          <span class="tc-panel__count" id="tc-quotecount"></span>
+        </div>
+        <div id="tc-quotes"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ─── Redland trade counter ────────────────────────────────────────────────
+     House rules for this file:
+       · var only, function declarations only, no arrow functions
+       · single quotes, semicolons, two-space indent
+       · string concatenation for markup — no template literals
+       · money is integer pence everywhere; it only becomes a string at render
+       · one store, one dispatcher, one render pass. Nothing writes to the DOM
+         outside a render* function.
+                                                                              */
+
+  /* ─── Constants ─────────────────────────────────────────────────────────── */
+
+  var VAT_BP = 2000;                 /* 20.00%, in basis points */
+  var CARRIAGE_FREE_FROM = 25000;    /* ex-VAT pence */
+  var CARRIAGE_BANDS = [
+    { maxKg: 30, pence: 795 },
+    { maxKg: 100, pence: 1495 },
+    { maxKg: 400, pence: 2450 },
+    { maxKg: 1200, pence: 4200 }
+  ];
+  var CARRIAGE_OVERSIZE = 6800;
+  var TRADE_CARRIAGE_BP = 5000;      /* trade accounts pay half carriage */
+  var MAX_QTY = 999;
+
+  /* ─── Catalogue ─────────────────────────────────────────────────────────────
+     priceExPence is the counter price excluding VAT. tiers are ascending by
+     minQty and discountBp is basis points off the unit price.                */
+
+  var CATALOGUE = [
+    { sku: 'TIM-204', cat: 'Timber', name: 'Sawn treated carcassing 47 × 100mm', unit: '3.0m length', weightKg: 6.4, priceExPence: 742,
+      tiers: [{ minQty: 10, discountBp: 250 }, { minQty: 50, discountBp: 750 }, { minQty: 200, discountBp: 1200 }] },
+    { sku: 'TIM-218', cat: 'Timber', name: 'Sawn treated carcassing 47 × 150mm', unit: '3.0m length', weightKg: 9.6, priceExPence: 1185,
+      tiers: [{ minQty: 10, discountBp: 250 }, { minQty: 50, discountBp: 750 }, { minQty: 200, discountBp: 1200 }] },
+    { sku: 'TIM-902', cat: 'Timber', name: 'OSB3 board 18mm', unit: '2440 × 1220 sheet', weightKg: 26.5, priceExPence: 2895,
+      tiers: [{ minQty: 5, discountBp: 200 }, { minQty: 25, discountBp: 600 }, { minQty: 100, discountBp: 1000 }] },
+    { sku: 'TIM-441', cat: 'Timber', name: 'Softwood roofing batten 25 × 50mm', unit: '2.4m length', weightKg: 1.5, priceExPence: 218,
+      tiers: [{ minQty: 20, discountBp: 300 }, { minQty: 100, discountBp: 800 }, { minQty: 400, discountBp: 1300 }] },
+    { sku: 'FIX-100', cat: 'Fixings', name: 'Timber screw 5.0 × 80mm', unit: 'box of 200', weightKg: 1.9, priceExPence: 1450,
+      tiers: [{ minQty: 5, discountBp: 400 }, { minQty: 20, discountBp: 900 }, { minQty: 60, discountBp: 1400 }] },
+    { sku: 'FIX-260', cat: 'Fixings', name: 'Frame anchor 10 × 140mm', unit: 'box of 50', weightKg: 2.2, priceExPence: 2310,
+      tiers: [{ minQty: 4, discountBp: 300 }, { minQty: 16, discountBp: 800 }] },
+    { sku: 'FIX-333', cat: 'Fixings', name: 'Joist hanger 47mm galvanised', unit: 'each', weightKg: 0.35, priceExPence: 189,
+      tiers: [{ minQty: 25, discountBp: 350 }, { minQty: 100, discountBp: 900 }, { minQty: 500, discountBp: 1500 }] },
+    { sku: 'FIX-780', cat: 'Fixings', name: 'Ring shank nail 3.1 × 65mm', unit: '2.5kg tub', weightKg: 2.5, priceExPence: 1195,
+      tiers: [{ minQty: 4, discountBp: 250 }, { minQty: 20, discountBp: 700 }] },
+    { sku: 'INS-050', cat: 'Insulation', name: 'PIR insulation board 50mm', unit: '2400 × 1200 sheet', weightKg: 5.8, priceExPence: 3450,
+      tiers: [{ minQty: 6, discountBp: 300 }, { minQty: 24, discountBp: 850 }, { minQty: 96, discountBp: 1250 }] },
+    { sku: 'INS-100', cat: 'Insulation', name: 'PIR insulation board 100mm', unit: '2400 × 1200 sheet', weightKg: 11.4, priceExPence: 6180,
+      tiers: [{ minQty: 6, discountBp: 300 }, { minQty: 24, discountBp: 850 }, { minQty: 96, discountBp: 1250 }] },
+    { sku: 'INS-LFT', cat: 'Insulation', name: 'Mineral wool loft roll 170mm', unit: '5.7m² roll', weightKg: 8.2, priceExPence: 2260,
+      tiers: [{ minQty: 8, discountBp: 350 }, { minQty: 40, discountBp: 900 }] },
+    { sku: 'AGG-BAL', cat: 'Aggregates', name: 'Ballast 20mm', unit: 'bulk bag 850kg', weightKg: 850, priceExPence: 5400,
+      tiers: [{ minQty: 3, discountBp: 500 }, { minQty: 10, discountBp: 1100 }] },
+    { sku: 'AGG-SND', cat: 'Aggregates', name: 'Sharp sand', unit: 'bulk bag 850kg', weightKg: 850, priceExPence: 5100,
+      tiers: [{ minQty: 3, discountBp: 500 }, { minQty: 10, discountBp: 1100 }] },
+    { sku: 'AGG-CEM', cat: 'Aggregates', name: 'Portland cement CEM II', unit: '25kg bag', weightKg: 25, priceExPence: 645,
+      tiers: [{ minQty: 10, discountBp: 400 }, { minQty: 50, discountBp: 900 }, { minQty: 200, discountBp: 1400 }] },
+    { sku: 'SEA-FOA', cat: 'Sealants', name: 'Expanding foam B2 750ml', unit: 'each', weightKg: 0.8, priceExPence: 689,
+      tiers: [{ minQty: 6, discountBp: 300 }, { minQty: 24, discountBp: 800 }] },
+    { sku: 'SEA-SIL', cat: 'Sealants', name: 'Low modulus silicone', unit: '310ml cartridge', weightKg: 0.42, priceExPence: 415,
+      tiers: [{ minQty: 12, discountBp: 350 }, { minQty: 48, discountBp: 900 }] }
+  ];
+
+  var CATEGORIES = ['all', 'Timber', 'Fixings', 'Insulation', 'Aggregates', 'Sealants'];
+
+  /* ─── Store ───────────────────────────────────────────────────────────────
+     Single mutable state object. Nothing outside commit() is allowed to touch
+     it, and every commit re-renders. It is not clever and it does not need to
+     be — the whole order is a few dozen objects.                             */
+
+  var store = {
+    state: null,
+    subs: [],
+
+    init: function (initial) {
+      this.state = initial;
+    },
+
+    get: function () {
+      return this.state;
+    },
+
+    commit: function (label, mutate) {
+      mutate(this.state);
+      this.state.revision = this.state.revision + 1;
+      this.state.lastAction = label;
+      for (var i = 0; i < this.subs.length; i++) {
+        this.subs[i](this.state);
+      }
+    },
+
+    subscribe: function (fn) {
+      this.subs.push(fn);
+    }
+  };
+
+  var lineSeq = 0;
+  var quoteSeq = 0;
+
+  function initialState() {
+    return {
+      revision: 0,
+      lastAction: 'boot',
+      lines: [],
+      filter: { q: '', cat: 'all' },
+      customer: { name: 'Cash sale', tradeAccount: false, postcode: 'LS11 5AB' },
+      quotes: [],
+      status: 'Ready.'
+    };
+  }
+
+  /* ─── Catalogue helpers ─────────────────────────────────────────────────── */
+
+  function productBySku(sku) {
+    for (var i = 0; i < CATALOGUE.length; i++) {
+      if (CATALOGUE[i].sku === sku) {
+        return CATALOGUE[i];
+      }
+    }
+    return null;
+  }
+
+  function visibleProducts(s) {
+    var q = s.filter.q.toLowerCase().replace(/^\s+|\s+$/g, '');
+    var out = [];
+    for (var i = 0; i < CATALOGUE.length; i++) {
+      var p = CATALOGUE[i];
+      if (s.filter.cat !== 'all' && p.cat !== s.filter.cat) {
+        continue;
+      }
+      if (q && (p.name + ' ' + p.sku + ' ' + p.unit).toLowerCase().indexOf(q) === -1) {
+        continue;
+      }
+      out.push(p);
+    }
+    return out;
+  }
+
+  /* Walks the tier table and returns the best break the quantity qualifies for.
+     Tiers are ascending, so the last match wins. */
+  function tierFor(product, qty) {
+    var best = { minQty: 1, discountBp: 0 };
+    for (var i = 0; i < product.tiers.length; i++) {
+      if (qty >= product.tiers[i].minQty) {
+        best = product.tiers[i];
+      }
+    }
+    return best;
+  }
+
+  function unitAtTier(product, tier) {
+    return product.priceExPence - Math.round(product.priceExPence * tier.discountBp / 10000);
+  }
+
+  function clampQty(n) {
+    n = parseInt(n, 10);
+    if (isNaN(n) || n < 1) {
+      n = 1;
+    }
+    if (n > MAX_QTY) {
+      n = MAX_QTY;
+    }
+    return n;
+  }
+
+  /* ─── Lines ───────────────────────────────────────────────────────────────
+     The resolved tier is cached on the line when the line is built. tierFor()
+     walks the whole tier table and the order panel re-renders on every commit,
+     so we resolve it once rather than on every pass.                         */
+
+  function makeLine(sku, qty) {
+    var product = productBySku(sku);
+    lineSeq = lineSeq + 1;
+    return {
+      id: 'L' + lineSeq,
+      sku: sku,
+      qty: qty,
+      tier: tierFor(product, qty),
+      note: ''
+    };
+  }
+
+  function lineById(s, id) {
+    for (var i = 0; i < s.lines.length; i++) {
+      if (s.lines[i].id === id) {
+        return s.lines[i];
+      }
+    }
+    return null;
+  }
+
+  function lineBySku(s, sku) {
+    for (var i = 0; i < s.lines.length; i++) {
+      if (s.lines[i].sku === sku) {
+        return s.lines[i];
+      }
+    }
+    return null;
+  }
+
+  /* ─── Derived money ─────────────────────────────────────────────────────── */
+
+  function lineNet(line) {
+    var product = productBySku(line.sku);
+    var gross = product.priceExPence * line.qty;
+    return gross - Math.round(gross * line.tier.discountBp / 10000);
+  }
+
+  function lineFull(line) {
+    return productBySku(line.sku).priceExPence * line.qty;
+  }
+
+  function goodsNet(s) {
+    var total = 0;
+    for (var i = 0; i < s.lines.length; i++) {
+      total = total + lineNet(s.lines[i]);
+    }
+    return total;
+  }
+
+  function orderWeight(s) {
+    var kg = 0;
+    for (var i = 0; i < s.lines.length; i++) {
+      kg = kg + productBySku(s.lines[i].sku).weightKg * s.lines[i].qty;
+    }
+    return kg;
+  }
+
+  function carriageNet(s) {
+    if (!s.lines.length) {
+      return 0;
+    }
+    if (goodsNet(s) >= CARRIAGE_FREE_FROM) {
+      return 0;
+    }
+    var kg = orderWeight(s);
+    var charge = CARRIAGE_OVERSIZE;
+    for (var i = 0; i < CARRIAGE_BANDS.length; i++) {
+      if (kg <= CARRIAGE_BANDS[i].maxKg) {
+        charge = CARRIAGE_BANDS[i].pence;
+        break;
+      }
+    }
+    if (s.customer.tradeAccount) {
+      charge = charge - Math.round(charge * TRADE_CARRIAGE_BP / 10000);
+    }
+    return charge;
+  }
+
+  function orderNet(s) {
+    return goodsNet(s) + carriageNet(s);
+  }
+
+  function vatOn(pence) {
+    return Math.round(pence * VAT_BP / 10000);
+  }
+
+  function incVat(pence) {
+    return pence + vatOn(pence);
+  }
+
+  function fmtMoney(pence) {
+    return '£' + (pence / 100).toFixed(2);
+  }
+
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  /* ─── Mutations ───────────────────────────────────────────────────────────
+     Every one of these goes through store.commit. Nothing mutates state
+     directly and nothing re-renders by hand.                                 */
+
+  function addLine(sku, qty) {
+    store.commit('line.add', function (s) {
+      var existing = lineBySku(s, sku);
+      if (existing) {
+        existing.qty = clampQty(existing.qty + qty);
+        s.status = 'Increased ' + sku + ' to ' + existing.qty + '.';
+        return;
+      }
+      s.lines.push(makeLine(sku, clampQty(qty)));
+      s.status = 'Added ' + sku + '.';
+    });
+  }
+
+  function setLineQty(id, qty) {
+    store.commit('line.qty', function (s) {
+      var line = lineById(s, id);
+      if (!line) {
+        return;
+      }
+      line.qty = clampQty(qty);
+      s.status = 'Set ' + line.sku + ' to ' + line.qty + '.';
+    });
+  }
+
+  function stepLineQty(id, by) {
+    store.commit('line.step', function (s) {
+      var line = lineById(s, id);
+      if (!line) {
+        return;
+      }
+      line.qty = clampQty(line.qty + by);
+      s.status = 'Set ' + line.sku + ' to ' + line.qty + '.';
+    });
+  }
+
+  function removeLine(id) {
+    store.commit('line.remove', function (s) {
+      for (var i = 0; i < s.lines.length; i++) {
+        if (s.lines[i].id === id) {
+          s.status = 'Removed ' + s.lines[i].sku + '.';
+          s.lines.splice(i, 1);
+          return;
+        }
+      }
+    });
+  }
+
+  function clearOrder() {
+    store.commit('order.clear', function (s) {
+      s.lines = [];
+      s.status = 'Order cleared.';
+    });
+  }
+
+  function setTradeAccount(on) {
+    store.commit('customer.trade', function (s) {
+      s.customer.tradeAccount = on;
+      s.status = on ? 'Trade account pricing applied.' : 'Cash sale pricing applied.';
+    });
+  }
+
+  function setFilterQuery(q) {
+    store.commit('filter.q', function (s) {
+      s.filter.q = q;
+    });
+  }
+
+  function setFilterCat(cat) {
+    store.commit('filter.cat', function (s) {
+      s.filter.cat = cat;
+    });
+  }
+
+  /* Quotes are held in memory for the session only. Persisting them is a
+     back-office job and deliberately not this screen's problem. */
+
+  function saveQuote() {
+    store.commit('quote.save', function (s) {
+      if (!s.lines.length) {
+        s.status = 'Nothing to save.';
+        return;
+      }
+      quoteSeq = quoteSeq + 1;
+      var snapshot = [];
+      for (var i = 0; i < s.lines.length; i++) {
+        snapshot.push({ sku: s.lines[i].sku, qty: s.lines[i].qty, note: s.lines[i].note });
+      }
+      s.quotes.unshift({
+        id: 'Q' + quoteSeq,
+        ref: 'RQ-' + (4200 + quoteSeq),
+        at: stamp(),
+        lines: snapshot,
+        netPence: goodsNet(s)
+      });
+      s.status = 'Saved quote RQ-' + (4200 + quoteSeq) + '.';
+    });
+  }
+
+  function loadQuote(id) {
+    store.commit('quote.load', function (s) {
+      var quote = null;
+      for (var i = 0; i < s.quotes.length; i++) {
+        if (s.quotes[i].id === id) {
+          quote = s.quotes[i];
+        }
+      }
+      if (!quote) {
+        return;
+      }
+      s.lines = [];
+      for (var j = 0; j < quote.lines.length; j++) {
+        var line = makeLine(quote.lines[j].sku, quote.lines[j].qty);
+        line.note = quote.lines[j].note;
+        s.lines.push(line);
+      }
+      s.status = 'Loaded ' + quote.ref + '.';
+    });
+  }
+
+  function deleteQuote(id) {
+    store.commit('quote.delete', function (s) {
+      for (var i = 0; i < s.quotes.length; i++) {
+        if (s.quotes[i].id === id) {
+          s.status = 'Deleted ' + s.quotes[i].ref + '.';
+          s.quotes.splice(i, 1);
+          return;
+        }
+      }
+    });
+  }
+
+  function stamp() {
+    var d = new Date();
+    return pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  }
+
+  function pad2(n) {
+    return n < 10 ? '0' + n : String(n);
+  }
+
+  /* ─── Dispatcher ──────────────────────────────────────────────────────────
+     One delegated listener per event type on #tc-app, plus the header, both
+     reading data-act. Handlers never touch the DOM; they call a mutation and
+     the render pass does the rest.                                           */
+
+  var clickActions = {
+    'line.add': function (el) {
+      var input = document.querySelector('[data-qty-for="' + el.getAttribute('data-sku') + '"]');
+      addLine(el.getAttribute('data-sku'), clampQty(input ? input.value : 1));
+    },
+    'line.inc': function (el) {
+      stepLineQty(el.getAttribute('data-id'), 1);
+    },
+    'line.dec': function (el) {
+      stepLineQty(el.getAttribute('data-id'), -1);
+    },
+    'line.remove': function (el) {
+      removeLine(el.getAttribute('data-id'));
+    },
+    'order.clear': function () {
+      clearOrder();
+    },
+    'quote.save': function () {
+      saveQuote();
+    },
+    'quote.load': function (el) {
+      loadQuote(el.getAttribute('data-id'));
+    },
+    'quote.delete': function (el) {
+      deleteQuote(el.getAttribute('data-id'));
+    },
+    'filter.cat': function (el) {
+      setFilterCat(el.getAttribute('data-cat'));
+    }
+  };
+
+  var editActions = {
+    'line.qty': function (el) {
+      setLineQty(el.getAttribute('data-id'), el.value);
+    },
+    'filter.q': function (el) {
+      setFilterQuery(el.value);
+    },
+    'customer.trade': function (el) {
+      setTradeAccount(el.checked);
+    }
+  };
+
+  function dispatch(map, ev) {
+    var el = ev.target.closest ? ev.target.closest('[data-act]') : null;
+    if (!el) {
+      return;
+    }
+    var handler = map[el.getAttribute('data-act')];
+    if (!handler) {
+      return;
+    }
+    handler(el, ev);
+  }
+
+  function wire() {
+    document.body.addEventListener('click', function (ev) {
+      dispatch(clickActions, ev);
+    });
+    /* Quantity fields commit on change, not input: the order panel is rewritten
+       on every commit and re-rendering mid-keystroke would eat the caret. */
+    document.body.addEventListener('change', function (ev) {
+      dispatch(editActions, ev);
+    });
+    document.getElementById('tc-search').addEventListener('input', function (ev) {
+      dispatch(editActions, ev);
+    });
+  }
+
+  /* ─── Render ──────────────────────────────────────────────────────────────
+     render() is the only thing subscribed to the store. Each render* function
+     owns exactly one mount and rewrites it wholesale.                        */
+
+  function mount(id, html) {
+    document.getElementById(id).innerHTML = html;
+  }
+
+  function renderCats(s) {
+    var html = '';
+    for (var i = 0; i < CATEGORIES.length; i++) {
+      var cat = CATEGORIES[i];
+      html = html +
+        '<button type="button" class="tc-cat' + (s.filter.cat === cat ? ' tc-cat--on' : '') + '"' +
+        ' data-act="filter.cat" data-cat="' + esc(cat) + '">' +
+        esc(cat === 'all' ? 'All' : cat) +
+        '</button>';
+    }
+    mount('tc-cats', html);
+  }
+
+  function renderCatalogue(s) {
+    var list = visibleProducts(s);
+    if (!list.length) {
+      mount('tc-catalogue', '<p class="tc-empty">Nothing in the catalogue matches that.</p>');
+      return;
+    }
+    var html = '';
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i];
+      var firstTier = p.tiers.length ? p.tiers[0] : null;
+      html = html +
+        '<article class="tc-tile">' +
+          '<div class="tc-tile__sku">' + esc(p.sku) + '</div>' +
+          '<h3 class="tc-tile__name">' + esc(p.name) + '</h3>' +
+          '<div class="tc-tile__unit">' + esc(p.unit) + '</div>' +
+          '<div class="tc-tile__price">' + fmtMoney(incVat(p.priceExPence)) + '</div>' +
+          (firstTier
+            ? '<div class="tc-tile__tier">' + firstTier.minQty + '+ &nbsp;£' +
+              (incVat(unitAtTier(p, firstTier)) / 100).toFixed(2) + ' each</div>'
+            : '<div class="tc-tile__tier">&nbsp;</div>') +
+          '<div class="tc-tile__buy">' +
+            '<input class="tc-qty" type="number" min="1" max="' + MAX_QTY + '" value="1"' +
+              ' data-qty-for="' + esc(p.sku) + '" aria-label="Quantity of ' + esc(p.name) + '">' +
+            '<button type="button" class="tc-btn tc-btn--add" data-act="line.add" data-sku="' + esc(p.sku) + '">Add</button>' +
+          '</div>' +
+        '</article>';
+    }
+    mount('tc-catalogue', html);
+  }
+
+  function renderOrder(s) {
+    document.getElementById('tc-ordercount').textContent =
+      s.lines.length + (s.lines.length === 1 ? ' line' : ' lines');
+
+    if (!s.lines.length) {
+      mount('tc-order', '<p class="tc-empty">No lines yet. Add something from the catalogue.</p>');
+      return;
+    }
+
+    var html = '<table class="tc-lines"><thead><tr>' +
+      '<th>Item</th>' +
+      '<th class="tc-num">Qty</th>' +
+      '<th class="tc-num">Unit</th>' +
+      '<th class="tc-num">Line</th>' +
+      '<th></th>' +
+      '</tr></thead><tbody>';
+
+    for (var i = 0; i < s.lines.length; i++) {
+      var line = s.lines[i];
+      var p = productBySku(line.sku);
+      var net = lineNet(line);
+      var saved = incVat(lineFull(line)) - incVat(net);
+
+      html = html +
+        '<tr>' +
+          '<td>' +
+            '<span class="tc-line__name">' + esc(p.name) + '</span>' +
+            '<span class="tc-line__sku">' + esc(p.sku) + ' · ' + esc(p.unit) + '</span>' +
+            (line.tier.discountBp
+              ? '<span class="tc-line__save">' + (line.tier.discountBp / 100).toFixed(2) +
+                '% break — saves £' + (saved / 100).toFixed(2) + '</span>'
+              : '') +
+          '</td>' +
+          '<td class="tc-num">' +
+            '<span class="tc-step">' +
+              '<button type="button" class="tc-step__btn" data-act="line.dec" data-id="' + line.id + '" aria-label="Fewer">&minus;</button>' +
+              '<input class="tc-step__input" type="number" min="1" max="' + MAX_QTY + '" value="' + line.qty + '"' +
+                ' data-act="line.qty" data-id="' + line.id + '" aria-label="Quantity of ' + esc(p.name) + '">' +
+              '<button type="button" class="tc-step__btn" data-act="line.inc" data-id="' + line.id + '" aria-label="More">+</button>' +
+            '</span>' +
+          '</td>' +
+          '<td class="tc-num">' + fmtMoney(incVat(Math.round(net / line.qty))) + '</td>' +
+          '<td class="tc-num tc-num--strong">' + fmtMoney(incVat(net)) + '</td>' +
+          '<td class="tc-num"><button type="button" class="tc-x" data-act="line.remove" data-id="' + line.id + '" aria-label="Remove line">&times;</button></td>' +
+        '</tr>';
+    }
+
+    html = html + '</tbody></table>';
+    mount('tc-order', html);
+  }
+
+  function totalRow(label, value, cls) {
+    return '<div class="tc-totals__row' + (cls ? ' ' + cls : '') + '">' +
+      '<dt>' + label + '</dt><dd>' + value + '</dd></div>';
+  }
+
+  function renderTotals(s) {
+    if (!s.lines.length) {
+      mount('tc-totals', '');
+      return;
+    }
+
+    var goods = goodsNet(s);
+    var carriage = carriageNet(s);
+    var net = orderNet(s);
+    var vat = vatOn(net);
+    var kg = orderWeight(s);
+
+    var html = '<dl class="tc-totals">' +
+      totalRow('Goods', fmtMoney(incVat(goods))) +
+      totalRow('Carriage', carriage ? fmtMoney(incVat(carriage)) : 'Free') +
+      totalRow('of which VAT', fmtMoney(vat)) +
+      totalRow('Total', '£' + ((net + vat) / 100).toFixed(2), 'tc-totals__row--grand') +
+      '</dl>';
+
+    if (carriage && goods < CARRIAGE_FREE_FROM) {
+      html = html + '<p class="tc-note">' +
+        fmtMoney(incVat(CARRIAGE_FREE_FROM - goods)) + ' more of goods and carriage is free. ' +
+        'This order weighs ' + kg.toFixed(1) + 'kg.</p>';
+    }
+
+    html = html +
+      '<button type="button" class="tc-btn tc-btn--wide" data-act="quote.save">Save as quote</button>' +
+      '<button type="button" class="tc-btn tc-btn--wide" data-act="order.clear">Clear order</button>';
+
+    mount('tc-totals', html);
+  }
+
+  function renderQuotes(s) {
+    document.getElementById('tc-quotecount').textContent =
+      s.quotes.length + (s.quotes.length === 1 ? ' saved' : ' saved');
+
+    if (!s.quotes.length) {
+      mount('tc-quotes', '<p class="tc-empty">No saved quotes this session.</p>');
+      return;
+    }
+
+    var html = '';
+    for (var i = 0; i < s.quotes.length; i++) {
+      var q = s.quotes[i];
+      html = html +
+        '<div class="tc-quote">' +
+          '<div class="tc-quote__ref">' + esc(q.ref) +
+            '<span>' + q.lines.length + ' lines · ' + esc(q.at) + '</span>' +
+          '</div>' +
+          '<div class="tc-quote__sum">£' + (incVat(q.netPence) / 100).toFixed(2) + '</div>' +
+          '<button type="button" class="tc-btn" data-act="quote.load" data-id="' + q.id + '">Load</button>' +
+          '<button type="button" class="tc-x" data-act="quote.delete" data-id="' + q.id + '" aria-label="Delete quote">&times;</button>' +
+        '</div>';
+    }
+    mount('tc-quotes', html);
+  }
+
+  function renderHeader(s) {
+    document.getElementById('tc-status').textContent = s.status;
+    var total = orderNet(s);
+    document.getElementById('tc-runningtotal').innerHTML = s.lines.length
+      ? '£' + ((total + vatOn(total)) / 100).toFixed(2)
+      : '&nbsp;';
+  }
+
+  function render(s) {
+    renderCats(s);
+    renderCatalogue(s);
+    renderOrder(s);
+    renderTotals(s);
+    renderQuotes(s);
+    renderHeader(s);
+  }
+
+  /* ─── Boot ──────────────────────────────────────────────────────────────── */
+
+  function boot() {
+    store.init(initialState());
+    store.subscribe(render);
+    wire();
+    render(store.get());
+  }
+
+  boot();
+})();
+</script>
+
+</body>
+</html>

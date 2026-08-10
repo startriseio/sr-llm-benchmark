@@ -1,0 +1,29 @@
+{
+  "name": "sr-llm-benchmark",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "StarRise LLM benchmarking engine — frontend, 3D, and creative build tasks scored by gates, a judge quorum, and a human.",
+  "scripts": {
+    "start": "node src/cli.mjs",
+    "gen": "node src/generate.mjs",
+    "gates": "node src/gates.mjs",
+    "judge": "node src/judge.mjs",
+    "score": "node src/score.mjs",
+    "audit": "node src/audit.mjs",
+    "manual": "node src/manual.mjs",
+    "report": "node src/report.mjs",
+    "bench": "node src/bench.mjs",
+    "postinstall": "playwright install chromium"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "dotenv": "^17.0.0",
+    "openai": "^6.0.0",
+    "playwright": "^1.50.0",
+    "pngjs": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

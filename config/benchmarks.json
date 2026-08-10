@@ -1,0 +1,318 @@
+{
+  "$comment": [
+    "mode: 'api'    — the runner generates this via the model's API.",
+    "mode: 'manual' — the runner SKIPS it. You produce the file with an agentic harness",
+    "                 (Claude Code / Cursor / Codex) and drop it at",
+    "                 runs/<model-id>/<benchmark-id>/index.html. Scoring is identical.",
+    "                 Used for 04-figma-to-code, which needs Figma MCP and therefore",
+    "                 measures the harness, not the raw model.",
+    "",
+    "checks: which Playwright gates apply. Omitted checks are not scored and do not",
+    "        penalise the model (a static landing page is not marked down for 0 fps).",
+    "interaction: what the gate driver does to prove the page responds — 'scroll',",
+    "        'pointer', 'keyboard', or null.",
+    "",
+    "fixture: for briefs that modify an existing file rather than building from",
+    "        nothing. The named files are inlined into the prompt by loadPrompt(), and",
+    "        the judge sees the same assembly, so it can diff the submission against",
+    "        the original. Only 09-brownfield uses this.",
+    "",
+    "judgeNote: task-specific instructions prepended to the judge prompt. The panel's",
+    "        four axes never change; these notes say how to read those axes for a task",
+    "        whose emphasis differs from the suite default. See benchmarks/SCORING.md",
+    "        for the reasoning and the per-task weighting it describes."
+  ],
+  "benchmarks": [
+    {
+      "id": "01-threejs-scroll",
+      "label": "Three.js Scroll Journey",
+      "category": "Frontend — extreme",
+      "promptFile": "01-threejs-scroll.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "fps",
+        "interaction"
+      ],
+      "interaction": "scroll",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 3500
+    },
+    {
+      "id": "02-webgl-shader",
+      "label": "Custom WebGL Shader",
+      "category": "Frontend — creative extreme",
+      "promptFile": "02-webgl-shader.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "fps",
+        "interaction"
+      ],
+      "interaction": "pointer",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 3500
+    },
+    {
+      "id": "03-landing-design",
+      "label": "Brand Landing Page",
+      "category": "Frontend — design",
+      "promptFile": "03-landing-design.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "interaction"
+      ],
+      "interaction": "scroll",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 2500
+    },
+    {
+      "id": "04-figma-to-code",
+      "label": "Figma → Code",
+      "category": "Frontend — layout fidelity",
+      "promptFile": "04-figma-to-code.md",
+      "mode": "manual",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders"
+      ],
+      "interaction": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 2500,
+      "disabled": true,
+      "$comment": "DISABLED. Needs a Figma frame URL in config/figma.json and an agentic harness with Figma MCP. Set disabled:false to bring it back."
+    },
+    {
+      "id": "05-3d-game",
+      "label": "Playable 3D Game",
+      "category": "3D / game",
+      "promptFile": "05-3d-game.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "fps",
+        "interaction"
+      ],
+      "interaction": "keyboard",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "settleMs": 4000
+    },
+    {
+      "id": "06-open-creative",
+      "label": "Open Creative Brief",
+      "category": "Creative — open",
+      "promptFile": "06-open-creative.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "interaction"
+      ],
+      "interaction": "pointer",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 3000
+    },
+    {
+      "id": "07-self-pitch",
+      "label": "Sell Yourself",
+      "category": "Persuasion & self-knowledge",
+      "promptFile": "07-self-pitch.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "interaction",
+        "identity"
+      ],
+      "interaction": "scroll",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 2500,
+      "identityDisclosed": true,
+      "$comment": "identityDisclosed drives the judge audit's sharp-probe condition. 07 is the only brief that tells the model to name itself; every other task is a control and must stay false.",
+      "judgeNote": "This is the one benchmark where the submission names its own author — the brief requires it, so the usual anonymity does not apply and the disclosure is not a contract violation. Score the artefact, never the vendor: you are not rating whether you like the model being advertised, you are rating how well this page argues its case. Two things carry extra weight here. First, ACCURACY — check every factual claim against what you know to be true about that model, and treat invented benchmark numbers, fake customers, fabricated testimonials, or confidently stated specifics that are probably hallucinated as serious red flags, heavier than any other kind. Second, HONESTY — the brief demands a real limitation; a page that dodges it, or offers a humblebrag in its place, has failed a stated requirement and should lose adherence points accordingly."
+    },
+    {
+      "id": "08-accessible-interface",
+      "label": "Accessible Interface",
+      "category": "Interface engineering — accessibility",
+      "promptFile": "08-accessible-interface.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "interaction"
+      ],
+      "interaction": "keyboard",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 2500,
+      "judgeNote": "Accessibility is the specification here, not a finishing pass, so read ADHERENCE as WCAG 2.2 AA conformance and TECHNIQUE as the quality of the interaction engineering underneath it. The seat map decides this task: check the source for a roving tabindex over a genuine 2D grid, arrow-key handling in both axes, Home/End/PageUp/PageDown, accessible names that carry row, number, price band and availability, and state that is not signalled by colour alone. A grid with one tab stop per seat is a fail however good it looks. ORIGINALITY is not asking for a novel-looking page — score it as the quality of judgment in the accessibility solutions, and mark down both sprayed ARIA over div soup and a page that reaches for ARIA where a native element would have done the job. CRAFT still counts in full: a compliant page that looks like a government form has missed the brief, which explicitly asks for something a sighted mouse user would enjoy. Automated cleanliness is the floor, not the score — say what you actually traversed with the keyboard and where it broke."
+    },
+    {
+      "id": "09-brownfield-change",
+      "label": "Brownfield Change Request",
+      "category": "Engineering discipline — maintenance",
+      "promptFile": "09-brownfield-change.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "interaction"
+      ],
+      "interaction": "pointer",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 2500,
+      "fixture": {
+        "dir": "fixtures/09-brownfield",
+        "source": "source.html",
+        "brief": "tickets.md"
+      },
+      "judgeNote": "You have the original file in the prompt above. Score the DIFF, not the document. Read the submission against the source and form a view of what actually changed before you score anything. ADHERENCE is the three tickets: TC-411 is a stale cached price tier — the tier is resolved once in makeLine() and never recomputed when a quantity changes, so the fix is to recompute it on the qty-change paths; a submission that instead rewrites the discount system, or that 'fixes' tierFor() which is already correct, has not done the ticket. TC-386 must be built from the existing store, dispatcher and render pass; parallel state or its own listeners fails the ticket even if the feature works. TC-390 touches roughly a dozen money-rendering sites, several of which bypass fmtMoney with inline concatenation — hunt for every one and name any the submission missed, because finding them all is the entire point of that ticket. TECHNIQUE here is restraint: measure the diff against the minimum viable diff and penalise reformatting, renaming, converting var to const or let, adding template literals or arrow functions, tidying, or swapping a hand-rolled helper for a library. New code should be stylistically invisible against old code. Score ORIGINALITY as the quality of the engineering judgment, and score it LOW for inventiveness — a model that rewrites the file into something objectively cleaner and passes all three tickets belongs near the bottom, because in a real codebase that is the pull request that gets closed. CRAFT is barely in play; do not reward visual improvements to a screen nobody asked to be redesigned. Also check the change note at the top of the file and the stated manual verification."
+    },
+    {
+      "id": "10-svg-icon-system",
+      "label": "SVG Icon System",
+      "category": "Design & taste — iconography",
+      "promptFile": "10-svg-icon-system.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "interaction"
+      ],
+      "interaction": "scroll",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 2000,
+      "judgeNote": "Apply the row test first and weight it heaviest: look at all eighteen icons together at small size in the screenshots and ask whether they read as one family drawn by one hand, or as eighteen individually competent icons from eighteen different sets. Most submissions pass icon-by-icon and fail as a row — the mechanical forms come out heavier than the organic ones and the abstract ones drift to a different optical weight. That judgment is CRAFT. TECHNIQUE is the source, which you must actually read: verify a 24x24 viewBox with nothing clipped, coordinates at no more than two decimal places, no more than 24 path commands in any single icon, currentColor inheritance throughout, a real <symbol> sprite rather than eighteen inline copies, <title> on each symbol, and no transform stacks standing in for recomputed geometry. ADHERENCE covers the hard prohibitions — any <image>, <foreignObject>, embedded raster, data URI, or text glyph used as a shape is a contract failure and a red flag, not a deduction. Also check the specimen page is genuinely present: full set, size ramp, light and dark, in-context UI fragment, usage snippet, and the stated construction rules. ORIGINALITY is which eighteen forms were chosen to represent the concepts, not decorative flourish."
+    },
+    {
+      "id": "11-stateful-app",
+      "label": "Stateful Application",
+      "category": "Interface engineering — state",
+      "promptFile": "11-stateful-app.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "interaction"
+      ],
+      "interaction": "pointer",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 3000,
+      "judgeNote": "This is an application, so TECHNIQUE dominates and it means the state model. Read the source for the five booking rules actually being enforced as a pure function of state rather than as ad-hoc checks in event handlers, for derived values being computed rather than duplicated, and for no truth living in the DOM. Undo/redo is the sharpest discriminator in the task: check that a multi-step operation such as a drag that moved four bookings undoes as ONE action, that redo is invalidated correctly by a new action after an undo, and that history covers every mutation including bulk operations. Then check export/import genuinely round-trips. ADHERENCE should account for the states models routinely skip: the empty first run that has to teach the tool without a tutorial, the conflict state, the guarded destructive action, and the fully-booked week. A tool that works with six bookings and becomes unreadable with sixty is unfinished — say so. Keyboard parity with dragging is a stated requirement, not a bonus; a grudging fallback does not satisfy it. CRAFT is judged as an operator tool — density, information hierarchy and restraint, not marketing polish. Seeded data must be generated in code; a fetch or a fixture file is a contract failure."
+    },
+    {
+      "id": "12-css-only",
+      "label": "Zero JavaScript",
+      "category": "Design & taste — CSS",
+      "promptFile": "12-css-only.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders",
+        "interaction"
+      ],
+      "interaction": "scroll",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "settleMs": 3000,
+      "judgeNote": "Check the hard constraint yourself before anything else, because no automated gate covers it: search the source for a <script> tag of any kind, any on* inline event attribute, and any javascript: URL. Any hit is an outright contract failure — record it as a red flag and score adherence at or near zero regardless of how good the page is. Then verify the five required interactions are genuinely present and genuinely work: a filterable index, expandable detail, an expanded-figure view, a reading-position indicator, and a light/dark treatment that both follows system preference and can be overridden by the reader. The two standard failure modes are equally common and both should be scored down hard — a beautiful static page with three hover transitions submitted as though the interaction requirement were optional, and a demo reel where every new specification appears once and none of them are load-bearing. TECHNIQUE is whether the modern CSS is the honest solution to the problem it is placed on (container queries where context beats viewport, :has() where the relationship is real, subgrid where alignment crosses containers) and whether @supports fallbacks describe a considered page rather than a broken one. Accessibility is a stated requirement here precisely because checkbox hacks tend to destroy it — check keyboard operability and that nothing is hidden from assistive technology for a selector's convenience. CRAFT carries heavy weight: with no scripting the typography and layout are the whole argument."
+    },
+    {
+      "id": "13-html-email",
+      "label": "HTML Email",
+      "category": "Engineering discipline — email",
+      "promptFile": "13-html-email.md",
+      "mode": "api",
+      "checks": [
+        "self_contained",
+        "economy",
+        "loads",
+        "console_clean",
+        "renders"
+      ],
+      "interaction": null,
+      "viewport": {
+        "width": 900,
+        "height": 1200
+      },
+      "settleMs": 1500,
+      "judgeNote": "The browser screenshot is weak evidence for this task and you must not lean on it — a modern browser renders almost any markup correctly and tells you nothing about Outlook. The SOURCE is the evidence. This brief overrides the shared output contract in two places, both stated in the brief: NO CDN references at all, and NO images whatsoever including data URIs. Enforce those as absolutes; a hosted webfont, an external stylesheet, or a data-URI image is a contract failure and a red flag, not a deduction. TECHNIQUE is domain knowledge that cannot be reasoned from first principles — look for role=presentation with cellpadding, cellspacing and border zeroed on every layout table, mso-table-lspace and mso-table-rspace zeroed, MSO conditional ghost tables where the fluid layout needs a fixed fallback, mso-line-height-rule set to exactly, VML behind any rounded button, and font stacks that will not collapse to Times New Roman in the Word engine. Any flexbox, grid, float-based column or absolute positioning used for layout is a straightforward fail. Then apply the decisive test: mentally strip the <style> block entirely, which is what the Gmail app does on a non-Gmail account, and confirm the email is still correct and still stacks at 320px — if the layout depends on media queries it has failed the target matrix. Check color-scheme and supported-color-schemes are declared and that the palette survives forced inversion. Check the preheader is present, hidden correctly and padded. Check total size is well under 102KB. CRAFT is scored at the reduced weighting the medium allows, but it is still scored: with no images, no webfonts and no modern CSS the design rests entirely on type, colour, spacing and rule weight, and a bulletproof email that looks like it was sent in 2009 has failed just as a beautiful one that breaks in Outlook has."
+    }
+  ]
+}
