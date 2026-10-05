@@ -5,10 +5,12 @@ on:
     branches: [main]
   pull_request:
 
-# Superseded runs are cancelled on pull requests only. On main every commit keeps
-# its own verdict, otherwise a quick follow-up push paints the earlier commit red.
+# Pull requests share one group per branch so a newer push cancels the older run.
+# Pushes to main get a group per commit: GitHub keeps only one *queued* run per
+# group and cancels the rest, which painted earlier commits red whenever two
+# landed while runners were scarce. Every main commit now keeps its own verdict.
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-${{ github.event_name == 'pull_request' && github.ref || github.sha }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
