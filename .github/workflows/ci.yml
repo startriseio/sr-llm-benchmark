@@ -5,10 +5,16 @@ on:
     branches: [main]
   pull_request:
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     name: Validate config, briefs and sources
-    runs-on: ubuntu-latest
+    # pinned: the ubuntu-latest label migrates to Ubuntu 26 on 2026-10-19
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
