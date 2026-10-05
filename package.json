@@ -5,7 +5,7 @@
   "type": "module",
   "description": "The Startrise LLM Benchmark \u2014 frontier models build the same twelve real frontends, single-shot; gated in a real browser, judged blind by a cross-lab panel, rated blind by a human.",
   "scripts": {
-    "test": "node scripts/validate-config.mjs",
+    "test": "node scripts/validate-config.mjs && node scripts/test-run-discovery.mjs",
     "start": "node src/cli.mjs",
     "gen": "node src/generate.mjs",
     "gates": "node src/gates.mjs",

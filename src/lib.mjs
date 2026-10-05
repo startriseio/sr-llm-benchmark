@@ -33,15 +33,19 @@ export function newRunId(d = new Date()) {
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}`
 }
 
-export async function listRuns() {
-  if (!(await exists(RUNS))) return []
-  const dirs = (await fs.readdir(RUNS, { withFileTypes: true }))
-    .filter((e) => e.isDirectory() && !e.name.startsWith('.'))
-    .map((e) => e.name)
-    .sort()
-    .reverse()
-  const registry = (await exists(REGISTRY)) ? await readJson(REGISTRY) : {}
-  return dirs.map((id) => ({ id, ...(registry[id] ?? {}) }))
+export async function listRuns({ runsDir = RUNS, resultsRoot = RESULTS, registryFile = REGISTRY } = {}) {
+  const registry = (await exists(registryFile)) ? await readJson(registryFile) : {}
+  const directories = async (root) => (await exists(root))
+    ? (await fs.readdir(root, { withFileTypes: true }))
+      .filter((e) => e.isDirectory() && !e.name.startsWith('.')).map((e) => e.name)
+    : []
+  const [local, publishedDirs] = await Promise.all([directories(runsDir), directories(resultsRoot)])
+  // Registry entries alone can describe unfinished runs. Only discover published
+  // runs with a score snapshot, while retaining every actual local run directory.
+  const published = (await Promise.all(publishedDirs.map(async (id) =>
+    await exists(path.join(resultsRoot, id, 'scores.json')) ? id : null))).filter(Boolean)
+  return [...new Set([...local, ...published])].sort().reverse()
+    .map((id) => ({ ...registry[id], id }))
 }
 
 export async function registerRun(id, patch = {}) {

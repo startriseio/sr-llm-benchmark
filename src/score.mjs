@@ -142,7 +142,7 @@ async function main() {
   const cfg = await loadConfig()
   const runId = await resolveRun(argv)
   const scores = await buildScores(cfg, runId)
-  await writeJson(scoresFile(runId), scores)
+  if (!scores.fromPublished) await writeJson(scoresFile(runId), scores)
 
   const runs = await listRuns()
   log(bold(`\nrun ${runId}`) + dim(`  (${runs.length} run${runs.length === 1 ? '' : 's'} on record)`))
@@ -163,7 +163,7 @@ async function main() {
     warn(`${split.length} result(s) split the judge panel by 4+ on an axis — worth your eyes first:`)
     for (const c of split.slice(0, 6)) log(dim(`    ${c.modelId} / ${c.benchmarkId} (spread ${c.maxSpread})`))
   }
-  log(dim(`\nwrote ${path.relative(process.cwd(), scoresFile(runId))}\n`))
+  log(dim(`\n${scores.fromPublished ? 'read published' : 'wrote'} ${path.relative(process.cwd(), scoresFile(runId))}\n`))
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) await main()

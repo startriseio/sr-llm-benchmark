@@ -1,23 +1,21 @@
 # Scoring Protocol
 
-**Audience: whoever is analysing a run.** This defines the pipeline, the axes, the scale, and the rules the analysis is held to. Deviating from it makes runs non-comparable, which is the only way this benchmark can fail outright.
+## Implemented method and published results
 
----
+The public results use `config/scoring.json`, `src/gates.mjs`, `src/judge.mjs` and `src/score.mjs`. The protocol below is a proposed analysis design, not a description of measurements already collected. Do not reinterpret or alter historical results to match it.
 
-## 0. How this document relates to the runner
+- Gates: weighted mean of the checks configured for each brief. `viable` requires a loaded page and a render score above 0.15. Only non-viability caps the final cell score at 40; a failed individual check reduces the technical score without automatically applying this cap. The proposed checks below are not all implemented browser assertions.
+- Panel: independent judges use four 0–10 axes (craft, technique, adherence, originality). The median on each axis is averaged and multiplied by 10. Disagreement of four points or more flags a split panel; no evidence-based reconciliation pass is implemented. The configured panel has three judges, with a minimum of two.
+- Human: a 0–10 rating multiplied by 10. The final blend is 25% technical, 45% panel, 30% human; missing columns redistribute their weights across available columns. Unrated cells remain provisional.
+- Per-run overall: mean final score over present, scored cells. Missing submissions are excluded, so coverage must accompany the score. Active self-pitch (07) is included; disabled Figma-to-code (04) is excluded from the active suite.
+- Local all-time report: mean across runs for each active (model, brief), then mean across covered briefs. It reports sample counts and range, not cluster medians or interquartile ranges.
+- Public website: latest scored leaderboard row per model; latest present build per (model, brief). It does not use the local pooled mean.
 
-This is the **analysis protocol**. It is not the configuration the automated panel runs on, and the two are deliberately not the same thing. Do not "reconcile" them by editing the runner.
+Published cells currently represent single trials. Five run sessions do not mean five repeated trials for every model and brief. The results do not satisfy the proposed N ≥ 3 requirement, and no repeat-trial confidence threshold is established. No four-cluster headline or five-axis profile is produced by the current runner.
 
-| | Automated panel (`config/scoring.json`) | This document |
-|---|---|---|
-| Axes | 4 — craft, technique, adherence, originality | 5 — C, R, D, A, B |
-| Scale | 0–10 per axis | 0–5 integers |
-| Weighting | flat across axes, then blended 25% gate / 45% panel / 30% human | per-task weights, §6 |
-| Output | one score per artefact | a four-cluster profile, §1 |
+## Proposed repeat-trial analysis protocol
 
-The panel's four axes map onto this document's five: **adherence → C**, **technique → R**, **craft → D**, **originality → A**. There is no panel axis for **B (robustness)** because robustness is measured rather than opined on — it arrives through the automated gate column and through the per-task hard checks in §6.
-
-So: the panel produces the raw per-artefact numbers, and this document governs how those numbers, the gate results, and the human column are aggregated and written up. Task-specific emphasis reaches the panel through each benchmark's `judgeNote` in `config/benchmarks.json`, which is where the §6 weighting is expressed in a form the live judges actually see. When you change a weight here, change the corresponding `judgeNote` too, or the two layers drift apart.
+The remaining sections define a future analysis protocol: five 0–5 axes, explicit reconciliation, repeated trials, separate self-pitch reporting and equal cluster weighting. Task-specific `judgeNote` text guides the current panel, but does not implement the numeric weights or hard checks in §6. Applying this protocol requires a separately labelled experiment and new evidence.
 
 ---
 
@@ -25,7 +23,7 @@ So: the panel produces the raw per-artefact numbers, and this document governs h
 
 Frontend and interface capability, broadly defined: creative coding, visual taste, interface engineering, and engineering discipline. It does not measure general reasoning, backend work, or agentic tool use, and it should never be reported as if it does.
 
-The output is not a single number. It is a **profile across four clusters**, plus two isolated tasks that never enter the headline figure.
+Under this proposed protocol, the output is not a single number. It is a **profile across four clusters**, plus two isolated tasks that never enter the headline figure.
 
 | Cluster | Tasks |
 |---|---|

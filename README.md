@@ -22,6 +22,7 @@
 
 <p align="center">
   <a href="https://www.startrise.io/benchmark/">Live results</a> ·
+  <a href="https://www.startrise.io/benchmark/gallery/">Build gallery</a> ·
   <a href="https://www.startrise.io/blog/gpt-6-astra-vs-claude-opus-5-5-benchmark/">Latest write-up</a> ·
   <a href="#how-a-score-is-computed">Method</a> ·
   <a href="#quick-start">Quick start</a> ·
@@ -51,11 +52,11 @@ Every model gets the identical brief and the identical output contract: one self
 | **Panel** | 45% | Three LLM judges from three labs, blind | Craft, technical ambition, brief adherence, originality, each 0–10, aggregated by **median per axis** |
 | **Human** | 30% | One reviewer, blind | Would you ship it? Model names are stripped from the review UI until every cell in a brief is rated |
 
-Nothing is a proxy. You can open any deliverable, click it, and disagree with the number.
+Automated checks and judge ratings are limited measurements, not a complete assessment of quality. You can open any deliverable, click it, and disagree with the number.
 
 ## Where things stand
 
-The all-time board pools every run; each model keeps its most recent row. Full table, filters, head-to-head comparator and every deliverable at **[startrise.io/benchmark](https://www.startrise.io/benchmark/)**.
+The public website combines runs using the latest scored leaderboard row per model and the latest present build per (model, brief). The local report’s all-time view instead averages repeated (model, brief) scores across runs. Full table, filters, head-to-head comparator and every deliverable at **[startrise.io/benchmark](https://www.startrise.io/benchmark/)**.
 
 | # | Model | Lab | Overall | Gates | Panel | Human | Built | Run |
 |---|---|---|---|---|---|---|---|---|
@@ -72,7 +73,7 @@ The all-time board pools every run; each model keeps its most recent row. Full t
 | 11 | Claude Fable 5 | Anthropic | **73.8** | 89.4 | 71.9 | 59.4 | 12/12 | Jul 2026 |
 | 12 | GLM 5.3 | Z.ai | **73.2** | 94.4 | 70.5 | 55.0 | 11/12 | Oct 2026 |
 
-<sub>30 models from 9 labs, 353 deliverables, 1,059 blind judge verdicts, 5 runs. Sample size per cell is one; gaps under about three points, and any gap across runs, are inside the noise. A "9/12" row delivered nothing usable on three briefs and is averaged over the nine it built.</sub>
+<sub>30 models from 9 labs, 353 deliverables, 1,059 blind judge verdicts, 5 runs. Published cells are single trials, without repeat-trial uncertainty estimates. Small differences and comparisons across runs should be treated cautiously; no statistical significance threshold has been established. A "9/12" row delivered nothing usable on three briefs and is averaged over the nine it built.</sub>
 
 Per-brief winners: Fable 5.1 holds the Three.js record (91.4), Sonnet 5.5 the accessible seat map (90.4), GPT-6.1 Sol the zero-JavaScript page (88.3), Opus 5 the 3D game (88.0) and the brownfield change, Grok 4.6 the HTML email, Qwen 3.8 Max the landing page, Muse Spark 1.3 the icon system, GPT-6 Astra the stateful app, Fable 5 the shader and the open creative brief, Opus 5.5 the self-pitch.
 
@@ -103,7 +104,7 @@ final = 0.25 × gates + 0.45 × panel + 0.30 × human
 
 Per model, per run: the mean of its finals over the briefs it **delivered**. An empty response shrinks the sample instead of scoring zero, and the coverage is always shown next to the number.
 
-Across runs: each (model, brief) pair is averaged over every run it appears in, then across briefs. See [`benchmarks/SCORING.md`](benchmarks/SCORING.md) for the reasoning and [`config/scoring.json`](config/scoring.json) for what actually runs.
+In the local report’s all-time view, each (model, brief) pair is averaged over every run it appears in, then across active briefs. The public website uses the latest scored model row rather than this pooled mean. Self-pitch (07) is included in the implemented overall scores; disabled Figma-to-code (04) is excluded. See [`benchmarks/SCORING.md`](benchmarks/SCORING.md) for the implemented method and a separately labelled proposed protocol and [`config/scoring.json`](config/scoring.json) for what actually runs.
 
 ## The twelve briefs
 
@@ -140,14 +141,18 @@ Judges see screenshots, the full source and the gate measurements, and never lea
 
 ## Quick start
 
+Browse published scores without provider keys or model calls:
+
 ```bash
 git clone https://github.com/startriseio/sr-llm-benchmark.git
 cd sr-llm-benchmark
 npm install                 # also fetches Chromium for Playwright
-cp .env.example .env        # add the keys for the providers you want to run
-npm test                    # validates the roster, briefs, judges and weights
-npm start                   # interactive picker: choose models and briefs, then run
+npm test
+npm run score               # reads the latest published snapshot, leaves it unchanged
+npm run report              # http://localhost:4321, scoreboard and history
 ```
+
+To reproduce generation or judging, copy `.env.example` to `.env` and add provider keys. `npm start`, `npm run bench`, `npm run gen`, `npm run judge` and `npm run audit` can make paid API calls. The report’s control centre can also launch paid runs when keys are configured.
 
 `npm start` lists every model with a key, shows how much of the suite each has already completed and how much you have rated, and pre-selects the ones with gaps. It prints the exact `npm run bench` command before it starts anything.
 
@@ -166,7 +171,7 @@ npm run gen   -- --model glm-5.3 --concurrency 4                        # one st
 npm run audit                                                           # judge-bias audit on the self-pitch brief
 ```
 
-A fresh clone has no `runs/` directory, because the deliverables are hundreds of megabytes per run. The scoreboard, the all-time view and the blind-review page fall back to the published `results/<run>/scores.json`, so everything renders out of the box; the live builds and screenshots are at [startrise.io/benchmark](https://www.startrise.io/benchmark/).
+A fresh clone has no local deliverables under `runs/`, because the deliverables are hundreds of megabytes per run. The scoreboard, the all-time view and the blind-review page fall back to the published `results/<run>/scores.json`, so score tables and history render out of the box; local blind review needs local deliverables, and the published live builds and screenshots are at [startrise.io/benchmark](https://www.startrise.io/benchmark/).
 
 > **Gates run headed, on a real GPU, serially by design.** Parallel pages fight over the GPU and corrupt the frame-rate measurement. Leave the machine alone during the gates stage.
 
