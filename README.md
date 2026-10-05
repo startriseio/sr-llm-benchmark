@@ -2,7 +2,7 @@
   <img src="docs/assets/banner.png" alt="The Startrise LLM Benchmark" width="100%">
 </p>
 
-<h1 align="center">The Startrise LLM Benchmark</h1>
+<h1 align="center">The STARTRISE LLM Benchmark</h1>
 
 <p align="center">
   Frontier models build the same twelve real frontends, single-shot.<br>
