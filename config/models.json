@@ -123,6 +123,19 @@
       "vendor": "openai"
     },
     {
+      "$comment": "Grok 4.6 (verified in the OpenRouter catalog 2026-08-12): 500k context, $2/$6 per MTok (rate doubles above 200k prompt tokens — irrelevant at our prompt sizes), image input supported, no published max_completion cap. max_tokens 128000 because Grok 4.5 truncated 08-accessible at the 64k ceiling in the July run — don't repeat that. Catalog lists the vendor as 'SpaceXAI'; vendor field stays 'xai' so the site groups it with Grok 4.5.",
+      "id": "grok-4.6",
+      "label": "Grok 4.6",
+      "provider": "openai-compatible",
+      "model": "x-ai/grok-4.6",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "xai"
+    },
+    {
       "$comment": "You said 'Cursor Grok 4.5'. This entry is the raw model over xAI's API via OpenRouter. If you actually want to measure the Cursor HARNESS driving Grok, change provider to 'manual' and run the briefs inside Cursor instead.",
       "id": "grok-4.5",
       "label": "Grok 4.5",
@@ -197,7 +210,20 @@
       "vendor": "meta"
     },
     {
-      "$comment": "Verified present in the OpenRouter catalog. Qwen 3.8 Max Preview is not published there yet; swap model/baseURL/apiKeyEnv to DashScope if you get direct access. vision:false because no OpenRouter endpoint for this model accepts image input — without it every judge-audit call 404s. Only the audit reads this flag; it does not affect generation.",
+      "$comment": "Qwen3.8-Max (released Aug 2026, announced via Qoder alongside 2.4T-parameter claim — the Qoder free credits are product credits, not API credits; this entry bills OpenRouter list rates $2/$6 per MTok). Verified in the OpenRouter catalog: 1M context, max_completion_tokens 131072, image input supported so no vision:false — it can also serve in judge audits, unlike 3.7-max. max_tokens 128000 on the GLM/Muse precedent for models that reason inside the output budget; verify with the probe before lowering.",
+      "id": "qwen3.8-max",
+      "label": "Qwen 3.8 Max",
+      "provider": "openai-compatible",
+      "model": "qwen/qwen3.8-max",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "alibaba"
+    },
+    {
+      "$comment": "Verified present in the OpenRouter catalog. Superseded by qwen3.8-max (separate entry) but kept for cross-version comparison. vision:false because no OpenRouter endpoint for this model accepts image input — without it every judge-audit call 404s. Only the audit reads this flag; it does not affect generation.",
       "id": "qwen3.7-max",
       "vision": false,
       "label": "Qwen 3.7 Max",
@@ -209,6 +235,225 @@
         "max_tokens": 64000
       },
       "vendor": "alibaba"
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. OpenAI flagship, released 2026-09-03 (OpenRouter 09-04). Verified in catalog: 1.05M context, max_completion_tokens 128000, $10/$50 per MTok — same rate card as Fable 5, so budget ~$25 for the full twelve briefs if its verbosity is Fable-like. Supports reasoning_effort via OpenRouter. The user-facing name is just Astra.",
+      "id": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "provider": "openai-compatible",
+      "model": "openai/gpt-6-astra",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "openai"
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Released 2026-09-29 (DevDay), upgrade of GPT-6 Sol (09-22) and successor to the tested GPT-5.6 Sol. $2/$10, 1.05M ctx, 128k out. GPT-6 Sol itself is skipped — superseded within a week.",
+      "id": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "provider": "openai-compatible",
+      "model": "openai/gpt-6.1-sol",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "openai"
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Cheap tier of GPT-6 (2026-09-22), successor to the tested GPT-5.6 Luna. $0.10/$0.50, 128k out. No GPT-6 Terra exists as of 2026-10-05 — 5.6 Terra remains the current Terra and stays as the Engineering judge.",
+      "id": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "provider": "openai-compatible",
+      "model": "openai/gpt-6-luna",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "openai"
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Released 2026-09-01, successor to Fable 5 at the same $10/$50. Same rules as Fable 5: thinking always on, omit the thinking param, control depth with output_config.effort; 30-day retention required; may return stop_reason refusal. New in 5.1: forced tool_choice 400s (irrelevant here), thinking blocks bound to the model (irrelevant — single turn).",
+      "id": "claude-fable-5-1",
+      "label": "Claude Fable 5.1",
+      "provider": "anthropic",
+      "model": "claude-fable-5-1",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "vendor": "anthropic",
+      "params": {
+        "max_tokens": 128000,
+        "output_config": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Released 2026-09-22, successor to Opus 5 at $4/$20 (was $5/$25). Thinking cannot be disabled; effort DEFAULTS TO MEDIUM on this model (Opus 5 defaulted high), so xhigh is set explicitly to match the Opus 5 entry. max_tokens covers thinking + output; keep 128k.",
+      "id": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "vendor": "anthropic",
+      "params": {
+        "max_tokens": 128000,
+        "thinking": {
+          "type": "adaptive"
+        },
+        "output_config": {
+          "effort": "xhigh"
+        }
+      }
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Released 2026-09-28, successor to Sonnet 5 at the same $2/$10. thinking disabled returns 400; adaptive is fine. Effort levels recalibrated vs Sonnet 5 but xhigh kept for parity with the Sonnet 5 entry.",
+      "id": "claude-sonnet-5-5",
+      "label": "Claude Sonnet 5.5",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "vendor": "anthropic",
+      "params": {
+        "max_tokens": 128000,
+        "thinking": {
+          "type": "adaptive"
+        },
+        "output_config": {
+          "effort": "xhigh"
+        }
+      }
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Released 2026-09-21, succeeds Grok 4.6. Same $2/$6, 500k ctx, 450k max completion. 128k max_tokens on the Grok 4.5 truncation precedent. Catalog vendor is SpaceXAI; vendor stays xai to group with 4.5/4.6.",
+      "id": "grok-4.7",
+      "label": "Grok 4.7",
+      "provider": "openai-compatible",
+      "model": "x-ai/grok-4.7",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "xai"
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Released 2026-08-14 (OpenRouter 08-18), succeeds GLM 5.2. $1.40/$4.40, 1M ctx, max_completion 131072. Text-only in the catalog, hence vision:false. 128k on the GLM 5.2 precedent (reasons inside the output budget). glm-5.3-prime (09-23) is the same model on a faster lane at 2x price — not a separate model, skipped.",
+      "id": "glm-5.3",
+      "label": "GLM 5.3",
+      "provider": "openai-compatible",
+      "model": "z-ai/glm-5.3",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "zai",
+      "vision": false
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Released 2026-09-02, succeeds the tested Muse Spark 1.2. Same $1.25/$4.25, 1M ctx, image input. Same 18+ attestation gate on OpenRouter as 1.2.",
+      "id": "muse-spark-1.3",
+      "label": "Muse Spark 1.3",
+      "provider": "openai-compatible",
+      "model": "meta/muse-spark-1.3",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "meta"
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. FIRST GOOGLE MODEL ON THE ROSTER. Released 2026-09-02, $0.75/$3.75, 1M ctx. WARNING: max_completion_tokens is 65536 and this model reasons inside the output budget, so 01/08/11 may truncate — that is a finding, not a config bug; do not expect 128k. Gemini 4 Argon (announced 2026-09-30) has NO public API model ID as of 2026-10-05 (Fairwind Program only) — add it when the catalog lists it. Google has shipped no Pro-tier model since gemini-3.1-pro-preview (Feb 2026).",
+      "id": "gemini-3.8-flash",
+      "label": "Gemini 3.8 Flash",
+      "provider": "openai-compatible",
+      "model": "google/gemini-3.8-flash",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 65536
+      },
+      "vendor": "google"
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. Released 2026-09-09 (OpenRouter 09-10). 552B MoE, new CED architecture, image input, 1M ctx, max_completion 943718. Catalog shows $0.00 input / $2.40 output on the primary route (likely promotional); the :batch route is $0.11/$0.34. DeepSeek V4.1 Pro is named but not released.",
+      "id": "deepseek-v4.1-flash",
+      "label": "DeepSeek V4.1 Flash",
+      "provider": "openai-compatible",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "deepseek"
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. The GA snapshot of V4 Pro (2026-08-12), distinct from the April deepseek/deepseek-v4-pro the July run tested; priced differently ($0.85/$5.00 vs $0.21/$0.42), so treat as a new model. Text-only, vision:false.",
+      "id": "deepseek-v4-pro-0813",
+      "label": "DeepSeek V4 Pro 0813",
+      "provider": "openai-compatible",
+      "model": "deepseek/deepseek-v4-pro-0813",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "deepseek",
+      "vision": false
+    },
+    {
+      "$comment": "ADDED 2026-10-05, untested. The 2026-09-02 snapshot of Qwen3.8 Max. NOTE: the plain qwen/qwen3.8-max ID the August run used is NO LONGER in the OpenRouter catalog — the live SKUs are qwen3.8-max-0902 ($2/$6), qwen3.8-max-prime ($4/$12, same model on a faster lane) and qwen3.8-2.4t-a95b (open-weight variant). Image input supported. Qwen 4 was previewed at Apsara 2026-09-22 but is unreleased.",
+      "id": "qwen3.8-max-0902",
+      "label": "Qwen 3.8 Max 0902",
+      "provider": "openai-compatible",
+      "model": "qwen/qwen3.8-max-0902",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "alibaba"
+    },
+    {
+      "$comment": "ADDED 2026-10-05 as a SECOND CONFIG of the same model at effort HIGH. In run 2026-10-05-0412 the xhigh entry returned EMPTY bodies on 3 of 12 briefs (all 128k max_tokens consumed by thinking, stop_reason max_tokens) and truncated 2 more; 128k is this model's hard output ceiling so max_tokens cannot be raised. Kept as a separate id so the xhigh result stays on record. Compare the two rows before deciding which config to carry forward.",
+      "id": "claude-opus-5-5-high",
+      "label": "Claude Opus 5.5 (high)",
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "vendor": "anthropic",
+      "params": {
+        "max_tokens": 128000,
+        "thinking": {
+          "type": "adaptive"
+        },
+        "output_config": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "$comment": "ADDED 2026-10-05 as a SECOND CONFIG of the same model at effort HIGH. In run 2026-10-05-0412 the xhigh entry returned EMPTY bodies on 3 of 12 briefs (all 128k max_tokens consumed by thinking, stop_reason max_tokens) and truncated 1 more; 128k is this model's hard output ceiling so max_tokens cannot be raised. Kept as a separate id so the xhigh result stays on record. Compare the two rows before deciding which config to carry forward.",
+      "id": "claude-sonnet-5-5-high",
+      "label": "Claude Sonnet 5.5 (high)",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "vendor": "anthropic",
+      "params": {
+        "max_tokens": 128000,
+        "thinking": {
+          "type": "adaptive"
+        },
+        "output_config": {
+          "effort": "high"
+        }
+      }
     }
   ]
 }

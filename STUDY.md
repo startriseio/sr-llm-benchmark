@@ -394,31 +394,33 @@ Access was `meta/muse-spark-1.2` via OpenRouter at $1.25/$4.25 per MTok, 1M-toke
 
 ```
   model                   overall  tech   judge  human
-  Muse Spark 1.2          73.3*    93.1   62.3   —
+  Muse Spark 1.2          70.3     93.1   62.3   60.0
 ```
 
-*\*Provisional. Zero of twelve cells have blind human ratings yet, so the human weight (30%) is redistributed across gates and panel. Every model above and below it on the pooled leaderboard carries human ratings; Muse's 73.3 is not the same kind of number. It slots 4th of 13 as displayed — between Fable 5 (73.8) and GLM 5.2 (72.1) — and that placement should be read as "high mid-table, pending review", not as a settled rank.*
+*Blind human review landed 2026-08-09: 8 of 12 cells rated (the four unrated — accessible interface, brownfield, stateful app, zero JS — redistribute the human weight, the same treatment the July field gets at its 106-of-144 coverage). Muse's number is now the same kind of number as its neighbours. The review moved it: the auto-only provisional was 73.3; with human ratings blended it is **70.3**, slotting **5th of 13** — below GLM 5.2 (72.1), above Grok 4.5 (68.0).*
 
 ### Per-task
 
-| task | tech | judge | final | flags |
-|---|---|---|---|---|
-| 01 three.js scroll | 100 | 62.5 | 75.9 | 6 |
-| 02 WebGL shader | 100 | 65.0 | 77.5 | 5 |
-| 03 landing page | 100 | 75.0 | **83.9** | 5 |
-| 05 3D game | 92.0 | 62.5 | 73.0 | 8 |
-| 06 open creative | 83.4 | 67.5 | 73.2 | 8 |
-| 07 sell yourself | 89.1 | 45.0 | 60.8 | 9 |
-| 08 accessible | 90.5 | 57.5 | 69.3 | 6 |
-| 09 brownfield | 79.1 | 72.5 | 74.9 | 1 |
-| 10 SVG icons | 100 | 60.0 | 74.3 | 7 |
-| 11 stateful app | 83.3 | 42.5 | 57.1 | 6 |
-| 12 zero JS | 100 | 67.5 | 79.1 | 8 |
-| 13 HTML email | 100 | 70.0 | **80.7** | 0 |
+| task | tech | judge | human | final | flags |
+|---|---|---|---|---|---|
+| 01 three.js scroll | 100 | 62.5 | 60 | 71.1 | 6 |
+| 02 WebGL shader | 100 | 65.0 | 50 | 69.3 | 5 |
+| 03 landing page | 100 | 75.0 | 55 | 75.3 | 5 |
+| 05 3D game | 92.0 | 62.5 | 55 | 67.6 | 8 |
+| 06 open creative | 83.4 | 67.5 | 65 | 70.7 | 8 |
+| 07 sell yourself | 89.1 | 45.0 | 80 | 66.5 | 9 |
+| 08 accessible | 90.5 | 57.5 | — | 69.3 | 6 |
+| 09 brownfield | 79.1 | 72.5 | — | 74.9 | 1 |
+| 10 SVG icons | 100 | 60.0 | 50 | 67.0 | 7 |
+| 11 stateful app | 83.3 | 42.5 | — | 57.1 | 6 |
+| 12 zero JS | 100 | 67.5 | — | **79.1** | 8 |
+| 13 HTML email | 100 | 70.0 | 65 | **76.0** | 0 |
 
-**Two podiums on entry.** On the pooled per-task standings Muse takes **2nd on the landing page** (83.9, behind Opus 5's 85.8, bumping Kimi K3 to third) and **2nd on HTML email** (80.7, bumping Sol to third). Its taste-and-restraint work is its best work — which is not the shape anyone expected from a model marketed on agentic coding.
+**The review took both entry podiums away.** On auto-only numbers Muse briefly held 2nd on the landing page (83.9) and 2nd on HTML email (80.7). The blind ratings disagreed with the judges on exactly those cells — landing page rated 55 against the panel's 75, dropping the final to 75.3 and **9th**; email rated 65, dropping it to 76.0 and **5th**. Its best standing final is now the zero-JS brief (79.1, 4th — still unrated). The provisional-numbers caveat §8 has always carried did its job here: the number moved, and it moved down.
 
-**The weakness is interactivity.** The interaction gate scored zero on the open creative brief, the brownfield change, and the stateful app, and 43–44 on the 3D game and the accessible interface. The judges' red flags echo the same thing: pages that render beautifully and under-respond to input. Its two worst finals — the stateful app (57.1) and the self-pitch (60.8, judge 45 with 9 red flags and a unanimous panel) — are both briefs where behaviour, not appearance, carries the score. Axis medians tell the same story: craft 6.5, technique 7, adherence 7, originality 5.5 — competent everywhere, with none of the chosen-subject spark that wins Fable its three open briefs.
+**The reviewer and the panel disagree about Muse in both directions.** The blind ratings run *below* the judges on its taste work (landing 55 vs 75, icons 50 vs 60) and *above* them on the one brief the judges savaged — the self-pitch, human 80 against judge 45. Muse under blind human eyes: less beautiful than the panel thought, more honest. Across its 8 rated cells the human column averages 60.0 — set against the July field, above GLM's 58.8 and Fable's 59.4, well under Kimi's 70.6 and Opus's 71.7.
+
+**The weakness is interactivity.** The interaction gate scored zero on the open creative brief, the brownfield change, and the stateful app, and 43–44 on the 3D game and the accessible interface. The judges' red flags echo the same thing: pages that render beautifully and under-respond to input. Its two worst finals — the stateful app (57.1, unrated) and the self-pitch (66.5) — are both briefs where behaviour, not appearance, carries the score. Axis medians tell the same story: craft 6.5, technique 7, adherence 7, originality 5.5 — competent everywhere, with none of the chosen-subject spark that wins Fable its three open briefs.
 
 **A perfectly clean sheet.** Twelve of twelve built, zero contract violations, zero truncation, every page loaded console-clean. The brownfield diff drew a single red flag — its cleanest judged work.
 
@@ -426,12 +428,128 @@ Access was `meta/muse-spark-1.2` via OpenRouter at $1.25/$4.25 per MTok, 1M-toke
 
 ### Caveats specific to this run
 
-- **N=1, same as everything else here.** No error bars. The 0.5-point gap to Fable 5 above it is noise; so is the 1.2-point gap to GLM below.
-- **Auto-only, pending blind review.** The 73.3 blends gates and panel only. Blind human ratings will move it, in either direction.
+- **N=1, same as everything else here.** No error bars. The 1.8-point gap to GLM 5.2 above it and the 2.3-point gap to Grok 4.5 below are both inside plausible run-to-run variance.
+- **Four cells remain unrated** (08 accessible, 09 brownfield, 11 stateful app, 12 zero JS) and redistribute the human weight. Two of the four are its behaviour-heavy briefs; rating them can still move the overall in either direction.
+- **The human column is one reviewer.** Blind — model names hidden until every cell in a task is scored — but a single rater, same as the July field's ratings. Panel-vs-human divergence on Muse is a finding about both.
 - **Not in the judge-bias audit.** The 839-call audit predates this run and covers the July twelve. Muse judged nothing and nothing about its scores involves self-judging conflict — none of the three panel judges is a Meta model. It joins the audit at the next full re-run.
 - **Contamination window.** The twelve briefs have been public in this repository since 2026-07-26. Muse Spark 1.2 shipped after that date. There is no evidence it saw them, but the possibility exists for any model released after publication, and §8's holdout requirement applies with extra force here.
-- **One split verdict.** The WebGL shader split the panel by 4 on an axis — flagged for human eyes, unresolved until reviewed.
+- **The split verdict is now anchored.** The WebGL shader split the panel by 4 on an axis; the blind rating came in at 50 against the panel's 65 — the sceptic on the panel was closer.
 
 ---
 
-*Run `2026-08-09-2106`. 1 model × 12 briefs = 12 deliverables, 12 gate runs, 36 judge verdicts. Judged by the same panel as the flagship run; not yet human-reviewed; not in the judge-bias audit. Raw data in `results/2026-08-09-2106/scores.json` and `runs/2026-08-09-2106/`.*
+*Run `2026-08-09-2106`. 1 model × 12 briefs = 12 deliverables, 12 gate runs, 36 judge verdicts, 8 of 12 cells blind human-reviewed (2026-08-09). Judged by the same panel as the flagship run; not in the judge-bias audit. Raw data in `results/2026-08-09-2106/scores.json` and `runs/2026-08-09-2106/`.*
+
+*[Update 2026-08-12/13: Addendum B's Qwen3.8-Max entry (71.3) and Addendum C's Grok 4.6 entry (72.1) both slot above Muse, moving it to **7th of 15** on the pooled table. Muse's nearest neighbour above is Qwen3.8-Max at a 1.0-point gap — all of these gaps are inside run-to-run noise. Grok 4.6 also took the HTML-email win (87.6), so Muse's email cell now ranks 6th on that brief.]*
+
+---
+
+## Addendum B — Qwen3.8-Max, run `2026-08-12-0114`
+
+Alibaba's Qwen3.8-Max reached general availability in August 2026 (announced through Qoder as its latest foundation model, with a vendor-claimed 2.4T parameters). On 2026-08-12 it was added to the roster and run through the identical harness: same twelve briefs, same contract, same three-judge panel, same weights. Single-shot, no follow-up turn. Blind human review landed the same day, 9 of 12 cells.
+
+Access was `qwen/qwen3.8-max` via OpenRouter at $2/$6 per MTok, 1M-token context, 131,072 max output tokens. It got the 128k `max_tokens` headroom on the GLM/Muse precedent and, like Muse, never came close to needing it.
+
+### The result
+
+```
+  model                   overall  tech   judge  human
+  Qwen 3.8 Max            71.3     88.0   69.2   56.1
+```
+
+*9 of 12 cells blind-rated; the three unrated (accessible interface, brownfield, stateful app) redistribute the human weight. Slots **5th of 14** — below GLM 5.2 (72.1), above Muse Spark 1.2 (70.3), all three gaps inside run-to-run noise. A 7.7-point blended improvement over Qwen 3.7 Max (63.6, now 12th), which had zero podium finishes; 3.8 has five.*
+
+### Per-task
+
+| task | tech | judge | human | final | flags |
+|---|---|---|---|---|---|
+| 01 three.js scroll | 58.6 | 32.5 | 0 | 29.3 | 9 |
+| 02 WebGL shader | 98.4 | 80.0 | 80 | 84.6 | 0 |
+| 03 landing page | 100 | 85.0 | 80 | **87.3** | 1 |
+| 05 3D game | 85.7 | 45.0 | 20 | 47.7 | 7 |
+| 06 open creative | 85.6 | 80.0 | 60 | 75.4 | 0 |
+| 07 sell yourself | 89.1 | 70.0 | 80 | 77.8 | 4 |
+| 08 accessible | 83.7 | 80.0 | — | 81.3 | 4 |
+| 09 brownfield | 79.0 | 75.0 | — | 76.4 | 0 |
+| 10 SVG icons | 100 | 82.5 | 65 | **81.6** | 0 |
+| 11 stateful app | 76.8 | 55.0 | — | 62.8 | 8 |
+| 12 zero JS | 98.9 | 77.5 | 60 | 77.6 | 0 |
+| 13 HTML email | 100 | 67.5 | 60 | 73.4 | 7 |
+
+**The first July wins to fall.** Qwen3.8-Max takes **two task wins with blind human review behind them**: the brand landing page at 87.3 — dethroning Opus 5's 85.8, on the highest landing-page judge verdict on record (85) — and the SVG icon system at 81.6, taking the brief Fable 5 had held at 80.5. It adds three second places: the WebGL shader (84.6, pushing Opus 5 to third), the self-pitch (77.8), and the accessible interface (81.3, unrated). Its judge column (69.2) trails only Opus, Kimi and Fable; its axis profile — craft 7, technique 8, adherence 8, originality 7 — is the most balanced non-podium-leader shape in the study.
+
+**And the deepest single-cell crater since Haiku.** The Three.js brief shipped broken: a console error, a page that barely renders, no animation loop, near-dead scroll — technical 58.6, judge 32.5 with 9 red flags, and the blind reviewer's first 0 of these addendum runs. Final: **29.3**. The 3D game ran at full frame rate but with console errors and a 45 judge score; the reviewer rated it 2. The same single-shot lesson as Fable's 22.5 on the same brief: one unhandled error, no second turn, sixty points gone.
+
+**Where the gate and the judges disagree, in both directions.** The interaction gate scored the accessible interface at 2; the judges, reading the source, scored the cell 80 with the tightest agreement of the run (spread 0.5). The reverse on the game: gates saw 120fps and full interaction; the judges saw a broken loop and flagged it seven times. Neither instrument is sufficient alone — which is why there are three.
+
+**Contract-clean, console-dirty.** Twelve of twelve built, zero contract violations, zero truncation — but unlike Muse's fully console-clean sheet, two cells (the Three.js scroll and the 3D game) logged runtime errors. It is also expensive to run: 477,264 output tokens (third-heaviest in the field, just above Kimi) at 12,107 seconds total generation time (second-slowest, after Kimi), for a suite cost of **$2.92**.
+
+### Caveats specific to this run
+
+- **N=1.** The 0.8-point gap to GLM above and the 1.0-point gap to Muse below are both well inside run-to-run variance. The two task wins rest on single samples too.
+- **Three cells remain unrated** (08 accessible, 09 brownfield, 11 stateful app) and redistribute the human weight — including the 81.3 accessible-interface second place.
+- **The human column is one reviewer**, blind, same as every other run on record.
+- **Not in the judge-bias audit.** Joins at the next full re-run.
+- **Contamination window.** The briefs have been public since 2026-07-26; the model reached availability after. Same disclosure as Addendum A, same holdout requirement.
+- **One split verdict, softened by review.** The WebGL shader split the panel by 4 on an axis; the blind rating (80) landed with the panel's median (80) rather than against it.
+
+---
+
+*Run `2026-08-12-0114`. 1 model × 12 briefs = 12 deliverables, 12 gate runs, 36 judge verdicts, 9 of 12 cells blind human-reviewed (2026-08-12). Judged by the same panel as the flagship run; not in the judge-bias audit. Raw data in `results/2026-08-12-0114/scores.json` and `runs/2026-08-12-0114/`.*
+
+*[Update 2026-08-13: Addendum C's Grok 4.6 entry (72.1) ties GLM 5.2 directly above Qwen3.8-Max, which now sits **6th of 15**. Qwen keeps both of its task wins; its landing-page judge verdict of 85 is no longer unique — Grok 4.6 matched it in the same day's later run.]*
+
+---
+
+## Addendum C — Grok 4.6, run `2026-08-12-2359`
+
+xAI's Grok 4.6 was added to the roster on 2026-08-12 and run through the identical harness: same twelve briefs, same contract, same three-judge panel, same weights, single-shot. Blind human review landed the next day, 9 of 12 cells. Access was `x-ai/grok-4.6` via OpenRouter at $2/$6 per MTok, 500k context, no published output cap. It got 128k `max_tokens` because Grok 4.5 truncated the accessible-interface brief at the 64k ceiling in July — and with the headroom, 4.6 recorded zero truncation and zero contract violations.
+
+### The result
+
+```
+  model                   overall  tech   judge  human
+  Grok 4.6                72.1     88.5   67.1   65.0
+```
+
+*9 of 12 cells blind-rated; the three unrated (accessible interface, brownfield, stateful app) redistribute the human weight — the same three briefs left unrated on the Muse and Qwen runs. Slots into a **dead tie with GLM 5.2 at 72.1** (displayed 4th/5th of 15 by insertion order — read it as a tie), 0.8 above Qwen3.8-Max, 4.1 above its predecessor Grok 4.5 (68.0). Its human column (65.0) is the third-best on record, behind only Opus 5 (71.7) and Kimi K3 (70.6).*
+
+### Per-task
+
+| task | tech | judge | human | final | flags |
+|---|---|---|---|---|---|
+| 01 three.js scroll | 100 | 72.5 | 80 | 81.6 | 6 |
+| 02 WebGL shader | 100 | 72.5 | 60 | 75.6 | 0 |
+| 03 landing page | 100 | 85.0 | 70 | 84.3 | 0 |
+| 05 3D game | 64.4 | 22.5 | 0 | 26.2 | 8 |
+| 06 open creative | 77.0 | 75.0 | 80 | 77.0 | 2 |
+| 07 sell yourself | 89.1 | 65.0 | 65 | 71.0 | 2 |
+| 08 accessible | 77.2 | 37.5 | — | 51.7 | 8 |
+| 09 brownfield | 78.8 | 80.0 | — | 79.6 | 0 |
+| 10 SVG icons | 100 | 65.0 | 75 | 76.8 | 5 |
+| 11 stateful app | 84.2 | 70.0 | — | 75.1 | 0 |
+| 12 zero JS | 90.7 | 77.5 | 70 | 78.6 | 4 |
+| 13 HTML email | 100 | 82.5 | 85 | **87.6** | 0 |
+
+**The email win changes hands — the third August upset.** Grok 4.6 takes the HTML email brief outright at **87.6** over Opus 5's 84.3: perfect gates, a near-unanimous judge 82.5 (spread 0.75, zero red flags), and the highest blind rating of the August runs (85). It adds a **3rd on the landing page** (84.3, judge 85 — tying the record verdict Qwen set on that brief) and two tie-3rds on the brownfield (79.6) and stateful app (75.1) — both, note, unrated cells.
+
+**It passed the brief that breaks frontier models.** Grok 4.6 is the only August addition to clear the Three.js scroll with perfect gates — the brief that produced Fable 5's 22.5 and Qwen3.8-Max's 29.3 — finishing 4th on it at 81.6 with an 80 blind rating.
+
+**And then it shipped a broken game.** The 3D game arrived with a console error, no animation frames, and near-dead input: technical 64.4, judge 22.5 with 8 red flags, blind rating 0. Final: **26.2 — the deepest August cell**, below Qwen's 29.3 Three.js crater. Every August addition has now cratered exactly one engineering-heavy brief; they just take turns on which.
+
+**The widest panel split on record, still unresolved.** The accessible interface split the judge panel by 6 on an axis (previous record: 4) — judge 37.5, gates 77.2, 8 red flags — and it is one of the three cells without a blind rating. That cell's final (51.7) is the least settled number in this addendum.
+
+**Three additions, one shape.** Muse, Qwen 3.8 and Grok 4.6 all: posted a record-tier landing-page verdict, cratered one engineering brief, scored identity 50 on the self-pitch, and under-responded to interaction probes (Grok's interaction gate: 1 on the game, 0 on the open creative, 5 on the stateful app, 13 on accessible). The August frontier is converging on taste and still stumbling on behaviour, single-shot. Axis medians make the twins visible — Grok 4.6: craft 7, technique 8, adherence 7.5, originality 7; Qwen 3.8: craft 7, technique 8, adherence 8, originality 7.
+
+**Economics.** 262,932 output tokens and 3,241 seconds — 8th of 15 on both, mid-pack — for a suite cost of **$1.63**. Console errors on three cells (the game, the accessible interface, the zero-JS page) keep it off Muse's fully-console-clean standard.
+
+### Caveats specific to this run
+
+- **N=1.** The tie with GLM and the 0.8 gap to Qwen are noise. The email win rests on one sample of each model.
+- **Three cells unrated** (08, 09, 11) — including the record-split accessible interface and both tie-3rd podium cells.
+- **The human column is one reviewer**, blind, same as every run on record.
+- **Not in the judge-bias audit.** Joins at the next full re-run.
+- **Contamination window.** Briefs public since 2026-07-26; same disclosure and holdout requirement as Addenda A and B.
+
+---
+
+*Run `2026-08-12-2359`. 1 model × 12 briefs = 12 deliverables, 12 gate runs, 36 judge verdicts, 9 of 12 cells blind human-reviewed (2026-08-13). Judged by the same panel as the flagship run; not in the judge-bias audit. Raw data in `results/2026-08-12-2359/scores.json` and `runs/2026-08-12-2359/`.*
