@@ -1,0 +1,43 @@
+name: Model request
+description: Ask for a model to be added to the roster and benchmarked
+title: "[model] "
+labels: [model]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: Vendor and exact name, e.g. "OpenAI GPT-6.1 Sol"
+    validations:
+      required: true
+  - type: input
+    id: catalog
+    attributes:
+      label: API identifier and route
+      description: The exact model string and where it is served, e.g. `openai/gpt-6.1-sol` on OpenRouter, or `claude-opus-5-5` direct.
+    validations:
+      required: true
+  - type: input
+    id: price
+    attributes:
+      label: List price per million tokens (input / output)
+      placeholder: "$2 / $10"
+  - type: input
+    id: ceiling
+    attributes:
+      label: Maximum output tokens
+      description: The published max_completion_tokens. Models that reason inside the output budget need the full ceiling.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything the harness should know
+      description: Reasoning behaviour, vision support, retention requirements, rate limits, known truncation.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I have confirmed the model is publicly callable today (not announced-only).
+          required: true
+        - label: I searched existing issues for this model.
+          required: true

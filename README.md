@@ -1,166 +1,193 @@
-# StarRise LLM Benchmark
+<p align="center">
+  <img src="docs/assets/banner.png" alt="The Startrise LLM Benchmark" width="100%">
+</p>
 
-An in-house benchmarking engine for frontier models on **build tasks** — hard frontend, real-time 3D, design, and open creative work. Every model gets the same brief, returns **one self-contained HTML file**, and that file is scored three ways:
+<h1 align="center">The Startrise LLM Benchmark</h1>
+
+<p align="center">
+  Frontier models build the same twelve real frontends, single-shot.<br>
+  Gated in a real browser. Judged blind by a cross-lab panel. Rated blind by a human. Everything published, including what broke.
+</p>
+
+<p align="center">
+  <a href="https://www.startrise.io/benchmark/"><img alt="Live leaderboard" src="https://img.shields.io/badge/live-leaderboard-ffd833?labelColor=0a0a0a&style=flat-square"></a>
+  <a href="https://github.com/startriseio/sr-llm-benchmark/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/startriseio/sr-llm-benchmark/actions/workflows/ci.yml/badge.svg"></a>
+  <img alt="Models" src="https://img.shields.io/badge/models-30-0a0a0a?labelColor=0a0a0a&color=f1eee6&style=flat-square">
+  <img alt="Briefs" src="https://img.shields.io/badge/briefs-12-0a0a0a?labelColor=0a0a0a&color=f1eee6&style=flat-square">
+  <img alt="Runs" src="https://img.shields.io/badge/runs-5-0a0a0a?labelColor=0a0a0a&color=f1eee6&style=flat-square">
+  <img alt="Blind verdicts" src="https://img.shields.io/badge/blind_verdicts-1%2C059-0a0a0a?labelColor=0a0a0a&color=f1eee6&style=flat-square">
+  <img alt="Node" src="https://img.shields.io/badge/node-%E2%89%A520-0a0a0a?labelColor=0a0a0a&color=f1eee6&style=flat-square">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0a0a0a?labelColor=0a0a0a&color=f1eee6&style=flat-square"></a>
+</p>
+
+<p align="center">
+  <a href="https://www.startrise.io/benchmark/">Live results</a> ·
+  <a href="https://www.startrise.io/blog/gpt-6-astra-vs-claude-opus-5-5-benchmark/">Latest write-up</a> ·
+  <a href="#how-a-score-is-computed">Method</a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#adding-a-model">Add a model</a> ·
+  <a href="CONTRIBUTING.md">Contributing</a>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="docs/assets/winners.png" alt="The twelve all-time winning deliverables, one per brief" width="100%">
+  <br>
+  <sub>The all-time winner of each brief, as rendered in the gate browser. Every one of these is a single API response: one prompt, one HTML file, no follow-up turn.</sub>
+</p>
+
+<br>
+
+## Why this benchmark exists
+
+Most LLM leaderboards are multiple choice. This one makes models **build things**: a Three.js scroll journey, a WebGL shader, a brand landing page, a playable 3D game, a WCAG 2.2 AA cinema seat map, a brownfield change request against a 700-line codebase, an eighteen-glyph SVG icon system, a stateful scheduling app, a page with zero JavaScript, an HTML email that survives Outlook, and two open creative briefs where the model chooses what is worth making.
+
+Every model gets the identical brief and the identical output contract: one self-contained HTML file, CDN references only, runs from `file://`, no placeholders. Whatever comes back is the submission. Then three independent instruments score it:
 
 | Column | Weight | Who decides | What it measures |
 |---|---|---|---|
-| **Technical** | 25% | Playwright, headed, real GPU | Does it load, render, hold frame rate, respond to input, stay in one file, keep the console clean |
-| **Judges** | 45% | A quorum of LLMs from different labs | Craft, technical ambition, brief adherence, originality |
-| **Human** | 30% | You, **blind** | Whether you would actually ship it |
+| **Gates** | 25% | Playwright, headed Chromium, real GPU | Loads, renders, holds frame rate, responds to input, stays in one file, keeps the console clean, stays within the size contract |
+| **Panel** | 45% | Three LLM judges from three labs, blind | Craft, technical ambition, brief adherence, originality, each 0–10, aggregated by **median per axis** |
+| **Human** | 30% | One reviewer, blind | Would you ship it? Model names are stripped from the review UI until every cell in a brief is rated |
 
-Nothing here is a multiple-choice eval. Every task produces an artefact you can open, click, and judge.
+Nothing is a proxy. You can open any deliverable, click it, and disagree with the number.
 
----
+## Where things stand
+
+The all-time board pools every run; each model keeps its most recent row. Full table, filters, head-to-head comparator and every deliverable at **[startrise.io/benchmark](https://www.startrise.io/benchmark/)**.
+
+| # | Model | Lab | Overall | Gates | Panel | Human | Built | Run |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Claude Opus 5 | Anthropic | **82.3** | 93.9 | 81.3 | 71.7 | 12/12 | Jul 2026 |
+| 2 | Claude Opus 5.5 (effort high) | Anthropic | **80.2** | 94.4 | 82.9 | 58.9 | 12/12 | Oct 2026 |
+| 3 | GPT-6 Astra | OpenAI | **79.9** | 94.4 | 81.7 | 58.9 | 12/12 | Oct 2026 |
+| 4 | Kimi K3 | Moonshot | **79.8** | 92.8 | 77.5 | 70.6 | 12/12 | Jul 2026 |
+| 5 | GPT-6.1 Sol | OpenAI | **78.6** | 94.7 | 80.0 | 57.2 | 12/12 | Oct 2026 |
+| 6 | Claude Fable 5.1 | Anthropic | **77.1** | 94.4 | 77.5 | 58.9 | 12/12 | Oct 2026 |
+| 7 | Claude Sonnet 5.5 (effort xhigh) | Anthropic | **75.9** | 91.2 | 73.9 | 68.3 | 9/12 | Oct 2026 |
+| 8 | Grok 4.7 | xAI | **75.9** | 92.9 | 78.8 | 49.4 | 12/12 | Oct 2026 |
+| 9 | DeepSeek V4.1 Flash | DeepSeek | **75.6** | 91.9 | 76.5 | 55.0 | 12/12 | Oct 2026 |
+| 10 | Muse Spark 1.3 | Meta | **74.7** | 95.5 | 70.8 | 56.3 | 12/12 | Oct 2026 |
+| 11 | Claude Fable 5 | Anthropic | **73.8** | 89.4 | 71.9 | 59.4 | 12/12 | Jul 2026 |
+| 12 | GLM 5.3 | Z.ai | **73.2** | 94.4 | 70.5 | 55.0 | 11/12 | Oct 2026 |
+
+<sub>30 models from 9 labs, 353 deliverables, 1,059 blind judge verdicts, 5 runs. Sample size per cell is one; gaps under about three points, and any gap across runs, are inside the noise. A "9/12" row delivered nothing usable on three briefs and is averaged over the nine it built.</sub>
+
+Per-brief winners: Fable 5.1 holds the Three.js record (91.4), Sonnet 5.5 the accessible seat map (90.4), GPT-6.1 Sol the zero-JavaScript page (88.3), Opus 5 the 3D game (88.0) and the brownfield change, Grok 4.6 the HTML email, Qwen 3.8 Max the landing page, Muse Spark 1.3 the icon system, GPT-6 Astra the stateful app, Fable 5 the shader and the open creative brief, Opus 5.5 the self-pitch.
+
+## What's in the box
+
+<table>
+<tr>
+<td width="50%"><img src="docs/assets/report-board.png" alt="Scoreboard"><br><sub><b>Scoreboard.</b> Per-run leaderboard with every column, the "built" coverage, blind-rating coverage and judge-named red flags.</sub></td>
+<td width="50%"><img src="docs/assets/report-blind.png" alt="Blind review"><br><sub><b>Blind review.</b> Submissions are opaque tokens; names are never sent to the page. Rate everything in a brief, then press Reveal.</sub></td>
+</tr>
+<tr>
+<td><img src="docs/assets/report-control.png" alt="Control centre"><br><sub><b>Control centre.</b> Pick models and briefs, launch a run, watch it live. Every run is kept; nothing is overwritten.</sub></td>
+<td><img src="docs/assets/cli-scoreboard.png" alt="CLI scoreboard"><br><sub><b>CLI.</b> The same pipeline from the terminal: <code>generate → gates → judge → score</code>, with split-panel cells surfaced first.</sub></td>
+</tr>
+</table>
+
+## How a score is computed
+
+Per cell (one model, one brief):
+
+```
+final = 0.25 × gates + 0.45 × panel + 0.30 × human
+```
+
+- **Gates** is the weighted mean of only the checks a brief declares. A static landing page has no `fps` gate, so its absence costs nothing. Two checks beyond the obvious: **economy** (the contract sets a working size of ~800 lines / 50 KB; score tapers to zero at 2.5×) and **identity** (on the self-pitch brief only: does the page name its own author correctly, checked by regex so the judges never learn who wrote what).
+- **Panel** takes the median per axis across the three judges, averages the four medians, and keeps the spread. A cell where judges differ by four or more on an axis is flagged `split panel` and surfaced first.
+- **Human** is a blind 0–10. If a cell is unrated the weight is redistributed across the other two and the row is marked provisional everywhere.
+
+Per model, per run: the mean of its finals over the briefs it **delivered**. An empty response shrinks the sample instead of scoring zero, and the coverage is always shown next to the number.
+
+Across runs: each (model, brief) pair is averaged over every run it appears in, then across briefs. See [`benchmarks/SCORING.md`](benchmarks/SCORING.md) for the reasoning and [`config/scoring.json`](config/scoring.json) for what actually runs.
+
+## The twelve briefs
+
+| # | Brief | What it separates |
+|---|---|---|
+| 01 | **Three.js Scroll Journey** | Scroll choreography, real GLSL, authored vs mechanical |
+| 02 | **Custom WebGL Shader** | Open brief: the coolest shader the model can write |
+| 03 | **Brand Landing Page** | Taste. Typography, palette, restraint; penalises default-AI aesthetics |
+| 05 | **Playable 3D Game** | A complete loop, game feel, collision, frame-rate independence |
+| 06 | **Open Creative Brief** | No subject at all. Half the score is what the model chose to build |
+| 07 | **Sell Yourself** | The model markets itself. Self-knowledge, persuasion, honesty under pressure |
+| 08 | **Accessible Interface** | A cinema seat map to WCAG 2.2 AA: the hardest common a11y widget |
+| 09 | **Brownfield Change Request** | Three tickets against an existing 700-line file. Scored on the diff |
+| 10 | **SVG Icon System** | Eighteen icons by hand, one grid, one hand, a node budget |
+| 11 | **Stateful Application** | A scheduler with real rules: undo/redo, bulk ops, keyboard parity |
+| 12 | **Zero JavaScript** | No `<script>` at all. Closes the gap where everything else can be won with flexbox |
+| 13 | **HTML Email** | Tables, MSO conditionals, no images. Knowledge you can't reason out |
+
+Brief 04 (Figma to code) exists but is disabled: it needs an agentic harness and measures the harness, not the model. Every brief is plain markdown in [`benchmarks/`](benchmarks/), joined at prompt time with [`_contract.md`](benchmarks/_contract.md). Brief 09 ships a frozen fixture in [`fixtures/09-brownfield/`](fixtures/09-brownfield/) with one genuine bug and a behaviour change scattered across a dozen call sites.
+
+The published briefs are now in the training window of every model released after July 2026. That is a known cost of publishing them; the next full re-run adds a private holdout.
+
+## The judge quorum
+
+One LLM judge is a single point of failure with a single set of blind spots. The panel is three models from three labs, each with a different lens:
+
+| Judge | Model | Lens |
+|---|---|---|
+| **Craft** | Claude Opus 5 | An award-jury design director. Composition, typography, colour, motion, whether the thing has a point of view |
+| **Engineering** | GPT-5.6 Terra | A graphics engineer reading the source: real shader maths vs a CSS gradient, real physics vs a hardcoded tween |
+| **Brief** | Grok 4.5 | The client who wrote the brief, checking every stated requirement one by one |
+
+Judges see screenshots, the full source and the gate measurements, and never learn which model produced a submission. Because judges and contestants overlap, `npm run audit` makes every rostered model score every submission and measures each one's **self-bias** and **vendor bias** net of its leniency. The July audit (839 calls) is in [`docs/STUDY.md`](docs/STUDY.md) and on the website; Opus 5's vendor bias measured −0.46, which is why the top of the board is described as a cluster rather than a win.
 
 ## Quick start
 
 ```bash
+git clone https://github.com/startriseio/sr-llm-benchmark.git
+cd sr-llm-benchmark
 npm install                 # also fetches Chromium for Playwright
-cp .env.example .env        # add your keys
-npm start                   # interactive picker — choose models and tasks, then run
+cp .env.example .env        # add the keys for the providers you want to run
+npm test                    # validates the roster, briefs, judges and weights
+npm start                   # interactive picker: choose models and briefs, then run
 ```
 
-`npm start` lists every model with a key, shows how much of the suite each has already completed and how much you have rated, and pre-selects the ones with gaps. Space toggles, `a` selects all, enter continues. It prints the full plan — and the exact `npm run bench` command it is about to run — before it starts anything.
+`npm start` lists every model with a key, shows how much of the suite each has already completed and how much you have rated, and pre-selects the ones with gaps. It prints the exact `npm run bench` command before it starts anything.
 
-For the browser instead: `npm run report` opens a control centre at `localhost:4321` that does the same thing with live output, plus **Blind review** for rating and **Overall** for cross-run comparison.
-
-Direct CLI:
+For the browser instead:
 
 ```bash
-npm run bench -- --all --note "july baseline"       # new run, everything
-npm run bench -- --model kimi-k3                    # new model just dropped
-npm run bench -- --all --run latest                 # top up the newest run
-npm run bench -- --all --audit                      # also audit the judges
+npm run report              # control centre at http://localhost:4321
 ```
 
----
-
-## How the score is computed
-
-**Per submission** (one model, one task), the three columns are combined:
-
-```
-final = 0.25 × technical  +  0.45 × judges  +  0.30 × you
-```
-
-- **technical** — the weighted mean of only the gate checks that task declares. A static landing page has no `fps` check, so its absence costs nothing. Two checks beyond the obvious ones:
-  - **economy** — the output contract sets a working budget of ~800 lines / 50 KB. Score tapers from full marks inside budget to zero at 2.5×, so a task that genuinely needs more is not failed outright, but padding is measured rather than merely disapproved of.
-  - **identity** *(self-pitch only)* — does the page name its own model correctly? Checked deterministically with a regex, not by a judge: a judge cannot know the true author unless told, and telling it would leak identity into the quorum and manufacture the vendor bias the audit exists to detect. Confidently claiming to be a different model scores 0; declining to name a version scores 0.5 (the brief asked, but it is not dishonest); naming itself correctly scores 1.
-- **judges** — each of the three judges scores four axes 0–10. Take the **median per axis** across judges, average the four medians, ×10.
-- **you** — your blind 0–10, ×10.
-
-If you have not rated it yet, the human weight is redistributed across the other two and the row is flagged provisional everywhere. It is a real number, not a placeholder — but it is not the final one.
-
-**Per model, one run:** the mean of its `final` scores across the tasks it completed.
-
-**Per model, all-time** (the **Overall** tab): each (model, task) pair is averaged across every run it appears in, then those are averaged across tasks.
-
-One caveat worth knowing: a model is averaged over **the tasks it completed**, so failing to produce a file does not drag its mean down — it shrinks the sample instead. That is why coverage (`4/6`) is shown next to every score. A 90 over two tasks is not the same claim as a 90 over six, and the leaderboard does not pretend otherwise.
-
----
-
-## The benchmarks
-
-| # | Task | What it separates |
-|---|---|---|
-| 01 | **Three.js Scroll Journey** | Scroll choreography, real GLSL, whether the page is authored or mechanical |
-| 02 | **Custom WebGL Shader** | Open brief: the coolest shader the model can write. Ambition and GPU technique |
-| 03 | **Brand Landing Page** | Taste. Typography, palette, restraint — explicitly penalises default-AI aesthetics |
-| 04 | **Figma → Code** | *(disabled)* Layout fidelity via Figma MCP. Needs a frame URL and an agentic harness |
-| 05 | **Playable 3D Game** | A complete loop, game feel, collision, frame-rate independence |
-| 06 | **Open Creative Brief** | No subject at all. Half the score is what the model thought was worth building |
-| 07 | **Sell Yourself** | The model markets *itself* to you. Self-knowledge, persuasion, and honesty under pressure |
-| 08 | **Accessible Interface** | A cinema seat map to WCAG 2.2 AA. The hardest common a11y widget there is |
-| 09 | **Brownfield Change Request** | Three tickets against an existing file. Scored on the diff — restraint, not rewriting |
-| 10 | **SVG Icon System** | Eighteen icons drawn by hand in code. One grid, one hand, a node budget |
-| 11 | **Stateful Application** | A scheduler with real rules. Undo/redo, bulk ops, keyboard parity, the skipped states |
-| 12 | **Zero JavaScript** | No `<script>` at all. Closes the gap where every other task can be won with flexbox |
-| 13 | **HTML Email** | Tables, MSO conditionals, no images. Knowledge that cannot be reasoned from first principles |
-
-Each brief lives in `benchmarks/` and is joined with `benchmarks/_contract.md`, the single-file output contract every model must satisfy. Edit the briefs freely — they are plain markdown and are the highest-leverage thing in the repo.
-
-**09 ships with a fixture.** `fixtures/09-brownfield/source.html` is a working ~700-line application with deliberate house conventions, one genuine bug, and a behaviour change whose call sites are scattered across the file; `tickets.md` is the change request. Both are inlined into the prompt by `loadPrompt()` and the judge sees the same assembly, so it scores the diff rather than the document. **The fixture is fixed for the life of the benchmark — do not regenerate it between runs**, or results stop being comparable.
-
-**13 overrides the shared contract** in two places, both stated at the top of its brief: no CDN references of any kind, and no images at all including data URIs. A browser render tells you almost nothing about an email; score it from the source, or in a client-rendering service.
-
-How the suite is grouped into clusters, weighted per task, and aggregated across runs is in `benchmarks/SCORING.md`. That document governs the write-up; the live panel keeps its own four axes and `config/scoring.json` is the authority for what the judges actually run on — §0 of SCORING.md explains how the two layers map.
-
-To re-enable Figma: put a frame URL in `config/figma.json` and set `disabled: false` in `config/benchmarks.json`. It runs in `manual` mode — you produce the file in Claude Code or Cursor and drop it at `runs/<run>/<model>/04-figma-to-code/index.html`; scoring is identical.
-
----
-
-## The judge quorum
-
-One LLM judge is a single point of failure with a single set of blind spots. This uses a **panel of three, from three different labs**, each with a different lens:
-
-- **Craft** — an award-jury design director (Claude Opus 5)
-- **Engineering** — a graphics engineer reading the source for faked effects (GPT-5.6 Terra)
-- **Brief** — the client, checking every stated requirement (Grok 4.5)
-
-Each judge scores all four axes independently, sees screenshots plus source plus the gate measurements, and never learns which model produced what. Scores aggregate by **median, per axis** — so one outlier judge cannot drag a result — and the **spread is kept**, so you can see where the panel genuinely disagreed instead of trusting a consensus that does not exist. A result where judges differ by 4+ on an axis is flagged `panel split` and surfaced first in the CLI output.
-
-Configure in `config/judges.json`. Use an odd number so the median is a score a real judge actually gave. Judges without an API key are skipped; the panel needs `minJudges` to produce a verdict.
-
----
-
-## Auditing the judges
+Direct CLI, one stage or all of them:
 
 ```bash
-npm run audit                              # on 07-self-pitch (authorship disclosed)
-npm run audit -- --bench 01-threejs-scroll # control: authorship hidden
+npm run bench -- --model gpt-6-astra --note "new model just dropped"   # generate → gates → judge → score
+npm run bench -- --all --run latest                                     # top up the newest run
+npm run gen   -- --model glm-5.3 --concurrency 4                        # one stage, throttled
+npm run audit                                                           # judge-bias audit on the self-pitch brief
 ```
 
-Every rostered model scores every submission, using the ordinary judging prompt with a neutral lens — **the models are not told they are being evaluated**. What comes back is a picture of each model *as a judge*:
+A fresh clone has no `runs/` directory, because the deliverables are hundreds of megabytes per run. The scoreboard, the all-time view and the blind-review page fall back to the published `results/<run>/scores.json`, so everything renders out of the box; the live builds and screenshots are at [startrise.io/benchmark](https://www.startrise.io/benchmark/).
 
-- **self-bias** — how much better it scored its own work than the rest of the panel did, **net of its own leniency**. A uniformly generous judge is not dishonest; a judge generous only to itself is.
-- **vendor bias** — the same measurement across same-vendor siblings
-- **leniency / discrimination / agreement** — is it calibrated, does it differentiate at all, does it track the panel
+> **Gates run headed, on a real GPU, serially by design.** Parallel pages fight over the GPU and corrupt the frame-rate measurement. Leave the machine alone during the gates stage.
 
-The self-pitch benchmark is the sharp probe, because there every page names its own author and a judge always knows whose work it is looking at. Run the audit on a benchmark where authorship is hidden and you have the control: **bias that appears only when the byline is visible is a preference, not noise.** Audit scores are written to `results/<run>/judge-audit.json` and never touch the official quorum.
-
----
-
-## Blind review
-
-The human column is collected blind, because a scoreboard that shows "Claude Opus 5" next to a slider is not measuring the artefact.
-
-The blind page receives **no model identities at all** — not in the DOM, not in a payload, not in the asset URLs. Every submission is an opaque token resolved server-side, links go through `/s/<run>/<token>/…`, and names only arrive when you press **Reveal**, per benchmark, after you have rated everything in it. Reveal then shows your ranking beside the judges'.
-
-Ratings are marked `blind: true` so you can tell later which ones were honest.
-
----
-
-## Run history and the all-time view
-
-Every run is kept forever under `runs/<runId>/`. Nothing is overwritten.
-
-Runs will usually **not** contain the whole roster — when a model ships you run just that one. So the **Overall** tab pools every run on record: each (model, benchmark) pair is averaged across however many times it has been run, with the sample count `n` attached so a single sample is never mistaken for a settled number. That is where a newly-added model gets compared against everything that came before it, and a line chart tracks overall quality per run over time.
-
-```bash
-npm run bench -- --model some-new-model --note "shipped today"
-# → new run containing one model; Overall compares it with the entire back-catalogue
-```
-
-The per-run **Scoreboard** stays useful for the detail of a single session; **Overall** is the view that matters once runs stop containing everything.
+## Repository layout
 
 ```
-runs/2026-07-26-1432/claude-opus-5/02-webgl-shader/
-  index.html          the deliverable
-  meta.json           tokens, latency, bytes, contract violations
-  gates.json          every check with its detail
-  judge.json          all judge verdicts + per-axis median and spread
-  shots/              initial, after-interaction, settled
-results/2026-07-26-1432/
-  human.json          your ratings
-  scores.json         the computed leaderboard
-  judge-audit.json    judge behaviour, if audited
+benchmarks/        the twelve briefs, the output contract, SCORING.md
+config/            models.json (the roster) · benchmarks.json · judges.json · scoring.json
+fixtures/          frozen inputs for briefs that modify an existing file (09)
+src/               the pipeline: generate → gates → judge → score, plus audit, report UI, CLI
+scripts/           probes and the config validator (npm test)
+results/           per-run published data: scores.json, human.json, judge-audit.json, runs.json
+runs/              per-run deliverables and per-cell gate/judge/meta files (git-ignored)
+docs/              STUDY.md (the July write-up), COST.md (the economics), README assets
 ```
 
----
+Every run lives forever under `runs/<runId>/<model>/<brief>/` with the deliverable, `meta.json` (tokens, latency, contract violations), `gates.json`, `judge.json` and three screenshots. Nothing is overwritten; a new model gets a new run and the all-time view pools them.
 
 ## Adding a model
 
-One entry in `config/models.json`, then `npm run bench -- --model <id>`.
+One entry in [`config/models.json`](config/models.json), then `npm run bench -- --model <id>`.
 
 ```jsonc
 {
@@ -171,49 +198,50 @@ One entry in `config/models.json`, then `npm run bench -- --model <id>`.
   "baseURL": "https://openrouter.ai/api/v1",
   "apiKeyEnv": "OPENROUTER_API_KEY",
   "vendor": "somelab",                   // used for vendor-bias detection
-  "params": { "max_tokens": 64000 }      // passed through verbatim
+  "params": { "max_tokens": 128000 }     // passed through verbatim
 }
 ```
 
-`provider: "manual"` covers models with no public API — Cursor Composer, for instance. See below.
+Three things the roster taught us, all documented in the `$comment` of the entry that taught them:
 
-`params` is passed straight through, which matters: Claude Opus 5 and Sonnet 5 take `thinking: {type: "adaptive"}` with `output_config.effort`, while **Haiku 4.5 predates both** and needs the older `budget_tokens` form — sending it `effort` returns a 400.
+- **Give reasoning models the whole output ceiling.** GLM, Muse, Qwen and the Claude 5.5 family reason inside `max_tokens`. At 64k they return empty bodies with `finish_reason: length`; at 128k they complete. If the ceiling is the model's hard maximum and it still runs out, that is a finding, not a configuration bug: in October, Opus 5.5 and Sonnet 5.5 at effort `xhigh` returned nothing on three briefs each, and the same models at effort `high` delivered twelve of twelve. Both configurations stay on the board.
+- **Cap concurrency per provider.** Anthropic and OpenRouter reserve each request's worst-case cost against your balance. Firing thirty-six 128k-token streams at once trips the pre-check even with auto-reload on. `--concurrency 8` is safe; the runner reports pool failures only when a stage ends, so check live connections rather than the log.
+- **Verify the catalog ID before the run.** `node scripts/probe.mjs` sends one 64-token request to every rostered model and judge. A model that has been silently aliased to a newer snapshot will still answer; put the dated snapshot in the config so the run is reproducible.
 
----
+`provider: "manual"` covers models with no public API (Cursor Composer): `npm run manual -- --model <id>` writes every brief, byte-identical to what the API models received, into the run folder and tells you where to drop the output. Scoring is identical.
 
-## Running a manual model (Cursor Composer)
+## What this can't tell you
 
-Composer only exists inside Cursor, so it cannot be driven over an API. `npm run manual` sets up the folders for you:
+- **Sample size is one.** Every brief ran once per configuration. There are no error bars.
+- **Cross-run gaps carry extra noise.** The human column is blind but rated in separate sessions per run.
+- **Single-shot only.** Nothing here measures iteration, tool use, or what a harness like Claude Code or Cursor would make of the same brief. A one-shot syntax error that a harness would fix in seconds scores as a broken page here, on purpose.
+- **The judge panel shares vendors with the field.** The audit measures the bias; it does not remove it.
+- **The briefs are public** and are therefore in the training window of every model that shipped after July 26, 2026.
 
-```bash
-npm run manual -- --model cursor-composer-2.5                    # writes every brief + shows the checklist
-npm run manual -- --model cursor-composer-2.5 --bench 02 --copy  # copies one brief to the clipboard (macOS)
-```
+The full list, including every measurement defect we found and fixed, is in the *What broke* section of the [live page](https://www.startrise.io/benchmark/#broke).
 
-It creates one folder per benchmark containing `PROMPT.md` — **byte-identical to what the API models received**, brief plus output contract, no edits — and tells you exactly where to save the result:
+## Write-ups
 
-```
-runs/<run>/cursor-composer-2.5/02-webgl-shader/
-  PROMPT.md     ← paste this into Cursor
-  index.html    ← save Composer's output here
-```
+- [GPT-6 Astra vs Claude Opus 5.5: The October Benchmark Drop](https://www.startrise.io/blog/gpt-6-astra-vs-claude-opus-5-5-benchmark/) — 13 new models, the `xhigh` ceiling finding, generation-over-generation deltas
+- [Twelve Models, Twelve Briefs: The Full Study](https://www.startrise.io/blog/llm-frontend-benchmark/) — the July baseline, method and bug list ([`docs/STUDY.md`](docs/STUDY.md))
+- [LLM-as-a-Judge Bias: The 839-Call Audit](https://www.startrise.io/blog/llm-judge-bias/) — self-bias and vendor bias for ten judges
+- [What Twelve Models Cost](docs/COST.md) — why the rate card is not the bill
+- [Grok 4.6 vs Qwen 3.8 Max](https://www.startrise.io/blog/grok-4-6-vs-qwen-3-8-max/) and [Muse Spark 1.2](https://www.startrise.io/blog/muse-spark-1-2-benchmark/) — the August additions
 
-Then score it like anything else:
+## Contributing
 
-```bash
-npm run bench -- --model cursor-composer-2.5 --run <run-id>
-```
+New models, new briefs, harness fixes and reports of measurement defects are all welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first: the twelve published briefs, the brief-09 fixture and the scoring weights are frozen for comparability, and anything that changes a score needs a re-score with the before/after attached. Security concerns, including anything about executing model-generated deliverables, go to [SECURITY.md](SECURITY.md).
 
-Re-running `npm run manual` shows a checklist of which benchmarks still need a file. Two things to keep it fair: paste the brief **verbatim** and don't iterate with Composer — the API models got exactly one shot with no follow-up turn, so a Composer result you refined over five messages is measuring something different.
+## Citation
 
----
+If you use the harness or the published results, please cite the repository ([`CITATION.cff`](CITATION.cff)) and link the run id you used.
 
-## Notes and caveats
+## License
 
-- **Generation and judging run everything in parallel by default.** Wall-clock is the slowest single generation, not the sum — seven models on one brief finished in the time the slowest took. Throttle with `--concurrency N` if a provider rate-limits you.
-- **Gates are deliberately serial, and run headed.** Parallel pages compete for the GPU and corrupt the frame-rate measurement, and headless Chromium falls back to software rendering, which makes FPS meaningless for WebGL work. `--headless` exists and warns you.
-- **Benchmarks only score the checks they declare.** A static landing page is not marked down for having no frame rate.
-- **`fps` is measured on your machine's GPU.** Numbers are comparable within a run, not across machines.
-- **An unrated result still gets a score**, with the human weight redistributed — but it is flagged provisional everywhere, and `npm run score` tells you how many are outstanding.
-- **GLM 5.2 runs on your Z.ai coding-plan endpoint** (`/api/coding/paas/v4`), not the pay-as-you-go one. The plan rate-limits, so it can 429 under a parallel run — retry it alone, or swap that entry to OpenRouter.
-- **The judges are LLMs.** They are consistent and specific, but they are not the ground truth. That is what the human column is for, and why it carries 30%.
+[MIT](LICENSE) © 2026 Startrise LLC. Model-generated deliverables under `runs/` are the output of third-party models and are published for inspection; their licensing follows the respective providers' terms.
+
+<br>
+
+<p align="center">
+  <sub>Built by <a href="https://www.startrise.io/ai-labs/">Startrise AI Labs</a>. We benchmark before we build.</sub>
+</p>

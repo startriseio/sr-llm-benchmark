@@ -1,5 +1,24 @@
+# dependencies
 node_modules/
+
+# keys — never commit; see .env.example
 .env
-runs/
-results/
+
+# model-generated deliverables, screenshots, per-cell gate/judge/meta files.
+# Hundreds of MB per run; the deliverables are published at https://www.startrise.io/benchmark/
+runs/*
+!runs/.gitkeep
+
+# per-run results: the computed leaderboard, blind human ratings and the judge audit are
+# the published dataset and ARE tracked; anything else under results/ is not
+results/*
 !results/.gitkeep
+!results/runs.json
+!results/*/
+results/*/*
+!results/*/scores.json
+!results/*/human.json
+!results/*/judge-audit.json
+
+# OS noise
+.DS_Store

@@ -1,0 +1,764 @@
+{
+  "muse-spark-1.3::01-threejs-scroll": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:06:20.498Z"
+  },
+  "claude-fable-5-1::01-threejs-scroll": {
+    "score": 9,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:06:37.514Z"
+  },
+  "gpt-6-luna::01-threejs-scroll": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:06:51.167Z"
+  },
+  "deepseek-v4-pro-0813::01-threejs-scroll": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:07:42.294Z"
+  },
+  "grok-4.7::01-threejs-scroll": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:07:22.414Z"
+  },
+  "gpt-6.1-sol::01-threejs-scroll": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:08:09.715Z"
+  },
+  "gemini-3.8-flash::01-threejs-scroll": {
+    "score": 2,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:08:33.707Z"
+  },
+  "claude-opus-5-5::01-threejs-scroll": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:08:41.619Z"
+  },
+  "claude-opus-5-5-high::01-threejs-scroll": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:09:09.552Z"
+  },
+  "claude-sonnet-5-5::01-threejs-scroll": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:09:37.850Z"
+  },
+  "deepseek-v4.1-flash::01-threejs-scroll": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:09:52.892Z"
+  },
+  "glm-5.3::01-threejs-scroll": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:10:03.246Z"
+  },
+  "qwen3.8-max-0902::01-threejs-scroll": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:10:15.418Z"
+  },
+  "gpt-6-astra::01-threejs-scroll": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:10:37.299Z"
+  },
+  "deepseek-v4-pro-0813::02-webgl-shader": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:13:31.106Z"
+  },
+  "gpt-6-luna::02-webgl-shader": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:12:17.858Z"
+  },
+  "deepseek-v4.1-flash::02-webgl-shader": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:12:36.344Z"
+  },
+  "qwen3.8-max-0902::02-webgl-shader": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:12:53.376Z"
+  },
+  "gpt-6.1-sol::02-webgl-shader": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:13:25.460Z"
+  },
+  "grok-4.7::02-webgl-shader": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:13:54.498Z"
+  },
+  "claude-opus-5-5-high::02-webgl-shader": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:15:20.031Z"
+  },
+  "gemini-3.8-flash::02-webgl-shader": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:15:17.315Z"
+  },
+  "glm-5.3::02-webgl-shader": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:15:07.033Z"
+  },
+  "gpt-6-astra::02-webgl-shader": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:15:44.071Z"
+  },
+  "claude-sonnet-5-5::02-webgl-shader": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:16:16.837Z"
+  },
+  "muse-spark-1.3::02-webgl-shader": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:16:34.287Z"
+  },
+  "claude-sonnet-5-5-high::02-webgl-shader": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:17:12.097Z"
+  },
+  "claude-opus-5-5::02-webgl-shader": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:17:36.150Z"
+  },
+  "claude-fable-5-1::02-webgl-shader": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:18:14.563Z"
+  },
+  "claude-sonnet-5-5::03-landing-design": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:19:22.385Z"
+  },
+  "gemini-3.8-flash::03-landing-design": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:19:32.906Z"
+  },
+  "claude-fable-5-1::03-landing-design": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:20:10.982Z"
+  },
+  "gpt-6-luna::03-landing-design": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:20:19.788Z"
+  },
+  "claude-opus-5-5::03-landing-design": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:20:50.814Z"
+  },
+  "claude-sonnet-5-5-high::03-landing-design": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:21:19.125Z"
+  },
+  "gpt-6-astra::03-landing-design": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:21:44.346Z"
+  },
+  "grok-4.7::03-landing-design": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:22:23.947Z"
+  },
+  "qwen3.8-max-0902::03-landing-design": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:22:37.974Z"
+  },
+  "glm-5.3::03-landing-design": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:22:57.322Z"
+  },
+  "deepseek-v4.1-flash::03-landing-design": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:23:17.930Z"
+  },
+  "gpt-6.1-sol::03-landing-design": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:23:42.959Z"
+  },
+  "deepseek-v4-pro-0813::03-landing-design": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:24:21.659Z"
+  },
+  "muse-spark-1.3::03-landing-design": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:24:19.510Z"
+  },
+  "claude-opus-5-5-high::03-landing-design": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:24:46.379Z"
+  },
+  "gpt-6-luna::05-3d-game": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:25:14.677Z"
+  },
+  "gemini-3.8-flash::05-3d-game": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:26:29.590Z"
+  },
+  "claude-opus-5-5::05-3d-game": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:26:32.159Z"
+  },
+  "grok-4.7::05-3d-game": {
+    "score": 1,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:26:47.309Z"
+  },
+  "claude-sonnet-5-5-high::05-3d-game": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:27:17.722Z"
+  },
+  "claude-fable-5-1::05-3d-game": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:27:38.487Z"
+  },
+  "claude-opus-5-5-high::05-3d-game": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:28:06.587Z"
+  },
+  "gpt-6.1-sol::05-3d-game": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:28:25.884Z"
+  },
+  "deepseek-v4-pro-0813::05-3d-game": {
+    "score": 2.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:28:54.643Z"
+  },
+  "glm-5.3::05-3d-game": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:30:31.296Z"
+  },
+  "qwen3.8-max-0902::05-3d-game": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:30:47.778Z"
+  },
+  "claude-sonnet-5-5::05-3d-game": {
+    "score": 8.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:31:31.401Z"
+  },
+  "deepseek-v4.1-flash::05-3d-game": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:32:11.876Z"
+  },
+  "muse-spark-1.3::05-3d-game": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:32:48.530Z"
+  },
+  "gpt-6-astra::05-3d-game": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:33:31.531Z"
+  },
+  "muse-spark-1.3::06-open-creative": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:35:02.668Z"
+  },
+  "claude-fable-5-1::06-open-creative": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:38:39.848Z"
+  },
+  "qwen3.8-max-0902::06-open-creative": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:38:43.507Z"
+  },
+  "claude-opus-5-5::06-open-creative": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:38:47.520Z"
+  },
+  "claude-opus-5-5-high::06-open-creative": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:39:52.422Z"
+  },
+  "gpt-6-luna::06-open-creative": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:41:39.371Z"
+  },
+  "claude-sonnet-5-5-high::06-open-creative": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:42:12.024Z"
+  },
+  "gpt-6.1-sol::06-open-creative": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:42:41.697Z"
+  },
+  "deepseek-v4-pro-0813::06-open-creative": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:43:55.689Z"
+  },
+  "gemini-3.8-flash::06-open-creative": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:45:40.671Z"
+  },
+  "gpt-6-astra::06-open-creative": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:46:49.301Z"
+  },
+  "glm-5.3::06-open-creative": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:47:59.380Z"
+  },
+  "deepseek-v4.1-flash::06-open-creative": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:48:42.056Z"
+  },
+  "grok-4.7::06-open-creative": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:50:04.466Z"
+  },
+  "gpt-6-luna::07-self-pitch": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:57:23.494Z"
+  },
+  "deepseek-v4.1-flash::07-self-pitch": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:57:27.611Z"
+  },
+  "grok-4.7::07-self-pitch": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:57:50.705Z"
+  },
+  "gemini-3.8-flash::07-self-pitch": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:58:01.549Z"
+  },
+  "gpt-6.1-sol::07-self-pitch": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:58:37.774Z"
+  },
+  "muse-spark-1.3::07-self-pitch": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:59:04.589Z"
+  },
+  "claude-opus-5-5::07-self-pitch": {
+    "score": 8.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:00:48.627Z"
+  },
+  "claude-sonnet-5-5::07-self-pitch": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T12:59:42.006Z"
+  },
+  "gpt-6-astra::07-self-pitch": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:00:02.883Z"
+  },
+  "qwen3.8-max-0902::07-self-pitch": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:00:23.101Z"
+  },
+  "deepseek-v4-pro-0813::07-self-pitch": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:01:02.632Z"
+  },
+  "claude-fable-5-1::07-self-pitch": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:01:16.581Z"
+  },
+  "glm-5.3::07-self-pitch": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:01:31.940Z"
+  },
+  "claude-opus-5-5-high::07-self-pitch": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:01:43.512Z"
+  },
+  "claude-sonnet-5-5-high::07-self-pitch": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:01:59.920Z"
+  },
+  "qwen3.8-max-0902::10-svg-icon-system": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:02:43.565Z"
+  },
+  "gpt-6.1-sol::10-svg-icon-system": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:02:40.503Z"
+  },
+  "deepseek-v4.1-flash::10-svg-icon-system": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:02:53.834Z"
+  },
+  "gpt-6-luna::10-svg-icon-system": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:03:23.494Z"
+  },
+  "claude-opus-5-5-high::10-svg-icon-system": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:03:20.318Z"
+  },
+  "claude-sonnet-5-5-high::10-svg-icon-system": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:03:34.536Z"
+  },
+  "deepseek-v4-pro-0813::10-svg-icon-system": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:03:56.740Z"
+  },
+  "grok-4.7::10-svg-icon-system": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:04:04.097Z"
+  },
+  "gpt-6-astra::10-svg-icon-system": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:04:18.107Z"
+  },
+  "claude-fable-5-1::10-svg-icon-system": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:04:29.984Z"
+  },
+  "gemini-3.8-flash::10-svg-icon-system": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:04:38.717Z"
+  },
+  "claude-fable-5-1::12-css-only": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:04:59.771Z"
+  },
+  "gpt-6-luna::12-css-only": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:05:19.604Z"
+  },
+  "gpt-6.1-sol::12-css-only": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:06:43.570Z"
+  },
+  "deepseek-v4.1-flash::12-css-only": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:06:14.385Z"
+  },
+  "grok-4.7::12-css-only": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:06:41.060Z"
+  },
+  "deepseek-v4-pro-0813::12-css-only": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:07:13.133Z"
+  },
+  "claude-opus-5-5-high::12-css-only": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:07:33.457Z"
+  },
+  "gemini-3.8-flash::12-css-only": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:07:53.698Z"
+  },
+  "glm-5.3::12-css-only": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:08:10.146Z"
+  },
+  "qwen3.8-max-0902::12-css-only": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:08:37.399Z"
+  },
+  "claude-sonnet-5-5-high::12-css-only": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:08:52.062Z"
+  },
+  "gpt-6-astra::12-css-only": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:09:16.561Z"
+  },
+  "muse-spark-1.3::12-css-only": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:09:44.397Z"
+  },
+  "grok-4.7::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:10:08.336Z"
+  },
+  "gpt-6-astra::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:10:09.604Z"
+  },
+  "claude-sonnet-5-5-high::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:10:22.547Z"
+  },
+  "claude-sonnet-5-5::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:10:33.816Z"
+  },
+  "qwen3.8-max-0902::13-html-email": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:10:47.316Z"
+  },
+  "claude-opus-5-5-high::13-html-email": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:11:07.750Z"
+  },
+  "deepseek-v4-pro-0813::13-html-email": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:11:19.855Z"
+  },
+  "gemini-3.8-flash::13-html-email": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:11:37.242Z"
+  },
+  "gpt-6-luna::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:11:51.408Z"
+  },
+  "deepseek-v4.1-flash::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:12:02.580Z"
+  },
+  "claude-opus-5-5::13-html-email": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:12:14.714Z"
+  },
+  "claude-fable-5-1::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:12:28.597Z"
+  },
+  "glm-5.3::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:12:39.018Z"
+  },
+  "gpt-6.1-sol::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:12:47.455Z"
+  },
+  "muse-spark-1.3::13-html-email": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-10-05T13:13:00.639Z"
+  }
+}

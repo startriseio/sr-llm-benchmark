@@ -1,10 +1,11 @@
 {
   "name": "sr-llm-benchmark",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "StarRise LLM benchmarking engine — frontend, 3D, and creative build tasks scored by gates, a judge quorum, and a human.",
+  "description": "The Startrise LLM Benchmark \u2014 frontier models build the same twelve real frontends, single-shot; gated in a real browser, judged blind by a cross-lab panel, rated blind by a human.",
   "scripts": {
+    "test": "node scripts/validate-config.mjs",
     "start": "node src/cli.mjs",
     "gen": "node src/generate.mjs",
     "gates": "node src/gates.mjs",
@@ -25,5 +26,28 @@
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "homepage": "https://www.startrise.io/benchmark/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/startriseio/sr-llm-benchmark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/startriseio/sr-llm-benchmark/issues"
+  },
+  "license": "MIT",
+  "author": "Startrise AI Labs <hello@startrise.io>",
+  "keywords": [
+    "llm",
+    "benchmark",
+    "evaluation",
+    "frontend",
+    "webgl",
+    "three.js",
+    "accessibility",
+    "llm-as-a-judge",
+    "playwright",
+    "anthropic",
+    "openai"
+  ]
 }

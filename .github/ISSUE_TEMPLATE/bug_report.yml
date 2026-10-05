@@ -1,0 +1,37 @@
+name: Bug report
+description: Something in the harness, gates, judging, scoring or report UI misbehaves
+title: "[bug] "
+labels: [bug]
+body:
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Stage
+      options: [generate, gates, judge, score, audit, report UI, CLI picker, config, other]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: Command, run id, model id, brief id. Attach the relevant `gates.json` / `judge.json` / `meta.json` if a cell is involved.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "macOS 15, Node 20.x, Chromium via Playwright 1.5x"
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Does this affect scores?
+      options:
+        - label: Yes — a published number is wrong or a cell was mis-measured
+        - label: No — tooling only

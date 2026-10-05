@@ -1,0 +1,638 @@
+{
+  "claude-sonnet-5::01-threejs-scroll": {
+    "score": 1,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:52:41.708Z"
+  },
+  "grok-4.5::01-threejs-scroll": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:14:44.706Z"
+  },
+  "gpt-5.6-sol::01-threejs-scroll": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:52:46.758Z"
+  },
+  "gpt-5.6-terra::01-threejs-scroll": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:27:32.727Z"
+  },
+  "gpt-5.6-sol::03-landing-design": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:22:46.764Z"
+  },
+  "gpt-5.6-luna::03-landing-design": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:23:17.028Z"
+  },
+  "claude-opus-5::03-landing-design": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:31:38.322Z"
+  },
+  "grok-4.5::03-landing-design": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:31:49.238Z"
+  },
+  "claude-sonnet-5::03-landing-design": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:32:10.853Z"
+  },
+  "claude-sonnet-5::05-3d-game": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:06:01.526Z"
+  },
+  "qwen3.7-max::05-3d-game": {
+    "score": 2.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:05:59.048Z"
+  },
+  "gpt-5.6-terra::05-3d-game": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:06:43.363Z"
+  },
+  "grok-4.5::05-3d-game": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:35:09.425Z"
+  },
+  "gpt-5.6-luna::05-3d-game": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:35:28.365Z"
+  },
+  "claude-haiku-4-5::05-3d-game": {
+    "score": 2,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:35:44.658Z"
+  },
+  "claude-fable-5::05-3d-game": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:04:36.747Z"
+  },
+  "grok-4.5::06-open-creative": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:44:11.244Z"
+  },
+  "gpt-5.6-sol::06-open-creative": {
+    "score": 8.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:37:39.228Z"
+  },
+  "gpt-5.6-terra::06-open-creative": {
+    "score": 0.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:44:36.601Z"
+  },
+  "gpt-5.6-luna::06-open-creative": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:43:27.524Z"
+  },
+  "claude-opus-5::06-open-creative": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:40:11.478Z"
+  },
+  "claude-sonnet-5::06-open-creative": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:46:36.669Z"
+  },
+  "claude-haiku-4-5::06-open-creative": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:44:51.789Z"
+  },
+  "claude-fable-5::06-open-creative": {
+    "score": 8.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:42:15.992Z"
+  },
+  "qwen3.7-max::06-open-creative": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:46:03.045Z"
+  },
+  "gpt-5.6-sol::10-svg-icon-system": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:44:57.760Z"
+  },
+  "grok-4.5::10-svg-icon-system": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:33:00.288Z"
+  },
+  "gpt-5.6-luna::10-svg-icon-system": {
+    "score": 0.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:46:19.996Z"
+  },
+  "gpt-5.6-terra::10-svg-icon-system": {
+    "score": 2.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:34:49.121Z"
+  },
+  "claude-haiku-4-5::10-svg-icon-system": {
+    "score": 0.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-25T22:46:16.545Z"
+  },
+  "kimi-k3::01-threejs-scroll": {
+    "score": 8.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:15:15.343Z"
+  },
+  "claude-opus-5::01-threejs-scroll": {
+    "score": 9,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:15:41.500Z"
+  },
+  "qwen3.7-max::01-threejs-scroll": {
+    "score": 1.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:16:04.841Z"
+  },
+  "gpt-5.6-luna::01-threejs-scroll": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:16:17.980Z"
+  },
+  "claude-haiku-4-5::01-threejs-scroll": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:16:30.999Z"
+  },
+  "claude-sonnet-5::02-webgl-shader": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:17:10.149Z"
+  },
+  "kimi-k3::02-webgl-shader": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:17:27.044Z"
+  },
+  "gpt-5.6-sol::02-webgl-shader": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:17:33.026Z"
+  },
+  "claude-opus-5::02-webgl-shader": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:17:47.967Z"
+  },
+  "grok-4.5::02-webgl-shader": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:18:15.617Z"
+  },
+  "gpt-5.6-luna::02-webgl-shader": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:18:42.545Z"
+  },
+  "claude-haiku-4-5::02-webgl-shader": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:18:46.274Z"
+  },
+  "claude-fable-5::02-webgl-shader": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:18:58.818Z"
+  },
+  "qwen3.7-max::02-webgl-shader": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:19:31.884Z"
+  },
+  "gpt-5.6-terra::02-webgl-shader": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:19:53.336Z"
+  },
+  "qwen3.7-max::03-landing-design": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:21:01.259Z"
+  },
+  "kimi-k3::03-landing-design": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:21:40.260Z"
+  },
+  "claude-fable-5::03-landing-design": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:21:53.330Z"
+  },
+  "gpt-5.6-terra::03-landing-design": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:22:13.215Z"
+  },
+  "claude-haiku-4-5::03-landing-design": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:22:27.012Z"
+  },
+  "claude-fable-5::07-self-pitch": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:25:00.491Z"
+  },
+  "gpt-5.6-luna::07-self-pitch": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:25:25.662Z"
+  },
+  "claude-haiku-4-5::07-self-pitch": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:25:38.315Z"
+  },
+  "claude-sonnet-5::07-self-pitch": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:26:29.219Z"
+  },
+  "kimi-k3::07-self-pitch": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:28:03.444Z"
+  },
+  "grok-4.5::07-self-pitch": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:31:36.537Z"
+  },
+  "gpt-5.6-sol::07-self-pitch": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:29:42.449Z"
+  },
+  "qwen3.7-max::07-self-pitch": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:30:18.157Z"
+  },
+  "gpt-5.6-terra::07-self-pitch": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:30:50.370Z"
+  },
+  "claude-opus-5::07-self-pitch": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:31:56.830Z"
+  },
+  "qwen3.7-max::10-svg-icon-system": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:35:34.532Z"
+  },
+  "claude-sonnet-5::10-svg-icon-system": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:32:46.850Z"
+  },
+  "claude-opus-5::10-svg-icon-system": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:33:29.452Z"
+  },
+  "claude-fable-5::10-svg-icon-system": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:33:52.871Z"
+  },
+  "kimi-k3::10-svg-icon-system": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:34:20.645Z"
+  },
+  "gpt-5.6-sol::12-css-only": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:36:54.128Z"
+  },
+  "grok-4.5::12-css-only": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:36:57.662Z"
+  },
+  "gpt-5.6-luna::12-css-only": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:37:23.368Z"
+  },
+  "gpt-5.6-terra::12-css-only": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:37:57.017Z"
+  },
+  "claude-haiku-4-5::12-css-only": {
+    "score": 2,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:38:11.272Z"
+  },
+  "claude-fable-5::12-css-only": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:39:53.081Z"
+  },
+  "claude-sonnet-5::12-css-only": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:40:06.679Z"
+  },
+  "qwen3.7-max::12-css-only": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:40:37.169Z"
+  },
+  "kimi-k3::12-css-only": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:41:18.504Z"
+  },
+  "claude-opus-5::12-css-only": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:42:05.632Z"
+  },
+  "claude-haiku-4-5::13-html-email": {
+    "score": 3.5,
+    "note": "dark/light mode issue",
+    "blind": true,
+    "at": "2026-07-26T05:42:38.636Z"
+  },
+  "claude-sonnet-5::13-html-email": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:43:33.464Z"
+  },
+  "claude-fable-5::13-html-email": {
+    "score": 3.5,
+    "note": "responsive issue",
+    "blind": true,
+    "at": "2026-07-26T05:43:43.140Z"
+  },
+  "qwen3.7-max::13-html-email": {
+    "score": 3.5,
+    "note": "dark mode issue",
+    "blind": true,
+    "at": "2026-07-26T05:43:59.500Z"
+  },
+  "gpt-5.6-luna::13-html-email": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:44:46.393Z"
+  },
+  "kimi-k3::13-html-email": {
+    "score": 5.5,
+    "note": "AI sloppy visually but well done technically",
+    "blind": true,
+    "at": "2026-07-26T05:45:05.370Z"
+  },
+  "claude-opus-5::13-html-email": {
+    "score": 7,
+    "note": "Good.",
+    "blind": true,
+    "at": "2026-07-26T05:45:26.919Z"
+  },
+  "gpt-5.6-terra::13-html-email": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T05:45:42.573Z"
+  },
+  "grok-4.5::13-html-email": {
+    "score": 4.5,
+    "note": "dark mode not perfect",
+    "blind": true,
+    "at": "2026-07-26T05:46:01.917Z"
+  },
+  "claude-fable-5::01-threejs-scroll": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:09:05.448Z"
+  },
+  "gpt-5.6-sol::05-3d-game": {
+    "score": 2.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:12:35.268Z"
+  },
+  "kimi-k3::05-3d-game": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:03:55.356Z"
+  },
+  "claude-opus-5::05-3d-game": {
+    "score": 9,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:05:22.274Z"
+  },
+  "deepseek-v4-pro::01-threejs-scroll": {
+    "score": 0,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:09:09.459Z"
+  },
+  "deepseek-v4-pro::02-webgl-shader": {
+    "score": 2.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:10:00.125Z"
+  },
+  "glm-5.2::03-landing-design": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:10:48.772Z"
+  },
+  "deepseek-v4-pro::03-landing-design": {
+    "score": 4,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:11:23.305Z"
+  },
+  "deepseek-v4-pro::05-3d-game": {
+    "score": 2.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:11:54.917Z"
+  },
+  "glm-5.2::05-3d-game": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:12:31.112Z"
+  },
+  "deepseek-v4-pro::06-open-creative": {
+    "score": 1.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:15:32.139Z"
+  },
+  "kimi-k3::06-open-creative": {
+    "score": 8.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:43:02.051Z"
+  },
+  "deepseek-v4-pro::10-svg-icon-system": {
+    "score": 2,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:16:09.606Z"
+  },
+  "deepseek-v4-pro::12-css-only": {
+    "score": 2,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:16:41.913Z"
+  },
+  "gpt-5.6-sol::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T06:17:01.139Z"
+  },
+  "glm-5.2::01-threejs-scroll": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:39:43.737Z"
+  },
+  "glm-5.2::02-webgl-shader": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:40:32.872Z"
+  },
+  "glm-5.2::06-open-creative": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:42:54.041Z"
+  },
+  "glm-5.2::07-self-pitch": {
+    "score": 4.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:49:21.243Z"
+  },
+  "deepseek-v4-pro::07-self-pitch": {
+    "score": 3.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:49:42.145Z"
+  },
+  "glm-5.2::10-svg-icon-system": {
+    "score": 3,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T10:58:51.497Z"
+  },
+  "glm-5.2::12-css-only": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-07-26T11:00:11.214Z"
+  }
+}

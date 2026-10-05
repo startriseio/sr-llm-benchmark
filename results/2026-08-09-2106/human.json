@@ -1,0 +1,50 @@
+{
+  "muse-spark-1.2::01-threejs-scroll": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-09T14:23:51.838Z"
+  },
+  "muse-spark-1.2::02-webgl-shader": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-09T14:24:20.588Z"
+  },
+  "muse-spark-1.2::03-landing-design": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-09T14:24:47.240Z"
+  },
+  "muse-spark-1.2::05-3d-game": {
+    "score": 5.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-09T14:25:15.159Z"
+  },
+  "muse-spark-1.2::06-open-creative": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-09T14:25:45.516Z"
+  },
+  "muse-spark-1.2::07-self-pitch": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-09T14:26:27.542Z"
+  },
+  "muse-spark-1.2::10-svg-icon-system": {
+    "score": 5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-09T14:26:56.836Z"
+  },
+  "muse-spark-1.2::13-html-email": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-09T14:27:32.946Z"
+  }
+}

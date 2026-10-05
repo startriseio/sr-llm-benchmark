@@ -1,0 +1,56 @@
+{
+  "grok-4.6::01-threejs-scroll": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-12T17:14:01.118Z"
+  },
+  "grok-4.6::02-webgl-shader": {
+    "score": 6,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-12T17:14:35.535Z"
+  },
+  "grok-4.6::03-landing-design": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-12T17:14:52.217Z"
+  },
+  "grok-4.6::05-3d-game": {
+    "score": 0,
+    "note": "not working",
+    "blind": true,
+    "at": "2026-08-12T17:15:21.802Z"
+  },
+  "grok-4.6::06-open-creative": {
+    "score": 8,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-12T17:16:27.494Z"
+  },
+  "grok-4.6::07-self-pitch": {
+    "score": 6.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-12T17:16:49.326Z"
+  },
+  "grok-4.6::10-svg-icon-system": {
+    "score": 7.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-12T17:17:11.642Z"
+  },
+  "grok-4.6::12-css-only": {
+    "score": 7,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-12T17:17:54.787Z"
+  },
+  "grok-4.6::13-html-email": {
+    "score": 8.5,
+    "note": "",
+    "blind": true,
+    "at": "2026-08-12T17:18:04.248Z"
+  }
+}

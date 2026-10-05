@@ -1,0 +1,1874 @@
+{
+  "runId": "2026-08-12-0114",
+  "generatedAt": "2026-08-11T18:59:03.575Z",
+  "weights": {
+    "technical": 0.25,
+    "judge": 0.45,
+    "human": 0.3
+  },
+  "axes": [
+    {
+      "id": "craft",
+      "label": "Craft & polish",
+      "description": "Visual quality, typography, colour, composition, motion feel, finish. Would a discerning person believe a human designed this on purpose?"
+    },
+    {
+      "id": "technique",
+      "label": "Technical ambition",
+      "description": "How hard is what was actually built, and is it built correctly? Real technique versus the cheapest thing that looks similar."
+    },
+    {
+      "id": "adherence",
+      "label": "Brief adherence",
+      "description": "Did it do everything the prompt asked, completely, including the output contract? Stubs and TODOs count against."
+    },
+    {
+      "id": "originality",
+      "label": "Originality",
+      "description": "Is the idea and its execution distinctive, or is it the median AI answer to this prompt?"
+    }
+  ],
+  "models": [
+    {
+      "id": "claude-fable-5",
+      "label": "Claude Fable 5",
+      "provider": "anthropic",
+      "vendor": "anthropic"
+    },
+    {
+      "id": "claude-opus-5",
+      "label": "Claude Opus 5",
+      "provider": "anthropic",
+      "vendor": "anthropic"
+    },
+    {
+      "id": "claude-sonnet-5",
+      "label": "Claude Sonnet 5",
+      "provider": "anthropic",
+      "vendor": "anthropic"
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "label": "Claude Haiku 4.5",
+      "provider": "anthropic",
+      "vendor": "anthropic"
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "label": "GPT-5.6 Sol",
+      "provider": "openai-compatible",
+      "vendor": "openai"
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "label": "GPT-5.6 Terra",
+      "provider": "openai-compatible",
+      "vendor": "openai"
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "label": "GPT-5.6 Luna",
+      "provider": "openai-compatible",
+      "vendor": "openai"
+    },
+    {
+      "id": "grok-4.5",
+      "label": "Grok 4.5",
+      "provider": "openai-compatible",
+      "vendor": "xai"
+    },
+    {
+      "id": "cursor-composer-2.5",
+      "label": "Cursor Composer 2.5",
+      "provider": "manual",
+      "vendor": "cursor"
+    },
+    {
+      "id": "glm-5.2",
+      "label": "GLM 5.2",
+      "provider": "openai-compatible",
+      "vendor": "zai"
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "label": "DeepSeek V4 Pro",
+      "provider": "openai-compatible",
+      "vendor": "deepseek"
+    },
+    {
+      "id": "kimi-k3",
+      "label": "Kimi K3",
+      "provider": "openai-compatible",
+      "vendor": "moonshot"
+    },
+    {
+      "id": "muse-spark-1.2",
+      "label": "Muse Spark 1.2",
+      "provider": "openai-compatible",
+      "vendor": "meta"
+    },
+    {
+      "id": "qwen3.8-max",
+      "label": "Qwen 3.8 Max",
+      "provider": "openai-compatible",
+      "vendor": "alibaba"
+    },
+    {
+      "id": "qwen3.7-max",
+      "label": "Qwen 3.7 Max",
+      "provider": "openai-compatible",
+      "vendor": "alibaba"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "01-threejs-scroll",
+      "label": "Three.js Scroll Journey",
+      "category": "Frontend — extreme",
+      "mode": "api"
+    },
+    {
+      "id": "02-webgl-shader",
+      "label": "Custom WebGL Shader",
+      "category": "Frontend — creative extreme",
+      "mode": "api"
+    },
+    {
+      "id": "03-landing-design",
+      "label": "Brand Landing Page",
+      "category": "Frontend — design",
+      "mode": "api"
+    },
+    {
+      "id": "05-3d-game",
+      "label": "Playable 3D Game",
+      "category": "3D / game",
+      "mode": "api"
+    },
+    {
+      "id": "06-open-creative",
+      "label": "Open Creative Brief",
+      "category": "Creative — open",
+      "mode": "api"
+    },
+    {
+      "id": "07-self-pitch",
+      "label": "Sell Yourself",
+      "category": "Persuasion & self-knowledge",
+      "mode": "api"
+    },
+    {
+      "id": "08-accessible-interface",
+      "label": "Accessible Interface",
+      "category": "Interface engineering — accessibility",
+      "mode": "api"
+    },
+    {
+      "id": "09-brownfield-change",
+      "label": "Brownfield Change Request",
+      "category": "Engineering discipline — maintenance",
+      "mode": "api"
+    },
+    {
+      "id": "10-svg-icon-system",
+      "label": "SVG Icon System",
+      "category": "Design & taste — iconography",
+      "mode": "api"
+    },
+    {
+      "id": "11-stateful-app",
+      "label": "Stateful Application",
+      "category": "Interface engineering — state",
+      "mode": "api"
+    },
+    {
+      "id": "12-css-only",
+      "label": "Zero JavaScript",
+      "category": "Design & taste — CSS",
+      "mode": "api"
+    },
+    {
+      "id": "13-html-email",
+      "label": "HTML Email",
+      "category": "Engineering discipline — email",
+      "mode": "api"
+    }
+  ],
+  "cells": [
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "01-threejs-scroll",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/01-threejs-scroll/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/01-threejs-scroll/shots",
+      "technical": 58.6,
+      "viable": true,
+      "judge": 32.5,
+      "disagreement": 1.5,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Uncaught ReferenceError `flip is not defined` at module evaluation — violates the no-console-errors clause and prevents the WebGL scene from ever initialising.",
+        "0 fps and mean scroll pixel delta of 0.1: the scroll-driven narrative, the sole subject of the brief, is entirely non-functional in the delivered file.",
+        "Dead code left in the shipped document (`for(const [tn,flip] of [...]){ /* unused trick kept minimal */ }`) is the direct cause of failure.",
+        "Uncaught `ReferenceError: flip is not defined` in tentacle geometry construction aborts the module before `frame()` is called.",
+        "The output contract explicitly requires no uncaught errors and a correctly running direct-open document; this is violated.",
+        "The visible landing state is effectively an uninitialized black screen rather than the designed opening frame described in the source.",
+        "Uncaught ReferenceError: flip is not defined — page does not run cleanly",
+        "fps: 0 and interaction scroll delta ~0 — scroll-driven 3D narrative does not execute",
+        "Renders as near-black void; cards/cue appear stuck at opacity 0 / never shown in captures"
+      ],
+      "human": 0,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 29.3,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 551.1,
+      "outputTokens": 25157,
+      "bytes": 31499
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "02-webgl-shader",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/02-webgl-shader/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/02-webgl-shader/shots",
+      "technical": 98.4,
+      "viable": true,
+      "judge": 80,
+      "disagreement": 1.25,
+      "maxSpread": 4,
+      "judgeCount": 3,
+      "redFlags": [],
+      "human": 8,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 84.6,
+      "gateCapped": false,
+      "fps": 119.8,
+      "elapsedSeconds": 1498.4,
+      "outputTokens": 38436,
+      "bytes": 19252
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "03-landing-design",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/03-landing-design/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/03-landing-design/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 85,
+      "disagreement": 1.25,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Automated measurement reports fps: 0/100."
+      ],
+      "human": 8,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 87.3,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 730.6,
+      "outputTokens": 36176,
+      "bytes": 41905
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "05-3d-game",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/05-3d-game/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/05-3d-game/shots",
+      "technical": 85.7,
+      "viable": true,
+      "judge": 45,
+      "disagreement": 1,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "`puff()` assigns to an undeclared `i3` under `'use strict'`, throwing on every call — the primary game update function never completes. This is a shipping-blocking bug, not a cosmetic one.",
+        "The second and third screenshots present as gameplay but are a frozen pre-start render; the apparent in-game state is not produced by a running simulation.",
+        "Brief explicitly requires no uncaught errors and no console errors; 481 were recorded.",
+        "481 uncaught `ReferenceError: i3 is not defined` errors are reported by automated measurement. This is caused by a real strict-mode bug in `puff()`, not an external CDN failure.",
+        "Because `puff()` is invoked from `updPlay()`, the error can terminate the active frame callback immediately after starting/boosting, making the play state materially broken.",
+        "481× console error: `i3 is not defined` in `puff` (`pi=(pi+1)%PN,i3=i*3` under 'use strict') — breaks the play loop every frame",
+        "Automated console_clean 0/100; gameplay screenshots show frozen 0 score / 0 km/h despite “play” state"
+      ],
+      "human": 2,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 47.7,
+      "gateCapped": false,
+      "fps": 120.4,
+      "elapsedSeconds": 910.4,
+      "outputTokens": 41887,
+      "bytes": 23109
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "06-open-creative",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/06-open-creative/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/06-open-creative/shots",
+      "technical": 85.6,
+      "viable": true,
+      "judge": 80,
+      "disagreement": 0.75,
+      "maxSpread": 1,
+      "judgeCount": 3,
+      "redFlags": [],
+      "human": 6,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 75.4,
+      "gateCapped": false,
+      "fps": 120,
+      "elapsedSeconds": 690.1,
+      "outputTokens": 32539,
+      "bytes": 22421
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "07-self-pitch",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/07-self-pitch/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/07-self-pitch/shots",
+      "technical": 89.1,
+      "viable": true,
+      "judge": 70,
+      "disagreement": 1,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Broken visual state: the hero headline is permanently hidden by an untriggered reveal class, so the page's most important element (its own name, in display type) does not render.",
+        "The self-audit labels `document.documentElement.outerHTML.length` as \"bytes\", but JavaScript string length is UTF-16 code-unit length, not a byte measurement, particularly relevant in a page containing non-ASCII text.",
+        "\"drafts of this page 1\" is a hard-coded value represented inside a strip otherwise framed as \"measured in your browser just now.\" It is not browser-measured and cannot substantiate the repeated one-pass/drafts claims.",
+        "The footer and copy assert that every line was produced by one model in one pass with no human edits. This cannot be verified from the delivered source and should have been tagged as self-report, like the multilingual claim."
+      ],
+      "human": 8,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 77.8,
+      "gateCapped": false,
+      "fps": 119.9,
+      "elapsedSeconds": 561.6,
+      "outputTokens": 25914,
+      "bytes": 38984
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "08-accessible-interface",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/08-accessible-interface/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/08-accessible-interface/shots",
+      "technical": 83.7,
+      "viable": true,
+      "judge": 80,
+      "disagreement": 0.5,
+      "maxSpread": 1,
+      "judgeCount": 3,
+      "redFlags": [
+        "Invalid/leftover CSS in the shipped stylesheet: `label:has? ;` and `border-color:0`.",
+        "Note on the automated numbers: the 0 fps and 0.09 pixel-delta readings reflect a harness that only reached step 1 (screenshot 2 shows a radio being selected), not a broken page — the seat map itself was never exercised on camera, so its behaviour is judged from source rather than observed.",
+        "The malformed `label:has? ;` rule means an intended focus/state treatment is not implemented; it is not just a harmless comment or stylistic nit.",
+        "The automated keyboard capture only changed the selected screening radio and did not demonstrate a completed keyboard traversal. Source inspection supports the seat-grid implementation, but the supplied interaction evidence does not validate the end-to-end flow at the tested state."
+      ],
+      "human": null,
+      "humanNote": "",
+      "humanBlind": false,
+      "reviewed": false,
+      "final": 81.3,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 929.6,
+      "outputTokens": 41186,
+      "bytes": 36359
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "09-brownfield-change",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/09-brownfield-change/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/09-brownfield-change/shots",
+      "technical": 79,
+      "viable": true,
+      "judge": 75,
+      "disagreement": 1.25,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [],
+      "human": null,
+      "humanNote": "",
+      "humanBlind": false,
+      "reviewed": false,
+      "final": 76.4,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 1526.2,
+      "outputTokens": 43787,
+      "bytes": 35813
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "10-svg-icon-system",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/10-svg-icon-system/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/10-svg-icon-system/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 82.5,
+      "disagreement": 1,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [],
+      "human": 6.5,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 81.6,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 1465.4,
+      "outputTokens": 71482,
+      "bytes": 38731
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "11-stateful-app",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/11-stateful-app/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/11-stateful-app/shots",
+      "technical": 76.8,
+      "viable": true,
+      "judge": 55,
+      "disagreement": 1.75,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Confirm modal is permanently visible and blocks all pointer interaction on first load (matches the 0 fps / 0 pixel-delta measurements) — the app ships unusable by mouse.",
+        "Drag handler throws an uncaught TypeError (`d.tabs` undefined) on the first pointer move, violating the no-uncaught-errors clause; the drag only escaped detection because the overlay prevented any drag from starting.",
+        "`validate` claims to be a pure function of state but ignores `st.bands` / `st.rooms`, so imported schedules with different bands are validated against the hardcoded seed roster.",
+        "Actual drag movement produces an uncaught TypeError because `drag.tabs` is undefined.",
+        "`renderAll()` during drag destroys the live drag ghost/elements, invalidating the visual direct-manipulation mechanism.",
+        "Global constant data (`BD`, `ROOMS`, `PEOPLE`) conflicts with the claimed imported state model and prevents a full entity-level import/export round-trip.",
+        "Modal permanently visible on load (CSS display beats [hidden]) — UI bricked; matches all three screenshots and 0 interaction pixel delta / 0 fps",
+        "Destructive confirm and empty-state CTAs are unreachable under the overlay without DevTools"
+      ],
+      "human": null,
+      "humanNote": "",
+      "humanBlind": false,
+      "reviewed": false,
+      "final": 62.8,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 996.2,
+      "outputTokens": 44112,
+      "bytes": 42538
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "12-css-only",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/12-css-only/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/12-css-only/shots",
+      "technical": 98.9,
+      "viable": true,
+      "judge": 77.5,
+      "disagreement": 1.75,
+      "maxSpread": 3,
+      "judgeCount": 3,
+      "redFlags": [],
+      "human": 6,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 77.6,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 2007,
+      "outputTokens": 63003,
+      "bytes": 58462
+    },
+    {
+      "modelId": "qwen3.8-max",
+      "benchmarkId": "13-html-email",
+      "present": true,
+      "href": "runs/2026-08-12-0114/qwen3.8-max/13-html-email/index.html",
+      "shotDir": "runs/2026-08-12-0114/qwen3.8-max/13-html-email/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 67.5,
+      "disagreement": 2,
+      "maxSpread": 3,
+      "judgeCount": 3,
+      "redFlags": [
+        "#outlook-dark-mode is a self-assigned body id presented as a forced-inversion mechanism; the rules are unconditional, so the declared light/dark duality does not exist and produces a cream-on-cream contrast failure in the footer.",
+        "Two-column and item-row stacking is media-query-dependent despite the brief requiring correctness with the <style> block removed; the layout overflows at 320px in style-stripped clients.",
+        "Nested duplicate 600px MSO ghost tables — the outer one wraps the full-width background table, so the page background outside the card is lost in the Word engine; xmlns:w is never declared although <w:anchorlock/> is used.",
+        "The required stripped-style Gmail-app fallback is broken: mobile stacking is implemented only in `@media` classes, while fixed HTML widths remain.",
+        "The Outlook conditional markup prevents, rather than enables, stacking of the required two-column detail section.",
+        "The hard-dark-mode selector is always active because `id=\"outlook-dark-mode\"` is always on the body, not because an Outlook dark-mode state has been detected.",
+        "The VML button uses `<w:anchorlock/>` without declaring the `w` namespace on the document or VML element, which is an avoidable Outlook compatibility risk."
+      ],
+      "human": 6,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 73.4,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 240.8,
+      "outputTokens": 13585,
+      "bytes": 37739
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    }
+  ],
+  "leaderboard": [
+    {
+      "modelId": "qwen3.8-max",
+      "label": "Qwen 3.8 Max",
+      "provider": "openai-compatible",
+      "vendor": "alibaba",
+      "scored": 12,
+      "attempted": 12,
+      "total": 12,
+      "reviewed": 9,
+      "blindReviewed": 9,
+      "overall": 71.3,
+      "technical": 88,
+      "judge": 69.2,
+      "human": 56.1,
+      "redFlags": 40
+    },
+    {
+      "modelId": "claude-fable-5",
+      "label": "Claude Fable 5",
+      "provider": "anthropic",
+      "vendor": "anthropic",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "claude-opus-5",
+      "label": "Claude Opus 5",
+      "provider": "anthropic",
+      "vendor": "anthropic",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "label": "Claude Sonnet 5",
+      "provider": "anthropic",
+      "vendor": "anthropic",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "label": "Claude Haiku 4.5",
+      "provider": "anthropic",
+      "vendor": "anthropic",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "label": "GPT-5.6 Sol",
+      "provider": "openai-compatible",
+      "vendor": "openai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "label": "GPT-5.6 Terra",
+      "provider": "openai-compatible",
+      "vendor": "openai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "label": "GPT-5.6 Luna",
+      "provider": "openai-compatible",
+      "vendor": "openai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "grok-4.5",
+      "label": "Grok 4.5",
+      "provider": "openai-compatible",
+      "vendor": "xai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "label": "Cursor Composer 2.5",
+      "provider": "manual",
+      "vendor": "cursor",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "glm-5.2",
+      "label": "GLM 5.2",
+      "provider": "openai-compatible",
+      "vendor": "zai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "label": "DeepSeek V4 Pro",
+      "provider": "openai-compatible",
+      "vendor": "deepseek",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "kimi-k3",
+      "label": "Kimi K3",
+      "provider": "openai-compatible",
+      "vendor": "moonshot",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "label": "Muse Spark 1.2",
+      "provider": "openai-compatible",
+      "vendor": "meta",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "label": "Qwen 3.7 Max",
+      "provider": "openai-compatible",
+      "vendor": "alibaba",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    }
+  ]
+}

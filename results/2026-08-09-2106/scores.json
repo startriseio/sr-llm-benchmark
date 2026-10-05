@@ -1,0 +1,1807 @@
+{
+  "runId": "2026-08-09-2106",
+  "generatedAt": "2026-08-10T18:06:34.152Z",
+  "weights": {
+    "technical": 0.25,
+    "judge": 0.45,
+    "human": 0.3
+  },
+  "axes": [
+    {
+      "id": "craft",
+      "label": "Craft & polish",
+      "description": "Visual quality, typography, colour, composition, motion feel, finish. Would a discerning person believe a human designed this on purpose?"
+    },
+    {
+      "id": "technique",
+      "label": "Technical ambition",
+      "description": "How hard is what was actually built, and is it built correctly? Real technique versus the cheapest thing that looks similar."
+    },
+    {
+      "id": "adherence",
+      "label": "Brief adherence",
+      "description": "Did it do everything the prompt asked, completely, including the output contract? Stubs and TODOs count against."
+    },
+    {
+      "id": "originality",
+      "label": "Originality",
+      "description": "Is the idea and its execution distinctive, or is it the median AI answer to this prompt?"
+    }
+  ],
+  "models": [
+    {
+      "id": "claude-fable-5",
+      "label": "Claude Fable 5",
+      "provider": "anthropic",
+      "vendor": "anthropic"
+    },
+    {
+      "id": "claude-opus-5",
+      "label": "Claude Opus 5",
+      "provider": "anthropic",
+      "vendor": "anthropic"
+    },
+    {
+      "id": "claude-sonnet-5",
+      "label": "Claude Sonnet 5",
+      "provider": "anthropic",
+      "vendor": "anthropic"
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "label": "Claude Haiku 4.5",
+      "provider": "anthropic",
+      "vendor": "anthropic"
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "label": "GPT-5.6 Sol",
+      "provider": "openai-compatible",
+      "vendor": "openai"
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "label": "GPT-5.6 Terra",
+      "provider": "openai-compatible",
+      "vendor": "openai"
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "label": "GPT-5.6 Luna",
+      "provider": "openai-compatible",
+      "vendor": "openai"
+    },
+    {
+      "id": "grok-4.5",
+      "label": "Grok 4.5",
+      "provider": "openai-compatible",
+      "vendor": "xai"
+    },
+    {
+      "id": "cursor-composer-2.5",
+      "label": "Cursor Composer 2.5",
+      "provider": "manual",
+      "vendor": "cursor"
+    },
+    {
+      "id": "glm-5.2",
+      "label": "GLM 5.2",
+      "provider": "openai-compatible",
+      "vendor": "zai"
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "label": "DeepSeek V4 Pro",
+      "provider": "openai-compatible",
+      "vendor": "deepseek"
+    },
+    {
+      "id": "kimi-k3",
+      "label": "Kimi K3",
+      "provider": "openai-compatible",
+      "vendor": "moonshot"
+    },
+    {
+      "id": "muse-spark-1.2",
+      "label": "Muse Spark 1.2",
+      "provider": "openai-compatible",
+      "vendor": "meta"
+    },
+    {
+      "id": "qwen3.7-max",
+      "label": "Qwen 3.7 Max",
+      "provider": "openai-compatible",
+      "vendor": "alibaba"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "01-threejs-scroll",
+      "label": "Three.js Scroll Journey",
+      "category": "Frontend — extreme",
+      "mode": "api"
+    },
+    {
+      "id": "02-webgl-shader",
+      "label": "Custom WebGL Shader",
+      "category": "Frontend — creative extreme",
+      "mode": "api"
+    },
+    {
+      "id": "03-landing-design",
+      "label": "Brand Landing Page",
+      "category": "Frontend — design",
+      "mode": "api"
+    },
+    {
+      "id": "05-3d-game",
+      "label": "Playable 3D Game",
+      "category": "3D / game",
+      "mode": "api"
+    },
+    {
+      "id": "06-open-creative",
+      "label": "Open Creative Brief",
+      "category": "Creative — open",
+      "mode": "api"
+    },
+    {
+      "id": "07-self-pitch",
+      "label": "Sell Yourself",
+      "category": "Persuasion & self-knowledge",
+      "mode": "api"
+    },
+    {
+      "id": "08-accessible-interface",
+      "label": "Accessible Interface",
+      "category": "Interface engineering — accessibility",
+      "mode": "api"
+    },
+    {
+      "id": "09-brownfield-change",
+      "label": "Brownfield Change Request",
+      "category": "Engineering discipline — maintenance",
+      "mode": "api"
+    },
+    {
+      "id": "10-svg-icon-system",
+      "label": "SVG Icon System",
+      "category": "Design & taste — iconography",
+      "mode": "api"
+    },
+    {
+      "id": "11-stateful-app",
+      "label": "Stateful Application",
+      "category": "Interface engineering — state",
+      "mode": "api"
+    },
+    {
+      "id": "12-css-only",
+      "label": "Zero JavaScript",
+      "category": "Design & taste — CSS",
+      "mode": "api"
+    },
+    {
+      "id": "13-html-email",
+      "label": "HTML Email",
+      "category": "Engineering discipline — email",
+      "mode": "api"
+    }
+  ],
+  "cells": [
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "grok-4.5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "glm-5.2",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "01-threejs-scroll",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/01-threejs-scroll/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/01-threejs-scroll/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 62.5,
+      "disagreement": 1.5,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Four lights (hemisphere, directional, two point lights) are added and their intensities animated per frame, but every material in the scene is a raw ShaderMaterial with hand-written lighting — the 'meaningful lighting' is dead code that has no effect on the render.",
+        "Ring vertex shader declares `attribute float alpha` that is never supplied by the geometry (unused/dead declaration).",
+        "Small per-frame allocations (two new THREE.Vector3 in the render loop) against the brief's 'no allocating per frame'.",
+        "The brief specifies that scroll is the only timeline, but uTime continuously drives star twinkling, nebula drift, planet displacement, terrain waves/sparkles, mote movement, rotations, and exposure independently of scroll.",
+        "IcosahedronGeometry is requested with detail 14, an unnecessarily extreme subdivision setting that risks very large initialization/memory cost depending on Three.js's internal detail cap; it is disproportionate to the visible result.",
+        "Landing chapter text opacity is 0 at scroll progress 0 by construction of updateText."
+      ],
+      "human": 6,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 71.1,
+      "gateCapped": false,
+      "fps": 120.3,
+      "elapsedSeconds": 39.8,
+      "outputTokens": 8062,
+      "bytes": 18813
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "02-webgl-shader",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/02-webgl-shader/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/02-webgl-shader/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 65,
+      "disagreement": 2.5,
+      "maxSpread": 4,
+      "judgeCount": 3,
+      "redFlags": [
+        "Advertised 'dispersion' and 'thin-film iridescence' are decorative hacks (a channel offset and a sin of dot(n,vec3(1))) that produce no visible effect in the shipped render.",
+        "The meta panel prints 'WEBGL2' unconditionally; if the WebGL1 fallback path is taken the #version 300 es shader cannot compile and the page degrades to an error string in the fallback copy.",
+        "The WebGL1 fallback attempt cannot compile the WebGL2 `#version 300 es` shaders; it does subsequently show the considered fallback message, so this is graceful but the WebGL1 context acquisition is effectively unnecessary.",
+        "`u_dpr` is declared, located, and updated but never used by the shader.",
+        "The shader's advertised “refraction” is an environment-direction approximation rather than physically propagated/transmitted glass, though the code itself labels it as fake."
+      ],
+      "human": 5,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 69.3,
+      "gateCapped": false,
+      "fps": 120.3,
+      "elapsedSeconds": 45.7,
+      "outputTokens": 7384,
+      "bytes": 14702
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "03-landing-design",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/03-landing-design/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/03-landing-design/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 75,
+      "disagreement": 1.75,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Hero reveal elements ship with class=\"reveal in\" already applied, so the staggered transition-delay values are dead code — there is no entrance animation on first paint, only on scroll for later sections.",
+        "Duplicate style attribute on the brass swatch label (`style=\"position:absolute…\" class=\"mono\" style=\"font-size:.58rem;background:…\"`) means the second declaration is dropped and the \"01 — Brass\" chip renders without its frame.",
+        "Inline `style=\"grid-column:1/7\"` on the hero copy overrides the `@media(max-width:900px){.hero-copy{grid-column:auto}}` rule, so the mobile hero relies on implicit column generation rather than the stacked layout the CSS intends; anchor targets also have no scroll-margin, so linked headings land under the sticky nav.",
+        "The “Read the manual (PDF)” link and most footer utility links point to `#` rather than a real destination.",
+        "The reservation confirmation is simulated UI feedback; it does not perform a reservation or email action."
+      ],
+      "human": 5.5,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 75.3,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 59.3,
+      "outputTokens": 12202,
+      "bytes": 34653
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "05-3d-game",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/05-3d-game/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/05-3d-game/shots",
+      "technical": 92,
+      "viable": true,
+      "judge": 62.5,
+      "disagreement": 1.75,
+      "maxSpread": 3,
+      "judgeCount": 3,
+      "redFlags": [
+        "Advertised mechanic not built: the alert and HUD claim a dash/burst on brake release; the update loop only multiplies speed by 0.42 while held.",
+        "Particle fade sets material.opacity on a MeshBasicMaterial created without transparent:true, so the opacity fade is inert — only the scale shrink actually reads.",
+        "hitFlash.style.background is permanently overwritten to the red death gradient on first hit and never restored, so subsequent near-miss flashes use the wrong colour.",
+        "Held keys are not cleared in resetWorld(), so input state can survive a restart, contrary to the brief.",
+        "Score bonus for passing an obstacle (+18) is gated on a userData.passed flag set in a branch that fires before the check, making that reward effectively dead logic.",
+        "`resetWorld()` does not reset `keys`, so held steering/brake input can survive death and immediately affect a new run, contrary to the brief's explicit restart-input requirement.",
+        "Particle materials are created without `transparent:true`, so setting `p.material.opacity` does not reliably produce the intended alpha fade; their scale fades, but the opacity mechanism is not correctly configured.",
+        "The play button explicitly switches audio from the initially muted state to audible. It is user-initiated and has a mute control, so this is not autoplay, but it is less conservative than keeping optional audio muted until the player opts in."
+      ],
+      "human": 5.5,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 67.6,
+      "gateCapped": false,
+      "fps": 120.5,
+      "elapsedSeconds": 40.9,
+      "outputTokens": 8019,
+      "bytes": 21656
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "06-open-creative",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/06-open-creative/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/06-open-creative/shots",
+      "technical": 83.4,
+      "viable": true,
+      "judge": 67.5,
+      "disagreement": 2,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Tray previews are decorative only — the placed stone is a different randomly generated shape than the one shown, contradicting the on-screen promise that each stone is unique and clickable.",
+        "'Tide in' button is a no-op due to groundY being overwritten in buildGround().",
+        "Save-image comment claims a higher-resolution export path that was not built; export omits the CSS-drawn sky/background.",
+        "Three supplied screenshots are identical with the intro overlay still up (pointer delta 0), so the actual stacking state is never demonstrated.",
+        "The Tide In control does not retain a changed shoreline: it decrements `groundY`, then immediately calls `buildGround()`, which resets `groundY` to `H - 62`; its meaningful effect is just a small wind gust.",
+        "Reset repeatedly creates new Mouse instances and canvas/document event listeners without removing prior mouse listeners or explicitly disposing old constraints.",
+        "The Save Image feature exports only the physics canvas, not the composed interface, despite its broad label.",
+        "All three captured frames are identical with the blocking welcome overlay still up; interaction score 0 / mean pixel delta 0 — no screenshot evidence of stacking, physics, or wind actually running."
+      ],
+      "human": 6.5,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 70.7,
+      "gateCapped": false,
+      "fps": 120.3,
+      "elapsedSeconds": 54.2,
+      "outputTokens": 9740,
+      "bytes": 23880
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "07-self-pitch",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/07-self-pitch/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/07-self-pitch/shots",
+      "technical": 89.1,
+      "viable": true,
+      "judge": 45,
+      "disagreement": 1,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Fabricated identity: the page invents a product name (\"Muse Spark\") and attributes it to Meta, directly violating the brief's first requirement not to invent a product name or hide behind a persona. Every self-description that follows is therefore unverifiable fiction.",
+        "Claims \"No fabricated stats on this page\" and \"No invented evidence\" while simultaneously asserting \"Latency: Fast\", \"Fidelity: High\", \"small, fast, cheap to run everywhere\" and a training-cutoff/context-limit profile for a model that does not exist.",
+        "The demonstration is faked: hardcoded output blocks chosen by substring tests, marketed as \"Live proof, not claims\" and \"verifiable now\".",
+        "Fabricated product identity: “Muse Spark — Meta” is presented as a real specific model despite not being one.",
+        "The page repeatedly represents a handcrafted local regex/template generator as evidence of the claimed model’s behavior (“Try me live,” “Run Spark,” “Live proof”).",
+        "Unsupported factual product positioning is stated confidently throughout, including model size, latency/cost characteristics, tool-use behavior, structured-output fidelity, and comparative suitability.",
+        "User text is inserted into `outEl.innerHTML` without escaping, enabling HTML injection in the supposedly local demonstration.",
+        "Fabricated model/product identity (“Muse Spark by Meta”) — direct violation of accurate naming and no-fabrication rules",
+        "Automated identity check confirms it never names a specific real model"
+      ],
+      "human": 8,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 66.5,
+      "gateCapped": false,
+      "fps": 120.3,
+      "elapsedSeconds": 54.9,
+      "outputTokens": 10526,
+      "bytes": 30650
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "08-accessible-interface",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/08-accessible-interface/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/08-accessible-interface/shots",
+      "technical": 90.5,
+      "viable": true,
+      "judge": 57.5,
+      "disagreement": 2,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "@media(prefers-contrast:more){--border:#000;--card:#fff} declares custom properties with no selector — invalid CSS that does nothing, so the claimed prefers-contrast support is not implemented.",
+        "validate() appends the error id to aria-describedby without dedup or removal, so repeated submissions accumulate duplicate ids and a stale error reference survives after the field is fixed.",
+        "role=\"radiogroup\" sprayed onto a div that already wraps native radios inside a fieldset/legend, and aria-label on the non-interactive .logo div — redundant ARIA where the native element already did the job.",
+        "Seat grid rows contain an aria-hidden row-label span as a direct child of role=\"row\", which is not a permitted child of a row in the grid pattern.",
+        "User-entered name and email values are interpolated into `innerHTML` for the review and confirmation content without escaping. Entering markup can alter the rendered review/confirmation DOM and its accessibility tree.",
+        "The code comments imply an Alt+Arrow row-skip feature, but the implementation is a no-op duplication of normal vertical movement."
+      ],
+      "human": null,
+      "humanNote": "",
+      "humanBlind": false,
+      "reviewed": false,
+      "final": 69.3,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 43.5,
+      "outputTokens": 8813,
+      "bytes": 24320
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "09-brownfield-change",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/09-brownfield-change/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/09-brownfield-change/shots",
+      "technical": 79.1,
+      "viable": true,
+      "judge": 72.5,
+      "disagreement": 1.25,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Held-only orders are incorrectly charged carriage; saved quote totals for such orders can show £0.00 while loading the quote produces a nonzero carriage total."
+      ],
+      "human": null,
+      "humanNote": "",
+      "humanBlind": false,
+      "reviewed": false,
+      "final": 74.9,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 60.1,
+      "outputTokens": 18593,
+      "bytes": 35879
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "10-svg-icon-system",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/10-svg-icon-system/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/10-svg-icon-system/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 60,
+      "disagreement": 1.5,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "The \"96px display\" step in both size ramps is rendered at width/height:68px with stroke-width forced to 1.4 — the page labels a size it does not actually show, and the brief specifically asks the set to hold at 96px.",
+        "Contradictory stated facts: the hero says \"4.1 KB gzipped sprite\", the hygiene checklist says \"~6.2 KB / 1.9 KB gz\".",
+        "The anemometer card claims a \"three-cup hub\" but only two cups are drawn in the symbol.",
+        "The dashboard's tide curve is a dashed empty box captioned \"TIDE CURVE — 24H\" — a placeholder in a deliverable that forbids placeholders.",
+        "The stated 96px size-ramp evidence is inaccurate: the markup uses 68px icons while labeling them 96px.",
+        "The “Hover to see code” claim is not implemented.",
+        "No-op paths in buoy and tide-gauge (broken authored geometry, not just sparse drawing)"
+      ],
+      "human": 5,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 67,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 65.6,
+      "outputTokens": 15790,
+      "bytes": 35418
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "11-stateful-app",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/11-stateful-app/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/11-stateful-app/shots",
+      "technical": 83.3,
+      "viable": true,
+      "judge": 42.5,
+      "disagreement": 1.75,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Time-axis scale mismatch: label column (40px per half-hour) and cell/booking column (20px rows, percentage positioning over a container that includes the header) disagree, so displayed block times do not line up with the axis.",
+        "Empty-state copy tells the user to \"drag the playhead\" — there is no playhead and no click-to-create anywhere in the code.",
+        "Automated capture reports 0 fps and zero pixel delta after scripted pointer interaction; the three screenshots are identical, so no interactive change was observed.",
+        "The empty-state copy claims a nonexistent “playhead” can be dragged.",
+        "`window.addEventListener('resize',()=>{ if(drag) { /* cancel transform to avoid jump */ } });` does not cancel or recompute an active drag, leaving stale drag geometry after resize.",
+        "Automated interaction evidence reports zero pointer pixel movement; while source contains a drag implementation, the delivered interaction was not demonstrably exercised by the capture."
+      ],
+      "human": null,
+      "humanNote": "",
+      "humanBlind": false,
+      "reviewed": false,
+      "final": 57.1,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 54.3,
+      "outputTokens": 11684,
+      "bytes": 30380
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "12-css-only",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/12-css-only/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/12-css-only/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 67.5,
+      "disagreement": 1.5,
+      "maxSpread": 2,
+      "judgeCount": 3,
+      "redFlags": [
+        "Filter interaction is non-functional: `:has()` filter selectors reference radios outside the `.catalog` subtree, so no card is ever hidden.",
+        "The sidebar \"Reading position\" indicator is faked — `.reading i::after{transform:scaleX(.35)}` is a static hardcoded 35% fill with no timeline or state driving it.",
+        "Several lightbox plates are effectively placeholders (a bare circle, a bare rounded rect), flagged in the source as \"generic lightboxes for remaining cards (minimal)\".",
+        "`@property --p` is dead code; `.catalog{container-type:inline-size}` has no corresponding container query.",
+        "No prohibited <script> tags, inline on* event attributes, or javascript: URLs were found.",
+        "Required filterable index is nonfunctional because the :has() selectors target inputs that are outside the .catalog subtree.",
+        "Filterable index does not filter—:has() scope bug makes the required interaction a no-op.",
+        "Faked reading-position indicator in the sticky TOC (static fill, not scroll-linked)."
+      ],
+      "human": null,
+      "humanNote": "",
+      "humanBlind": false,
+      "reviewed": false,
+      "final": 79.1,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 84.9,
+      "outputTokens": 17472,
+      "bytes": 47251
+    },
+    {
+      "modelId": "muse-spark-1.2",
+      "benchmarkId": "13-html-email",
+      "present": true,
+      "href": "runs/2026-08-09-2106/muse-spark-1.2/13-html-email/index.html",
+      "shotDir": "runs/2026-08-09-2106/muse-spark-1.2/13-html-email/shots",
+      "technical": 100,
+      "viable": true,
+      "judge": 70,
+      "disagreement": 1,
+      "maxSpread": 1,
+      "judgeCount": 3,
+      "redFlags": [],
+      "human": 6.5,
+      "humanNote": "",
+      "humanBlind": true,
+      "reviewed": true,
+      "final": 76,
+      "gateCapped": false,
+      "fps": 0,
+      "elapsedSeconds": 43.3,
+      "outputTokens": 10277,
+      "bytes": 25808
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "01-threejs-scroll",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "02-webgl-shader",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "03-landing-design",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "04-figma-to-code",
+      "present": false,
+      "expectedManual": true
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "05-3d-game",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "06-open-creative",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "07-self-pitch",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "08-accessible-interface",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "09-brownfield-change",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "10-svg-icon-system",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "11-stateful-app",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "12-css-only",
+      "present": false,
+      "expectedManual": false
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "benchmarkId": "13-html-email",
+      "present": false,
+      "expectedManual": false
+    }
+  ],
+  "leaderboard": [
+    {
+      "modelId": "muse-spark-1.2",
+      "label": "Muse Spark 1.2",
+      "provider": "openai-compatible",
+      "vendor": "meta",
+      "scored": 12,
+      "attempted": 12,
+      "total": 12,
+      "reviewed": 8,
+      "blindReviewed": 8,
+      "overall": 70.3,
+      "technical": 93.1,
+      "judge": 62.3,
+      "human": 60,
+      "redFlags": 69
+    },
+    {
+      "modelId": "claude-fable-5",
+      "label": "Claude Fable 5",
+      "provider": "anthropic",
+      "vendor": "anthropic",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "claude-opus-5",
+      "label": "Claude Opus 5",
+      "provider": "anthropic",
+      "vendor": "anthropic",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "label": "Claude Sonnet 5",
+      "provider": "anthropic",
+      "vendor": "anthropic",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "label": "Claude Haiku 4.5",
+      "provider": "anthropic",
+      "vendor": "anthropic",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "gpt-5.6-sol",
+      "label": "GPT-5.6 Sol",
+      "provider": "openai-compatible",
+      "vendor": "openai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "gpt-5.6-terra",
+      "label": "GPT-5.6 Terra",
+      "provider": "openai-compatible",
+      "vendor": "openai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "gpt-5.6-luna",
+      "label": "GPT-5.6 Luna",
+      "provider": "openai-compatible",
+      "vendor": "openai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "grok-4.5",
+      "label": "Grok 4.5",
+      "provider": "openai-compatible",
+      "vendor": "xai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "cursor-composer-2.5",
+      "label": "Cursor Composer 2.5",
+      "provider": "manual",
+      "vendor": "cursor",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "glm-5.2",
+      "label": "GLM 5.2",
+      "provider": "openai-compatible",
+      "vendor": "zai",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "label": "DeepSeek V4 Pro",
+      "provider": "openai-compatible",
+      "vendor": "deepseek",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "kimi-k3",
+      "label": "Kimi K3",
+      "provider": "openai-compatible",
+      "vendor": "moonshot",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    },
+    {
+      "modelId": "qwen3.7-max",
+      "label": "Qwen 3.7 Max",
+      "provider": "openai-compatible",
+      "vendor": "alibaba",
+      "scored": 0,
+      "attempted": 0,
+      "total": 12,
+      "reviewed": 0,
+      "blindReviewed": 0,
+      "overall": null,
+      "technical": null,
+      "judge": null,
+      "human": null,
+      "redFlags": 0
+    }
+  ]
+}

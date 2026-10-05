@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate config, briefs and sources
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      # Chromium is only needed for the gates stage; skip the Playwright download in CI.
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - name: Syntax-check every module
+        run: for f in src/*.mjs scripts/*.mjs; do node --check "$f"; done

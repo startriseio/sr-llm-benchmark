@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this benchmark or its published results, please cite it."
+title: "The Startrise LLM Benchmark: frontier models on real single-shot frontend builds"
+type: software
+authors:
+  - family-names: Petrov
+    given-names: Misha
+    affiliation: Startrise LLC
+  - name: Startrise AI Labs
+repository-code: "https://github.com/startriseio/sr-llm-benchmark"
+url: "https://www.startrise.io/benchmark/"
+license: MIT
+version: "0.2.0"
+date-released: "2026-10-06"
+keywords:
+  - llm-benchmark
+  - frontend
+  - llm-as-a-judge
+  - evaluation
+  - webgl
+  - accessibility
+abstract: >
+  A benchmark in which frontier language models each build the same twelve
+  single-shot frontend deliverables (Three.js, WebGL, landing page, 3D game,
+  accessible interface, brownfield change request, SVG icon system, stateful
+  application, zero-JavaScript page, HTML email, and two open briefs). Every
+  deliverable is driven in headed Chromium, scored blind by a three-lab judge
+  panel on four axes with median aggregation, and rated blind by a human. The
+  repository contains the harness, the briefs, the configuration, and the
+  published per-run results.

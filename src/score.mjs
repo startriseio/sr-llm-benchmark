@@ -1,7 +1,6 @@
 import path from 'node:path'
 import {
-  loadConfig, parseCli, resolveRun, listRuns, runDir, htmlPath, exists, readJson, writeJson,
-  humanFile, scoresFile, round, log, bold, dim, warn, green, yellow,
+  loadConfig, parseCli, resolveRun, listRuns, runDir, htmlPath, exists, readJson, writeJson, humanFile, scoresFile, round, log, bold, dim, warn, green, yellow, RUNS, resultsDir,
 } from './lib.mjs'
 
 export const humanKey = (modelId, benchId) => `${modelId}::${benchId}`
@@ -36,6 +35,13 @@ export function blend({ technical, judge, human }, weights) {
 }
 
 export async function buildScores(cfg, runId) {
+  // A clone without runs/ (the deliverables are hundreds of MB and are published on the
+  // website instead) still carries results/<run>/scores.json. Serve that so the report,
+  // the scoreboard and the all-time view work out of the box.
+  if (!(await exists(path.join(RUNS, runId)))) {
+    const published = path.join(resultsDir(runId), 'scores.json')
+    if (await exists(published)) return { ...(await readJson(published)), fromPublished: true }
+  }
   const active = cfg.benchmarks.filter((b) => !b.disabled)
   const hf = humanFile(runId)
   const human = (await exists(hf)) ? await readJson(hf) : {}

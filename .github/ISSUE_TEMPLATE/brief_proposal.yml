@@ -1,0 +1,39 @@
+name: Brief proposal
+description: Propose a new build brief for the suite
+title: "[brief] "
+labels: [brief]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The twelve published briefs are frozen for comparability. New briefs join as new ids. A good brief separates models on something the existing set does not, has a deterministic output contract, and can be gated in a browser.
+  - type: input
+    id: title
+    attributes:
+      label: Working title
+    validations:
+      required: true
+  - type: textarea
+    id: separates
+    attributes:
+      label: What does it separate?
+      description: Which capability do the current briefs miss, and why would single-shot output reveal it?
+    validations:
+      required: true
+  - type: textarea
+    id: gates
+    attributes:
+      label: Which gates apply?
+      description: self_contained, economy, loads, console_clean, renders, fps, interaction, identity — and the interaction type (scroll / pointer / keyboard / none).
+    validations:
+      required: true
+  - type: textarea
+    id: judge
+    attributes:
+      label: Judge note
+      description: How should the four axes (craft, technique, adherence, originality) be read for this brief?
+  - type: textarea
+    id: draft
+    attributes:
+      label: Draft brief
+      description: Plain markdown, in the voice of the existing briefs. It will be joined with `_contract.md`.

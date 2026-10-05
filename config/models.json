@@ -136,7 +136,7 @@
       "vendor": "xai"
     },
     {
-      "$comment": "You said 'Cursor Grok 4.5'. This entry is the raw model over xAI's API via OpenRouter. If you actually want to measure the Cursor HARNESS driving Grok, change provider to 'manual' and run the briefs inside Cursor instead.",
+      "$comment": "The raw model over xAI's API via OpenRouter. To measure the Cursor HARNESS driving Grok instead, change provider to 'manual' and run the briefs inside Cursor.",
       "id": "grok-4.5",
       "label": "Grok 4.5",
       "provider": "openai-compatible",
