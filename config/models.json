@@ -454,6 +454,115 @@
           "effort": "high"
         }
       }
+    },
+    {
+      "$comment": "ADDED 2026-10-28. Google's Gemini 4 Argon flagship (GA 2026-10-13). OpenRouter ID google/gemini-4-argon, $2/$10 intro. Google sync default max out is 65536 with long-decode continuation up to 1M; this harness does not implement continuation, so max_tokens 128000 is set as a best-effort ceiling. Truncation/empty bodies on hard briefs are findings, not config bugs. First Google flagship on the roster (3.8 Flash already scored Oct 5).",
+      "id": "gemini-4-argon",
+      "label": "Gemini 4 Argon",
+      "provider": "openai-compatible",
+      "model": "google/gemini-4-argon",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "google"
+    },
+    {
+      "$comment": "ADDED 2026-10-28. OpenAI GPT-6.1 Terra (2026-10-26). Mid-tier GPT-6.1 below Sol; $1/$5, 1.05M ctx, 128k out. Engineering judge remains gpt-5.6-terra.",
+      "id": "gpt-6.1-terra",
+      "label": "GPT-6.1 Terra",
+      "provider": "openai-compatible",
+      "model": "openai/gpt-6.1-terra",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "openai"
+    },
+    {
+      "$comment": "ADDED 2026-10-28. Moonshot Kimi K3.1 Pro (2026-10-23). Post-trained successor to Kimi K3; 1M ctx; $2/$10. Highspeed lane has no separate OpenRouter ID as of 2026-10-28.",
+      "id": "kimi-k3.1-pro",
+      "label": "Kimi K3.1 Pro",
+      "provider": "openai-compatible",
+      "model": "moonshotai/kimi-k3.1-pro",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "moonshot"
+    },
+    {
+      "$comment": "ADDED 2026-10-28. Meta Muse Wonder (2026-10-12). Frontier agentic model; $4/$20; 1M ctx. May share Muse Spark 1.x OpenRouter 18+ attestation gate.",
+      "id": "muse-wonder",
+      "label": "Muse Wonder",
+      "provider": "openai-compatible",
+      "model": "meta/muse-wonder",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "meta"
+    },
+    {
+      "$comment": "ADDED 2026-10-28. Anthropic Claude Haiku 5.5 (2026-10-07). First Haiku with adjustable effort; ~75% cheaper than Haiku 4.5. Direct Anthropic route. effort high for parity with other Claude contestants; max_tokens 128000.",
+      "id": "claude-haiku-5-5",
+      "label": "Claude Haiku 5.5",
+      "provider": "anthropic",
+      "model": "claude-haiku-5-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "vendor": "anthropic",
+      "params": {
+        "max_tokens": 128000,
+        "thinking": {
+          "type": "adaptive"
+        },
+        "output_config": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "$comment": "ADDED 2026-10-28. DeepSeek V4.1 Flash 1017 snapshot (2026-10-17). Update to the already-scored V4.1 Flash with shorter outputs; $0.15/$0.60.",
+      "id": "deepseek-v4.1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "provider": "openai-compatible",
+      "model": "deepseek/deepseek-v4.1-flash-1017",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "deepseek"
+    },
+    {
+      "$comment": "ADDED 2026-10-28. MiniMax M3.1 Flash (2026-10-19). Multimodal Flash with tunable thinking; $0.15/$0.60; 1M ctx. First MiniMax model on the roster.",
+      "id": "minimax-m3.1-flash",
+      "label": "MiniMax M3.1 Flash",
+      "provider": "openai-compatible",
+      "model": "minimax/minimax-m3.1-flash",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "minimax"
+    },
+    {
+      "$comment": "ADDED 2026-10-28. Meta Muse Spark Open (2026-10-15). Coding-optimized open-weight Muse Spark line; $1.25/$4.25; 1M ctx. Same 18+ attestation gate risk as Muse Spark 1.x on OpenRouter.",
+      "id": "muse-spark-open",
+      "label": "Muse Spark Open",
+      "provider": "openai-compatible",
+      "model": "meta/muse-spark-open",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "params": {
+        "max_tokens": 128000
+      },
+      "vendor": "meta"
     }
   ]
 }
